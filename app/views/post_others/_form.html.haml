@@ -1,0 +1,16 @@
+= form_for @post_other do |f|
+  -if @post_other.errors.any?
+    #errorExplanation
+      %h2= "#{pluralize(@post_other.errors.count, "error")} prohibited this post_other from being saved:"
+      %ul
+        - @post_other.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :content
+    = f.text_area :content
+  .actions
+    = f.submit 'Save'
