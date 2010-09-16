@@ -42,17 +42,17 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     primary.item :home, 'Home', root_path, :class => 'nav_button'
     primary.item :blogs, 'Blog', post_teches_path, :class => 'nav_button' do |blogs|
-      blogs.item :posttechs, 'IT', post_teches_path
-      blogs.item :postothers, 'Other', post_others_path
+      blogs.item :posttechs, 'IT', post_teches_path, :class => 'subnav_button'
+      blogs.item :postothers, 'Other', post_others_path, :class => 'subnav_button'
     end
     primary.item :work, 'Work', projects_path, :class => 'nav_button' do |work|
-      work.item :projects, 'Projects', projects_path
-      work.item :services, 'Services', service_index_path
-      work.item :resume, 'Resume', resume_index_path
+      work.item :projects, 'Projects', projects_path, :class => 'subnav_button'
+      work.item :services, 'Services', service_index_path, :class => 'subnav_button'
+      work.item :resume, 'Resume', resume_index_path, :class => 'subnav_button'
     end
     primary.item :contact, 'Contact', contact_index_path, :class => 'nav_button' do |contact|
-      contact.item :address, 'Address', contact_index_path
-      contact.item :feedback, 'Feedback', feedback_index_path
+      contact.item :address, 'Address', contact_index_path, :class => 'subnav_button'
+      contact.item :feedback, 'Feedback', feedback_index_path, :class => 'subnav_button'
     end
     primary.item :about_me, 'About me', about_me_index_path, :class => 'nav_button'
 

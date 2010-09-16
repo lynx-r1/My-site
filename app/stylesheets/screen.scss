@@ -81,8 +81,8 @@ body {
                     li {
                         position: relative;
                         left: 50%;
-
                         float: left;
+
                         padding: 0px 4px 0px 4px;
 
                         a {
@@ -184,8 +184,8 @@ body {
                 li {
                     position: relative;
                     left: 50%;
-
                     float: left;
+
                     padding: 0px 4px 0px 4px;
 
                     a {
@@ -257,12 +257,47 @@ body {
 
             margin: 0.5em 1em 0em 1em;
             height: 2em;
+            line-height: 2em;
 
             border: solid 1px #8c8;
             background: $backgroundColor;
 
             @include border-bottom-radius(2em);
             @include box-shadow(rgba(0, 0, 0, 0.2), 0, 1px, 12px);
+
+            ul {
+                list-style: none;
+
+                float: right;
+                position: relative;
+                left: -50%;
+
+                margin: 0;
+
+                li {
+                    position: relative;
+                    left: 50%;
+                    float: left;
+
+                    padding: 0px 8px 0px 8px;
+
+                    a {
+                        float: left;
+
+                        font: {
+                            size: 1.2em;
+                            weight: bold;
+                        }
+
+                        text: {
+                            align: center;
+                            decoration: none;
+                        }
+
+                        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
         }
 
         #footer {
@@ -275,7 +310,7 @@ body {
             width: $width;
             height: $height;
             border: solid 1px $borderColor;
-            background: $color1;
+            background: $color2;
 
             text-align: center;
             line-height: $height;

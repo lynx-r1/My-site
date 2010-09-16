@@ -297,6 +297,7 @@ body #main_container #body_container {
 body #main_container #adds {
   margin: 0.5em 1em 0em 1em;
   height: 2em;
+  line-height: 2em;
   border: solid 1px #8c8;
   background: #aff5af;
   -moz-border-radius-bottomleft: 2em;
@@ -317,11 +318,35 @@ body #main_container #adds {
   box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
 }
 /* line 268, ../../../app/stylesheets/screen.scss */
+body #main_container #adds ul {
+  list-style: none;
+  float: right;
+  position: relative;
+  left: -50%;
+  margin: 0;
+}
+/* line 277, ../../../app/stylesheets/screen.scss */
+body #main_container #adds ul li {
+  position: relative;
+  left: 50%;
+  float: left;
+  padding: 0px 8px 0px 8px;
+}
+/* line 284, ../../../app/stylesheets/screen.scss */
+body #main_container #adds ul li a {
+  float: left;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+/* line 303, ../../../app/stylesheets/screen.scss */
 body #main_container #footer {
   width: 40%;
   height: 38px;
   border: solid 1px #777777;
-  background: #aaaaaa;
+  background: #777777;
   text-align: center;
   line-height: 38px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
