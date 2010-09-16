@@ -97,22 +97,11 @@ body #main_container #top_container {
 }
 /* line 47, ../../../app/stylesheets/screen.scss */
 body #main_container #top_container #nav_bar {
-  float: right;
-  position: relative;
-  left: -50%;
-  width: 768px;
-}
-/* line 53, ../../../app/stylesheets/screen.scss */
-body #main_container #top_container #nav_bar ul {
-  position: relative;
-  left: 50%;
-  list-style: none;
-  height: 2em;
-  line-height: 2em;
-  padding: .3em 0em .5em 4em;
-  margin: 0;
   background-color: #84eb84;
   border: solid 1px #4ce14c;
+  height: 2em;
+  width: 768px;
+  margin-left: 1em;
   -moz-border-radius: 2em;
   -webkit-border-radius: 2em;
   -o-border-radius: 2em;
@@ -122,17 +111,29 @@ body #main_container #top_container #nav_bar ul {
   background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, color-stop(0%, #c7ffc7), color-stop(100%, #5cd85c));
   background-image: -moz-linear-gradient(bottom, #c7ffc7 0%, #5cd85c 100%);
   background-image: linear-gradient(bottom, #c7ffc7 0%, #5cd85c 100%);
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
+}
+/* line 67, ../../../app/stylesheets/screen.scss */
+body #main_container #top_container #nav_bar ul {
+  list-style: none;
+  float: right;
+  position: relative;
+  left: -50%;
+  height: 1.9em;
+  line-height: 1.9em;
+  margin: 0;
 }
 /* line 81, ../../../app/stylesheets/screen.scss */
 body #main_container #top_container #nav_bar ul li {
+  position: relative;
+  left: 50%;
   float: left;
   padding: 0px 4px 0px 4px;
 }
-/* line 85, ../../../app/stylesheets/screen.scss */
+/* line 88, ../../../app/stylesheets/screen.scss */
 body #main_container #top_container #nav_bar ul li a {
   width: 6em;
   float: left;
@@ -153,10 +154,10 @@ body #main_container #top_container #nav_bar ul li a {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #c7ffc7), color-stop(100%, #5cd85c));
   background-image: -moz-linear-gradient(top, #c7ffc7 0%, #5cd85c 100%);
   background-image: linear-gradient(top, #c7ffc7 0%, #5cd85c 100%);
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
                             /*&:hover {
                                 $lightColor1: lighten($color1, 5%);
                                 $lightColor2: lighten($color2, 5%);
@@ -166,7 +167,7 @@ body #main_container #top_container #nav_bar ul li a {
                                 @include linear-gradient(color-stops($lightColor1, $lightColor2), $gradientDir);
                             }*/
 }
-/* line 124, ../../../app/stylesheets/screen.scss */
+/* line 127, ../../../app/stylesheets/screen.scss */
 body #main_container #top_container #nav_bar ul li a.selected {
   font-weight: bold;
   background-color: #47d347;
@@ -174,11 +175,11 @@ body #main_container #top_container #nav_bar ul li a.selected {
   background-image: -moz-linear-gradient(bottom, #aeffae 0%, #47d347 100%);
   background-image: linear-gradient(bottom, #aeffae 0%, #47d347 100%);
 }
-/* line 138, ../../../app/stylesheets/screen.scss */
+/* line 141, ../../../app/stylesheets/screen.scss */
 body #main_container hr {
   border: solid 3px #8d8;
   width: 50%;
-  margin-top: 4em;
+  margin-top: 1em;
   -moz-border-radius: 2em;
   -webkit-border-radius: 2em;
   -o-border-radius: 2em;
@@ -190,12 +191,14 @@ body #main_container hr {
   -o-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 8px 0;
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 8px 0;
 }
-/* line 146, ../../../app/stylesheets/screen.scss */
+/* line 149, ../../../app/stylesheets/screen.scss */
 body #main_container #tabs {
-  margin: 1em 1em 0em 1em;
-  height: 2em;
-  border: solid 1px #8c8;
-  background: #aff5af;
+  background-color: #84eb84;
+  border: solid 1px #4ce14c;
+  height: 1.5em;
+  width: 768px;
+  margin-left: 1em;
+  margin-top: 1em;
   -moz-border-radius-topleft: 2em;
   -webkit-border-top-left-radius: 2em;
   -o-border-top-left-radius: 2em;
@@ -208,12 +211,77 @@ body #main_container #tabs {
   -ms-border-top-right-radius: 2em;
   -khtml-border-top-right-radius: 2em;
   border-top-right-radius: 2em;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
 }
-/* line 159, ../../../app/stylesheets/screen.scss */
+/* line 170, ../../../app/stylesheets/screen.scss */
+body #main_container #tabs ul {
+  list-style: none;
+  float: right;
+  position: relative;
+  left: -50%;
+  height: 1.4em;
+  line-height: 1.4em;
+  margin: 0;
+}
+/* line 184, ../../../app/stylesheets/screen.scss */
+body #main_container #tabs ul li {
+  position: relative;
+  left: 50%;
+  float: left;
+  padding: 0px 4px 0px 4px;
+}
+/* line 191, ../../../app/stylesheets/screen.scss */
+body #main_container #tabs ul li a {
+  width: 6em;
+  float: left;
+  font-size: 1.2em;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none;
+  color: #2f3c4c;
+  border: solid 1px #53b953;
+  background-color: #aafaaa;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  -moz-border-radius-topleft: 2em;
+  -webkit-border-top-left-radius: 2em;
+  -o-border-top-left-radius: 2em;
+  -ms-border-top-left-radius: 2em;
+  -khtml-border-top-left-radius: 2em;
+  border-top-left-radius: 2em;
+  -moz-border-radius-topright: 2em;
+  -webkit-border-top-right-radius: 2em;
+  -o-border-top-right-radius: 2em;
+  -ms-border-top-right-radius: 2em;
+  -khtml-border-top-right-radius: 2em;
+  border-top-right-radius: 2em;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #c7ffc7), color-stop(100%, #5cd85c));
+  background-image: -moz-linear-gradient(top, #c7ffc7 0%, #5cd85c 100%);
+  background-image: linear-gradient(top, #c7ffc7 0%, #5cd85c 100%);
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
+                        /*&:hover {
+                            $lightColor1: lighten($color1, 5%);
+                            $lightColor2: lighten($color2, 5%);
+
+                            text-decoration: none;
+                            background-color: $lightColor1;
+                            @include linear-gradient(color-stops($lightColor1, $lightColor2), $gradientDir);
+                        }*/
+}
+/* line 230, ../../../app/stylesheets/screen.scss */
+body #main_container #tabs ul li a.selected {
+  font-weight: bold;
+  background-color: #47d347;
+  background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, color-stop(0%, #aeffae), color-stop(100%, #47d347));
+  background-image: -moz-linear-gradient(bottom, #aeffae 0%, #47d347 100%);
+  background-image: linear-gradient(bottom, #aeffae 0%, #47d347 100%);
+}
+/* line 243, ../../../app/stylesheets/screen.scss */
 body #main_container #body_container {
   margin: 0.5em 1em 0em 1em;
   min-height: 710px;
@@ -225,7 +293,7 @@ body #main_container #body_container {
   -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
   box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
 }
-/* line 171, ../../../app/stylesheets/screen.scss */
+/* line 255, ../../../app/stylesheets/screen.scss */
 body #main_container #adds {
   margin: 0.5em 1em 0em 1em;
   height: 2em;
@@ -248,7 +316,7 @@ body #main_container #adds {
   -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
   box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
 }
-/* line 184, ../../../app/stylesheets/screen.scss */
+/* line 268, ../../../app/stylesheets/screen.scss */
 body #main_container #footer {
   width: 40%;
   height: 38px;

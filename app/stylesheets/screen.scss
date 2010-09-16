@@ -45,40 +45,43 @@ body {
             padding-top: 1em;
 
             #nav_bar {
-                float: right;
-                position: relative;
-                left: -50%;
+                $backgroundColor: #84eb84;
+                $borderColor: #4ce14c;
+                $color1: #c7ffc7;
+                $color2: #5cd85c;
+                $gradientDir: bottom;
+                $rounded: 1em;
+                $shadowColor: rgba(0, 0, 0, 0.3);
+
+                background-color: $backgroundColor;
+                border: solid 1px $borderColor;
+
+                height: 2em;
                 width: $MainWidth - 32px;
+                margin-left: 1em;
+
+                @include border-radius($radius);
+                @include linear-gradient(color-stops($color1, $color2), $gradientDir);
+                @include box-shadow($shadowColor, $shadowX, $shadowY, $shadowBlur);
 
                 ul {
-                    $height: 2em;
-                    $backgroundColor: #84eb84;
-                    $borderColor: #4ce14c;
-                    $color1: #c7ffc7;
-                    $color2: #5cd85c;
-                    $gradientDir: bottom;
-                    $rounded: 1em;
-                    $shadowColor: rgba(0, 0, 0, 0.2);
-
-                    position: relative;
-                    left: 50%;
+                    $height: 1.9em;
 
                     list-style: none;
+
+                    float: right;
+                    position: relative;
+                    left: -50%;
 
                     height: $height;
                     line-height: $height;
 
-                    padding: .3em 0em .5em 4em;
                     margin: 0;
 
-                    background-color: $backgroundColor;
-                    border: solid 1px $borderColor;
-
-                    @include border-radius($radius);
-                    @include linear-gradient(color-stops($color1, $color2), $gradientDir);
-                    @include box-shadow($shadowColor, $shadowX, $shadowY, $shadowBlur);
-
                     li {
+                        position: relative;
+                        left: 50%;
+
                         float: left;
                         padding: 0px 4px 0px 4px;
 
@@ -138,22 +141,103 @@ body {
         hr {
             border: solid 3px #8d8;
             width: 50%;
-            margin-top: 4em;
+            margin-top: 1em;
             @include border-radius(2em);
             @include box-shadow(rgba(0, 0, 0, 0.3), 0, 1px, 8px);
         }
 
         #tabs {
-            $backgroundColor: #aff5af;
+            $backgroundColor: #84eb84;
+            $borderColor: #4ce14c;
+            $color1: #c7ffc7;
+            $color2: #5cd85c;
+            $gradientDir: bottom;
+            $rounded: 1em;
+            $shadowColor: rgba(0, 0, 0, 0.3);
 
-            margin: 1em 1em 0em 1em;
-            height: 2em;
+            background-color: $backgroundColor;
+            border: solid 1px $borderColor;
 
-            border: solid 1px #8c8;
-            background: $backgroundColor;
+            height: 1.5em;
+            width: $MainWidth - 32px;
+            margin-left: 1em;
+            margin-top: 1em;
 
-            @include border-top-radius(2em);
-            @include box-shadow(rgba(0, 0, 0, 0.2), 0, 1px, 12px);
+            @include border-top-radius($radius);
+            //@include linear-gradient(color-stops($color1, $color2), $gradientDir);
+            @include box-shadow($shadowColor, $shadowX, $shadowY, $shadowBlur);
+
+            ul {
+                $height: 1.4em;
+
+                list-style: none;
+
+                float: right;
+                position: relative;
+                left: -50%;
+
+                height: $height;
+                line-height: $height;
+
+                margin: 0;
+
+                li {
+                    position: relative;
+                    left: 50%;
+
+                    float: left;
+                    padding: 0px 4px 0px 4px;
+
+                    a {
+                        $width: 6em;
+                        $color: #2f3c4c;
+                        $borderColor: #53b953;
+                        $backgroundColor: #aafaaa;
+                        $gradientDir: top;
+
+                        width: $width;
+                        float: left;
+
+                        font: {
+                            size: 1.2em;
+                            weight: normal;
+                        }
+
+                        text: {
+                            align: center;
+                            decoration: none;
+                        }
+
+                        color: $color;
+                        border: solid 1px $borderColor;
+                        background-color: $backgroundColor;
+
+                        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+                        @include border-top-radius($radius);
+                        @include linear-gradient(color-stops($color1, $color2), $gradientDir);
+                        @include box-shadow($shadowColor, $shadowX, $shadowY, $shadowBlur);
+
+                        /*&:hover {
+                            $lightColor1: lighten($color1, 5%);
+                            $lightColor2: lighten($color2, 5%);
+
+                            text-decoration: none;
+                            background-color: $lightColor1;
+                            @include linear-gradient(color-stops($lightColor1, $lightColor2), $gradientDir);
+                        }*/
+
+                        &.selected {
+                            $darkColor1: darken($color1, 5%);
+                            $darkColor2: darken($color2, 5%);
+
+                            font-weight: bold;
+                            background-color: $darkColor2;
+                            @include linear-gradient(color-stops($darkColor1, $darkColor2), bottom);
+                        }
+                    }
+                }
+            }
         }
 
         #body_container {
