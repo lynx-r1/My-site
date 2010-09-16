@@ -66,9 +66,9 @@ a img {
 body {
   margin: 12px 0 12px 0;
   background-color: #e1ffe1;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e1ffe1), color-stop(100%, #eefaea));
-  background-image: -moz-linear-gradient(top, #e1ffe1 0%, #eefaea 100%);
-  background-image: linear-gradient(top, #e1ffe1 0%, #eefaea 100%);
+  background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, color-stop(0%, #e1ffe1), color-stop(100%, #eefaea));
+  background-image: -moz-linear-gradient(bottom, #e1ffe1 0%, #eefaea 100%);
+  background-image: linear-gradient(bottom, #e1ffe1 0%, #eefaea 100%);
 }
 /* line 23, ../../../app/stylesheets/screen.scss */
 body #main_container {
@@ -158,16 +158,8 @@ body #main_container #top_container #nav_bar ul li a {
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
   -o-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
-                            /*&:hover {
-                                $lightColor1: lighten($color1, 5%);
-                                $lightColor2: lighten($color2, 5%);
-
-                                text-decoration: none;
-                                background-color: $lightColor1;
-                                @include linear-gradient(color-stops($lightColor1, $lightColor2), $gradientDir);
-                            }*/
 }
-/* line 127, ../../../app/stylesheets/screen.scss */
+/* line 118, ../../../app/stylesheets/screen.scss */
 body #main_container #top_container #nav_bar ul li a.selected {
   font-weight: bold;
   background-color: #47d347;
@@ -175,7 +167,7 @@ body #main_container #top_container #nav_bar ul li a.selected {
   background-image: -moz-linear-gradient(bottom, #aeffae 0%, #47d347 100%);
   background-image: linear-gradient(bottom, #aeffae 0%, #47d347 100%);
 }
-/* line 141, ../../../app/stylesheets/screen.scss */
+/* line 132, ../../../app/stylesheets/screen.scss */
 body #main_container hr {
   border: solid 3px #8d8;
   width: 50%;
@@ -191,8 +183,8 @@ body #main_container hr {
   -o-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 8px 0;
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 8px 0;
 }
-/* line 149, ../../../app/stylesheets/screen.scss */
-body #main_container #tabs {
+/* line 140, ../../../app/stylesheets/screen.scss */
+body #main_container #subnav_top {
   background-color: #84eb84;
   border: solid 1px #4ce14c;
   height: 1.5em;
@@ -216,8 +208,8 @@ body #main_container #tabs {
   -o-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
 }
-/* line 170, ../../../app/stylesheets/screen.scss */
-body #main_container #tabs ul {
+/* line 161, ../../../app/stylesheets/screen.scss */
+body #main_container #subnav_top ul {
   list-style: none;
   float: right;
   position: relative;
@@ -226,15 +218,15 @@ body #main_container #tabs ul {
   line-height: 1.4em;
   margin: 0;
 }
-/* line 184, ../../../app/stylesheets/screen.scss */
-body #main_container #tabs ul li {
+/* line 175, ../../../app/stylesheets/screen.scss */
+body #main_container #subnav_top ul li {
   position: relative;
   left: 50%;
   float: left;
   padding: 0px 4px 0px 4px;
 }
-/* line 191, ../../../app/stylesheets/screen.scss */
-body #main_container #tabs ul li a {
+/* line 182, ../../../app/stylesheets/screen.scss */
+body #main_container #subnav_top ul li a {
   width: 6em;
   float: left;
   font-size: 1.2em;
@@ -264,42 +256,34 @@ body #main_container #tabs ul li a {
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
   -o-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 12px 0;
-                        /*&:hover {
-                            $lightColor1: lighten($color1, 5%);
-                            $lightColor2: lighten($color2, 5%);
-
-                            text-decoration: none;
-                            background-color: $lightColor1;
-                            @include linear-gradient(color-stops($lightColor1, $lightColor2), $gradientDir);
-                        }*/
 }
-/* line 230, ../../../app/stylesheets/screen.scss */
-body #main_container #tabs ul li a.selected {
+/* line 212, ../../../app/stylesheets/screen.scss */
+body #main_container #subnav_top ul li a.selected {
   font-weight: bold;
   background-color: #47d347;
   background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, color-stop(0%, #aeffae), color-stop(100%, #47d347));
   background-image: -moz-linear-gradient(bottom, #aeffae 0%, #47d347 100%);
   background-image: linear-gradient(bottom, #aeffae 0%, #47d347 100%);
 }
-/* line 243, ../../../app/stylesheets/screen.scss */
+/* line 225, ../../../app/stylesheets/screen.scss */
 body #main_container #body_container {
   margin: 0.5em 1em 0em 1em;
   min-height: 710px;
   padding: 1em;
   border: solid 1px #8c8;
   background-color: #f5f5f5;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 1px 12px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 1px 12px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.4) 0 1px 12px 0;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 1px 12px 0;
 }
-/* line 255, ../../../app/stylesheets/screen.scss */
-body #main_container #adds {
+/* line 237, ../../../app/stylesheets/screen.scss */
+body #main_container #subnav_bottom {
   margin: 0.5em 1em 0em 1em;
-  height: 2em;
-  line-height: 2em;
-  border: solid 1px #8c8;
-  background: #aff5af;
+  height: 1.5em;
+  line-height: 1.5em;
+  border: solid 1px #4ce14c;
+  background: #84eb84;
   -moz-border-radius-bottomleft: 2em;
   -webkit-border-bottom-left-radius: 2em;
   -o-border-bottom-left-radius: 2em;
@@ -312,28 +296,28 @@ body #main_container #adds {
   -ms-border-bottom-right-radius: 2em;
   -khtml-border-bottom-right-radius: 2em;
   border-bottom-right-radius: 2em;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 12px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 1px 12px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 1px 12px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.4) 0 1px 12px 0;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 1px 12px 0;
 }
-/* line 268, ../../../app/stylesheets/screen.scss */
-body #main_container #adds ul {
+/* line 252, ../../../app/stylesheets/screen.scss */
+body #main_container #subnav_bottom ul {
   list-style: none;
   float: right;
   position: relative;
   left: -50%;
   margin: 0;
 }
-/* line 277, ../../../app/stylesheets/screen.scss */
-body #main_container #adds ul li {
+/* line 261, ../../../app/stylesheets/screen.scss */
+body #main_container #subnav_bottom ul li {
   position: relative;
   left: 50%;
   float: left;
   padding: 0px 8px 0px 8px;
 }
-/* line 284, ../../../app/stylesheets/screen.scss */
-body #main_container #adds ul li a {
+/* line 268, ../../../app/stylesheets/screen.scss */
+body #main_container #subnav_bottom ul li a {
   float: left;
   font-size: 1.2em;
   font-weight: bold;
@@ -341,7 +325,7 @@ body #main_container #adds ul li a {
   text-decoration: none;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
-/* line 303, ../../../app/stylesheets/screen.scss */
+/* line 287, ../../../app/stylesheets/screen.scss */
 body #main_container #footer {
   width: 40%;
   height: 38px;
@@ -361,8 +345,8 @@ body #main_container #footer {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #aaaaaa), color-stop(100%, #777777));
   background-image: -moz-linear-gradient(top, #aaaaaa 0%, #777777 100%);
   background-image: linear-gradient(top, #aaaaaa 0%, #777777 100%);
-  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 1px 12px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 1px 12px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.4) 0 1px 12px 0;
-  box-shadow: rgba(0, 0, 0, 0.4) 0 1px 12px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 12px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 12px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 12px 0;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 12px 0;
 }

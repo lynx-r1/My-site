@@ -14,7 +14,7 @@ $MainWidth: 800px;
 body {
     $color1: #e1ffe1;
     $color2: #eefaea;
-    $gradientDir: top;
+    $gradientDir: bottom;
 
     margin: 12px 0 12px 0;
     background-color: $color1;
@@ -115,15 +115,6 @@ body {
                             @include linear-gradient(color-stops($color1, $color2), $gradientDir);
                             @include box-shadow($shadowColor, $shadowX, $shadowY, $shadowBlur);
 
-                            /*&:hover {
-                                $lightColor1: lighten($color1, 5%);
-                                $lightColor2: lighten($color2, 5%);
-
-                                text-decoration: none;
-                                background-color: $lightColor1;
-                                @include linear-gradient(color-stops($lightColor1, $lightColor2), $gradientDir);
-                            }*/
-
                             &.selected {
                                 $darkColor1: darken($color1, 5%);
                                 $darkColor2: darken($color2, 5%);
@@ -146,7 +137,7 @@ body {
             @include box-shadow(rgba(0, 0, 0, 0.3), 0, 1px, 8px);
         }
 
-        #tabs {
+        #subnav_top {
             $backgroundColor: #84eb84;
             $borderColor: #4ce14c;
             $color1: #c7ffc7;
@@ -218,15 +209,6 @@ body {
                         @include linear-gradient(color-stops($color1, $color2), $gradientDir);
                         @include box-shadow($shadowColor, $shadowX, $shadowY, $shadowBlur);
 
-                        /*&:hover {
-                            $lightColor1: lighten($color1, 5%);
-                            $lightColor2: lighten($color2, 5%);
-
-                            text-decoration: none;
-                            background-color: $lightColor1;
-                            @include linear-gradient(color-stops($lightColor1, $lightColor2), $gradientDir);
-                        }*/
-
                         &.selected {
                             $darkColor1: darken($color1, 5%);
                             $darkColor2: darken($color2, 5%);
@@ -249,21 +231,23 @@ body {
             border: solid 1px #8c8;
 
             background-color: $backgroundColor;
-            @include box-shadow(rgba(0, 0, 0, 0.2), 0, 1px, 12px);
+            @include box-shadow(rgba(0, 0, 0, 0.4), 0, 1px, 12px);
         }
 
-        #adds {
-            $backgroundColor: #aff5af;
+        #subnav_bottom {
+            $backgroundColor: #84eb84;
+            $borderColor: #4ce14c;
+            $height: 1.5em;
 
             margin: 0.5em 1em 0em 1em;
-            height: 2em;
-            line-height: 2em;
+            height: $height;
+            line-height: $height;
 
-            border: solid 1px #8c8;
+            border: solid 1px $borderColor;
             background: $backgroundColor;
 
             @include border-bottom-radius(2em);
-            @include box-shadow(rgba(0, 0, 0, 0.2), 0, 1px, 12px);
+            @include box-shadow(rgba(0, 0, 0, 0.4), 0, 1px, 12px);
 
             ul {
                 list-style: none;
@@ -321,7 +305,7 @@ body {
 
             @include border-radius(1em);
             @include linear-gradient(color-stops($color1, $color2), top);
-            @include box-shadow(rgba(0, 0, 0, 0.4), 0, 1px, 12px);
+            @include box-shadow(rgba(0, 0, 0, 0.5), 0, 1px, 12px);
         }
     }
 }
