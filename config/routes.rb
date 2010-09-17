@@ -1,4 +1,6 @@
 Jsite::Application.routes.draw do
+  resources :users
+
   get "feedback/index"
 
   resources :post_others
