@@ -50,7 +50,7 @@ SimpleNavigation::Configuration.run do |navigation|
       work.item :services, 'Services', service_index_path, :class => 'subnav_button'
       work.item :resume, 'Resume', resume_index_path, :class => 'subnav_button'
     end
-    primary.item :contact, 'Contact', contact_index_path, :class => 'nav_button' do |contact|
+    primary.item :contact, 'Contacts', contact_index_path, :class => 'nav_button' do |contact|
       contact.item :address, 'Address', contact_index_path, :class => 'subnav_button'
       contact.item :feedback, 'Feedback', feedback_index_path, :class => 'subnav_button'
     end
