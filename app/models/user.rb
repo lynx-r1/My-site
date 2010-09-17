@@ -22,10 +22,14 @@ class User < ActiveRecord::Base
   def self.authenticate(name, password)
     user = User.find_by_name(name)
     if user
-      expacted_password = User.encrypted_password(password, user.salt)
+      expected_password = User.encrypted_password(password, user.salt)
       user = nil if expected_password != user.hashed_password
     end
     user
+  end
+
+  def after_destroy
+    raise "Can't delete last user" if User.count.zero?
   end
 
   private

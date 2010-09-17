@@ -65,16 +65,16 @@ a img {
 /* line 50, ../../../app/stylesheets/screen.scss */
 body {
   margin: 12px;
-  background-color: #44cfff;
-  background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0%, #44cfff), color-stop(50%, #ffffff), color-stop(100%, #44cfff));
-  background-image: -moz-linear-gradient(left, #44cfff 0%, #ffffff 50%, #44cfff 100%);
-  background-image: linear-gradient(left, #44cfff 0%, #ffffff 50%, #44cfff 100%);
+  background-color: #99cfff;
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0%, #99cfff), color-stop(50%, #ffffff), color-stop(100%, #99cfff));
+  background-image: -moz-linear-gradient(left, #99cfff 0%, #ffffff 50%, #99cfff 100%);
+  background-image: linear-gradient(left, #99cfff 0%, #ffffff 50%, #99cfff 100%);
 }
 /* line 59, ../../../app/stylesheets/screen.scss */
 body #main_container {
   width: 800px;
   min-height: 900px;
-  background-color: #44cfff;
+  background-color: #99cfff;
   margin: 0 auto;
   padding-bottom: 7px;
   -moz-border-radius: 32px;
@@ -94,8 +94,8 @@ body #main_container #top_container {
 }
 /* line 73, ../../../app/stylesheets/screen.scss */
 body #main_container #top_container #nav_bar {
-  background-color: #77a4dd;
-  border: solid 1px #4e89d3;
+  background-color: #44b0ff;
+  border: solid 1px #119aff;
   height: 32px;
   width: 768px;
   margin-left: 16px;
@@ -109,9 +109,9 @@ body #main_container #top_container #nav_bar {
   -ms-border-radius: 32px;
   -khtml-border-radius: 32px;
   border-radius: 32px;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #bbcfff), color-stop(50%, #77a4dd), color-stop(100%, #88c2ff));
-  background-image: -moz-linear-gradient(top, #bbcfff 0%, #77a4dd 50%, #88c2ff 100%);
-  background-image: linear-gradient(top, #bbcfff 0%, #77a4dd 50%, #88c2ff 100%);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #aae0ff), color-stop(50%, #44b0ff), color-stop(100%, #77c8ff));
+  background-image: -moz-linear-gradient(top, #aae0ff 0%, #44b0ff 50%, #77c8ff 100%);
+  background-image: linear-gradient(top, #aae0ff 0%, #44b0ff 50%, #77c8ff 100%);
 }
 /* line 91, ../../../app/stylesheets/screen.scss */
 body #main_container #top_container #nav_bar ul {
@@ -138,9 +138,9 @@ body #main_container #top_container #nav_bar ul li a {
   font-weight: normal;
   text-align: center;
   text-decoration: none;
-  color: #0033bb;
-  border: solid 1px #007eaa;
-  background-color: #00a4dd;
+  color: #0051ff;
+  border: solid 1px #0087ff;
+  background-color: #339fff;
   text-shadow: 0 1px 2px #333333;
   -moz-box-shadow: #333333 0px 1px 8px 0;
   -webkit-box-shadow: #333333 0px 1px 8px 0;
@@ -152,25 +152,25 @@ body #main_container #top_container #nav_bar ul li a {
   -ms-border-radius: 32px;
   -khtml-border-radius: 32px;
   border-radius: 32px;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #44cfff), color-stop(50%, #00a4dd), color-stop(100%, #11c2ff));
-  background-image: -moz-linear-gradient(top, #44cfff 0%, #00a4dd 50%, #11c2ff 100%);
-  background-image: linear-gradient(top, #44cfff 0%, #00a4dd 50%, #11c2ff 100%);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #99cfff), color-stop(50%, #339fff), color-stop(100%, #66b7ff));
+  background-image: -moz-linear-gradient(top, #99cfff 0%, #339fff 50%, #66b7ff 100%);
+  background-image: linear-gradient(top, #99cfff 0%, #339fff 50%, #66b7ff 100%);
 }
 /* line 142, ../../../app/stylesheets/screen.scss */
 body #main_container #top_container #nav_bar ul li a.selected {
   font-weight: bold;
-  background-color: #0091c3;
+  background-color: #1a93ff;
   -moz-box-shadow: #333333 0 1px 4px 0;
   -webkit-box-shadow: #333333 0 1px 4px 0;
   -o-box-shadow: #333333 0 1px 4px 0;
   box-shadow: #333333 0 1px 4px 0;
-  background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, color-stop(0%, #2ac8ff), color-stop(50%, #0091c3), color-stop(100%, #00b7f6));
-  background-image: -moz-linear-gradient(bottom, #2ac8ff 0%, #0091c3 50%, #00b7f6 100%);
-  background-image: linear-gradient(bottom, #2ac8ff 0%, #0091c3 50%, #00b7f6 100%);
+  background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, color-stop(0%, #80c3ff), color-stop(50%, #1a93ff), color-stop(100%, #4dabff));
+  background-image: -moz-linear-gradient(bottom, #80c3ff 0%, #1a93ff 50%, #4dabff 100%);
+  background-image: linear-gradient(bottom, #80c3ff 0%, #1a93ff 50%, #4dabff 100%);
 }
 /* line 158, ../../../app/stylesheets/screen.scss */
 body #main_container hr {
-  border: solid 3px #00a4dd;
+  border: solid 3px #339fff;
   width: 50%;
   margin-top: 16px;
   -moz-border-radius: 32px;
@@ -187,8 +187,8 @@ body #main_container hr {
 /* line 166, ../../../app/stylesheets/screen.scss */
 body #main_container #subnav_top {
   margin-top: 16px;
-  background-color: #88c2ff;
-  border: solid 1px #55a8ff;
+  background-color: #77c8ff;
+  border: solid 1px #44b3ff;
   height: 24px;
   width: 768px;
   margin-left: 16px;
@@ -208,9 +208,9 @@ body #main_container #subnav_top {
   -ms-border-top-right-radius: 32px;
   -khtml-border-top-right-radius: 32px;
   border-top-right-radius: 32px;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #88c2ff), color-stop(50%, #bbdcff), color-stop(100%, #88c2ff));
-  background-image: -moz-linear-gradient(top, #88c2ff 0%, #bbdcff 50%, #88c2ff 100%);
-  background-image: linear-gradient(top, #88c2ff 0%, #bbdcff 50%, #88c2ff 100%);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #77c8ff), color-stop(50%, #aaddff), color-stop(100%, #77c8ff));
+  background-image: -moz-linear-gradient(top, #77c8ff 0%, #aaddff 50%, #77c8ff 100%);
+  background-image: linear-gradient(top, #77c8ff 0%, #aaddff 50%, #77c8ff 100%);
 }
 /* line 175, ../../../app/stylesheets/screen.scss */
 body #main_container #subnav_top ul {
@@ -237,9 +237,9 @@ body #main_container #subnav_top ul li a {
   font-weight: normal;
   text-align: center;
   text-decoration: none;
-  color: #0033bb;
-  border: solid 1px #007eaa;
-  background-color: #00a4dd;
+  color: #0051ff;
+  border: solid 1px #0087ff;
+  background-color: #339fff;
   -moz-box-shadow: #333333 0px 1px 8px 0;
   -webkit-box-shadow: #333333 0px 1px 8px 0;
   -o-box-shadow: #333333 0px 1px 8px 0;
@@ -257,17 +257,17 @@ body #main_container #subnav_top ul li a {
   -ms-border-top-right-radius: 32px;
   -khtml-border-top-right-radius: 32px;
   border-top-right-radius: 32px;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #44cfff), color-stop(100%, #00a4dd));
-  background-image: -moz-linear-gradient(top, #44cfff 0%, #00a4dd 100%);
-  background-image: linear-gradient(top, #44cfff 0%, #00a4dd 100%);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #99cfff), color-stop(100%, #339fff));
+  background-image: -moz-linear-gradient(top, #99cfff 0%, #339fff 100%);
+  background-image: linear-gradient(top, #99cfff 0%, #339fff 100%);
 }
 /* line 225, ../../../app/stylesheets/screen.scss */
 body #main_container #subnav_top ul li a.selected {
   font-weight: bold;
-  background-color: #0091c3;
-  background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, color-stop(0%, #2ac8ff), color-stop(100%, #0091c3));
-  background-image: -moz-linear-gradient(bottom, #2ac8ff 0%, #0091c3 100%);
-  background-image: linear-gradient(bottom, #2ac8ff 0%, #0091c3 100%);
+  background-color: #1a93ff;
+  background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, color-stop(0%, #80c3ff), color-stop(100%, #1a93ff));
+  background-image: -moz-linear-gradient(bottom, #80c3ff 0%, #1a93ff 100%);
+  background-image: linear-gradient(bottom, #80c3ff 0%, #1a93ff 100%);
 }
 /* line 238, ../../../app/stylesheets/screen.scss */
 body #main_container #body_container {
@@ -284,8 +284,8 @@ body #main_container #body_container {
 /* line 249, ../../../app/stylesheets/screen.scss */
 body #main_container #subnav_bottom {
   margin-top: 8px;
-  background-color: #88c2ff;
-  border: solid 1px #55a8ff;
+  background-color: #77c8ff;
+  border: solid 1px #44b3ff;
   height: 24px;
   width: 768px;
   margin-left: 16px;
@@ -305,9 +305,9 @@ body #main_container #subnav_bottom {
   -ms-border-bottom-right-radius: 32px;
   -khtml-border-bottom-right-radius: 32px;
   border-bottom-right-radius: 32px;
-  background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0%, #88c2ff), color-stop(50%, #bbdcff), color-stop(100%, #88c2ff));
-  background-image: -moz-linear-gradient(left, #88c2ff 0%, #bbdcff 50%, #88c2ff 100%);
-  background-image: linear-gradient(left, #88c2ff 0%, #bbdcff 50%, #88c2ff 100%);
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0%, #77c8ff), color-stop(50%, #aaddff), color-stop(100%, #77c8ff));
+  background-image: -moz-linear-gradient(left, #77c8ff 0%, #aaddff 50%, #77c8ff 100%);
+  background-image: linear-gradient(left, #77c8ff 0%, #aaddff 50%, #77c8ff 100%);
 }
 /* line 257, ../../../app/stylesheets/screen.scss */
 body #main_container #subnav_bottom ul {
@@ -327,13 +327,14 @@ body #main_container #subnav_bottom ul li {
 /* line 273, ../../../app/stylesheets/screen.scss */
 body #main_container #subnav_bottom ul li a {
   float: left;
+  color: #0051ff;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
   text-shadow: 0 1px 2px #333333;
 }
-/* line 292, ../../../app/stylesheets/screen.scss */
+/* line 294, ../../../app/stylesheets/screen.scss */
 body #main_container #footer {
   width: 40%;
   height: 38px;
@@ -345,6 +346,7 @@ body #main_container #footer {
   margin: 0 auto;
   margin-top: 7px;
   font-size: 16px;
+  cursor: default;
   -moz-border-radius: 1em;
   -webkit-border-radius: 1em;
   -o-border-radius: 1em;

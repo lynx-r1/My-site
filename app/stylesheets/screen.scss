@@ -18,9 +18,9 @@ $default-border-radius: 32px;
 $main_min_height: 900px;
 $main_width: 800px;
 
-$base_color: #44cfff;
+$base_color: #99cfff;
 $addon_link_color: #007;
-$addon_color: #700;
+$addon_color: #111;
 //$base_color: #aaaaff;
 //$addon_link_color: #000;
 //$addon_color: #444;
@@ -271,8 +271,10 @@ body {
                     padding: 0px 8px 0px 8px;
 
                     a {
+                        $color: darken($base_color, 50%) + $addon_link_color;
                         float: left;
 
+                        color: $color;
                         font: {
                             size: 20px;
                             weight: bold;
@@ -310,6 +312,7 @@ body {
             margin-top: 7px;
 
             font-size: 16px;
+            cursor: default;
 
             @include border-radius(1em);
             @include linear-gradient(color-stops($color1, $color2, $color3), top);

@@ -1,2 +1,12 @@
-%h1 Admin#login
-%p Find me in app/views/admin/login.html.haml
+.depot-form
+- form_tag do
+  %fieldset
+    %legend Please Log In
+    .field
+      %label{for: "name"} Name:
+      = text_field_tag :name, params[:name]
+    .field
+      %label{for: "password"} Password:
+      = password_field_tag :password, params[:password]
+    .field
+      = submit_tag "Login"

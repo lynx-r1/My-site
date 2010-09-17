@@ -6,14 +6,15 @@
         - @user.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :name
-    = f.text_field :name, :size => 40
-  .field
-    = f.label :password
-    = f.text_field :password, :size => 40
-  .field
-    = f.label :password_confirmation, "Confirm"
-    = f.text_field :password_confirmation, :size => 40
-  .actions
-    = f.submit 'Save'
+  %fieldset
+    .field
+      = f.label :name
+      = f.text_field :name, :size => 40
+    .field
+      = f.label :password
+      = f.text_field :password, :size => 40, :type => "password"
+    .field
+      = f.label :password_confirmation, "Confirm"
+      = f.text_field :password_confirmation, :size => 40, :type => "password"
+    .actions
+      = f.submit 'Save'
