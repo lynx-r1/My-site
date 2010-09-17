@@ -1,4 +1,10 @@
 LSite::Application.routes.draw do
+  get "admin/login"
+
+  get "admin/logout"
+
+  get "admin/index"
+
   resources :users
 
   get "feedback/index"
@@ -18,8 +24,6 @@ LSite::Application.routes.draw do
   get "about_me/index"
 
   get "home/index"
-
-  match "blogs/itblog/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
