@@ -4,6 +4,7 @@ class PostOthersController < ApplicationController
   def index
     @post_others = PostOther.all
 
+    session[:blogs_path] = request.url
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @post_others }

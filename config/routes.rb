@@ -1,4 +1,12 @@
 LSite::Application.routes.draw do
+  resources :post_its
+
+  get "blogs/index"
+
+  get "address/index"
+
+  get "work/index"
+
   get "admin/login"
   post "admin/login"
 
@@ -17,8 +25,6 @@ LSite::Application.routes.draw do
   get "service/index"
 
   resources :projects
-
-  resources :post_teches
 
   get "contact/index"
 
