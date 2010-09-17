@@ -17,6 +17,8 @@ gem 'compass'
 
 gem 'simple-navigation'
 
+gem 'toto'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

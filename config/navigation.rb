@@ -42,7 +42,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     primary.item :home, 'Home', root_path, :class => 'nav_button'
     primary.item :blogs, 'Blog', post_teches_path, :class => 'nav_button' do |blogs|
-      blogs.item :posttechs, 'IT', post_teches_path, :class => 'subnav_button'
+      blogs.item :posttechs, 'IT', blogs_itblog_index_path, :class => 'subnav_button'
       blogs.item :postothers, 'Other', post_others_path, :class => 'subnav_button'
     end
     primary.item :work, 'Work', projects_path, :class => 'nav_button' do |work|

@@ -1,4 +1,4 @@
-Jsite::Application.routes.draw do
+LSite::Application.routes.draw do
   resources :users
 
   get "feedback/index"
@@ -18,6 +18,8 @@ Jsite::Application.routes.draw do
   get "about_me/index"
 
   get "home/index"
+
+  match "blogs/itblog/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

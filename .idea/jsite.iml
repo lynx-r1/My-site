@@ -52,6 +52,12 @@
       </requirement>
       <source from="Gemfile" />
     </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="toto" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
@@ -74,6 +80,10 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] haml-rails (v0.2, /usr/local/lib/ruby/gems/1.9.1/gems/haml-rails-0.2)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] compass (v0.10.5, /usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] simple-navigation (v2.7.3, /usr/local/lib/ruby/gems/1.9.1/gems/simple-navigation-2.7.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] toto (v0.4.6, /usr/local/lib/ruby/gems/1.9.1/gems/toto-0.4.6)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rack (v1.2.1, /usr/local/lib/ruby/gems/1.9.1/gems/rack-1.2.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] builder (v2.1.2, /usr/local/lib/ruby/gems/1.9.1/gems/builder-2.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rdiscount (v1.6.5, /usr/local/lib/ruby/gems/1.9.1/gems/rdiscount-1.6.5)" level="application" />
   </component>
 </module>
 
