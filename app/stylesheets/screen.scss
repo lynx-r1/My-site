@@ -98,7 +98,6 @@ body {
                     left: -50%;
 
                     height: $height;
-                    line-height: $height;
 
                     margin-top: 2px;
 
@@ -118,6 +117,8 @@ body {
                             $border_color: darken($color2, 10%);
 
                             width: $width;
+                            height: $height;
+                            line-height: $height;
                             float: left;
 
                             font: {
@@ -277,7 +278,7 @@ body {
                         color: $color;
                         font: {
                             size: 20px;
-                            weight: bold;
+                            //weight: bold;
                         }
 
                         text: {
@@ -285,7 +286,12 @@ body {
                             decoration: none;
                         }
 
-                        @include text_shadow
+                        @include text_shadow;
+
+                        &.selected {
+                            color: darken($color, 10%);
+                            font-weight: bold;
+                        }
                     }
                 }
             }
@@ -321,3 +327,58 @@ body {
     }
 }
 
+$transparent_white: rgba(255, 255, 255, 0.1);
+
+.nav_bar_glass_effect {
+    float: left;
+    width: $main_width - $margin_left_body * 2 - 8px; // see width and height of
+    height: 14px; // body #main_container #top_container #nav_bar
+
+    margin-left: 4px;
+    margin-bottom: -14px;
+
+    background-color: red;
+    background-color: $transparent_white;
+
+    @include border-radius;
+}
+
+.nav_button_glass_effect {
+    float: left;
+    width: 108px; // see width and height of
+    height: 12px; // body #main_container #top_container #nav_bar ul li a
+
+    margin-left: 2px;
+    margin-bottom: -16px;
+
+    background-color: $transparent_white;
+
+    @include border-radius;
+}
+
+.subnav_button_glass_effect {
+    float: left;
+    width: 102px; // see width and height of
+    height: 10px; // body #main_container #subnav_top ul li a
+
+    margin-bottom: -14px;
+    margin-left: 5px;
+
+    background-color: $transparent_white;
+
+    @include border-top-radius(40px);
+}
+
+.footer_glass_effect {
+    //float: left;
+    width: 98%; // see width and height of
+    height: 16px; // body #main_container #subnav_top ul li a
+
+    margin-bottom: -18px;
+    margin-left: 4px;
+
+    background-color: red;
+    background-color: $transparent_white;
+
+    @include border-radius(40px);
+}

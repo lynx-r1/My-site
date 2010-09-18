@@ -6,4 +6,10 @@ class WorkController < ApplicationController
       redirect_to projects_path
     end
   end
+
+  protected
+
+  def authorize
+  end
+
 end

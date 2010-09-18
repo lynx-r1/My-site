@@ -3,4 +3,9 @@ class AddressController < ApplicationController
     session[:contacts_path] = request.url
   end
 
+  protected
+
+  def authorize
+  end
+
 end

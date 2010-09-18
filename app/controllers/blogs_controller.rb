@@ -6,4 +6,10 @@ class BlogsController < ApplicationController
       redirect_to post_its_path
     end
   end
+
+  protected
+
+  def authorize
+  end
+
 end

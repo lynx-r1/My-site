@@ -6,4 +6,10 @@ class ContactController < ApplicationController
       redirect_to address_index_path
     end
   end
+
+  protected
+
+  def authorize
+  end
+
 end

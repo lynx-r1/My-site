@@ -3,4 +3,9 @@ class ResumeController < ApplicationController
     session[:work_path] = request.url
   end
 
+  protected
+
+  def authorize
+  end
+
 end

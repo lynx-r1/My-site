@@ -16,9 +16,9 @@
       #subnav_top
         = render_navigation :level => 2
       #body_container
-        - flash[:notice]
-        #notice
-          = flash[:notice]
+        - if flash[:notice]
+          #notice
+            = flash[:notice]
         = yield
       #subnav_bottom
         = render_navigation :level => 1

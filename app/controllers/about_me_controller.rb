@@ -6,4 +6,5 @@ class AboutMeController < ApplicationController
 
   def authorize
   end
+
 end
