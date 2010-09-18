@@ -3,7 +3,7 @@
   = @post_it.title
 %p
   %b Content:
-  = word_wrap(@post_it.content, :line_width => 80)
+  = raw(@post_it.content)
 
 - user_logged do
   = link_to 'Edit', edit_post_it_path(@project)

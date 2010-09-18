@@ -11,7 +11,7 @@
 
   - @projects.each do |project|
     %tr
-      %td= project.image
+      /%td= image_tag project.image.url
       %td= project.title
       %td= project.description
       %td= link_to 'Show', project

@@ -4,7 +4,7 @@
   - @post_its.each do |post_it|
     .post_it_entry
       %h3= post_it.title
-      = word_wrap(truncate(post_it.content, :length => 400), :line_width => 10)
+      = raw(truncate(post_it.content, :length => 400))
       = link_to 'Read more...', post_it
       - user_logged do
         %table

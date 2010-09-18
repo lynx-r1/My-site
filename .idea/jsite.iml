@@ -12,6 +12,12 @@
   <component name="GemRequirementsHolder" version="3">
     <requirement>
       <requirement>
+        <dependency name="ckeditor" version="3.4.1.pre" bound="EQUAL" git="false" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="compass" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
       <source from="Gemfile" />
@@ -36,6 +42,12 @@
     </requirement>
     <requirement>
       <requirement>
+        <dependency name="paperclip" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="rails" version="3.0.0" bound="EQUAL" git="false" />
       </requirement>
       <source from="Gemfile" />
@@ -49,12 +61,6 @@
     <requirement>
       <requirement>
         <dependency name="sqlite3-ruby" version="0" bound="GREATER_OR_EQUAL" lib="sqlite3" git="false" />
-      </requirement>
-      <source from="Gemfile" />
-    </requirement>
-    <requirement>
-      <requirement>
-        <dependency name="toto" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
       <source from="Gemfile" />
     </requirement>
@@ -80,10 +86,9 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] haml-rails (v0.2, /usr/local/lib/ruby/gems/1.9.1/gems/haml-rails-0.2)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] compass (v0.10.5, /usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] simple-navigation (v2.7.3, /usr/local/lib/ruby/gems/1.9.1/gems/simple-navigation-2.7.3)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] toto (v0.4.6, /usr/local/lib/ruby/gems/1.9.1/gems/toto-0.4.6)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] rack (v1.2.1, /usr/local/lib/ruby/gems/1.9.1/gems/rack-1.2.1)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] builder (v2.1.2, /usr/local/lib/ruby/gems/1.9.1/gems/builder-2.1.2)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] rdiscount (v1.6.5, /usr/local/lib/ruby/gems/1.9.1/gems/rdiscount-1.6.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] paperclip (v2.3.3, /usr/local/lib/ruby/gems/1.9.1/gems/paperclip-2.3.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] mime-types (v1.16, /usr/local/lib/ruby/gems/1.9.1/gems/mime-types-1.16)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] ckeditor (v3.4.1.pre, /usr/local/lib/ruby/gems/1.9.1/gems/ckeditor-3.4.1.pre)" level="application" />
   </component>
 </module>
 

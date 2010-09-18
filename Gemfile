@@ -17,7 +17,10 @@ gem 'compass'
 
 gem 'simple-navigation'
 
-gem 'toto'
+gem 'paperclip'
+
+gem 'ckeditor', '3.4.1.pre'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
