@@ -282,7 +282,16 @@ body #main_container #body_container {
   -o-box-shadow: #333333 0px 1px 8px 0;
   box-shadow: #333333 0px 1px 8px 0;
 }
-/* line 250, ../../../app/stylesheets/screen.scss */
+/* line 249, ../../../app/stylesheets/screen.scss */
+body #main_container #body_container #post_it_box {
+  border: solid 1px;
+}
+/* line 252, ../../../app/stylesheets/screen.scss */
+body #main_container #body_container #post_it_box .post_it_entry {
+  border: solid 1px;
+  text-align: justify;
+}
+/* line 260, ../../../app/stylesheets/screen.scss */
 body #main_container #subnav_bottom {
   margin-top: 8px;
   background-color: #77c8ff;
@@ -310,7 +319,7 @@ body #main_container #subnav_bottom {
   background-image: -moz-linear-gradient(left, #77c8ff 0%, #aaddff 50%, #77c8ff 100%);
   background-image: linear-gradient(left, #77c8ff 0%, #aaddff 50%, #77c8ff 100%);
 }
-/* line 258, ../../../app/stylesheets/screen.scss */
+/* line 268, ../../../app/stylesheets/screen.scss */
 body #main_container #subnav_bottom ul {
   list-style: none;
   float: right;
@@ -318,14 +327,14 @@ body #main_container #subnav_bottom ul {
   left: -50%;
   margin: 0;
 }
-/* line 267, ../../../app/stylesheets/screen.scss */
+/* line 277, ../../../app/stylesheets/screen.scss */
 body #main_container #subnav_bottom ul li {
   position: relative;
   left: 50%;
   float: left;
   padding: 0px 8px 0px 8px;
 }
-/* line 274, ../../../app/stylesheets/screen.scss */
+/* line 284, ../../../app/stylesheets/screen.scss */
 body #main_container #subnav_bottom ul li a {
   float: left;
   color: #0051ff;
@@ -334,12 +343,12 @@ body #main_container #subnav_bottom ul li a {
   text-decoration: none;
   text-shadow: 0 1px 2px #333333;
 }
-/* line 291, ../../../app/stylesheets/screen.scss */
+/* line 301, ../../../app/stylesheets/screen.scss */
 body #main_container #subnav_bottom ul li a.selected {
   color: #0041cc;
   font-weight: bold;
 }
-/* line 300, ../../../app/stylesheets/screen.scss */
+/* line 310, ../../../app/stylesheets/screen.scss */
 body #main_container #footer {
   width: 40%;
   height: 38px;
@@ -367,7 +376,7 @@ body #main_container #footer {
   box-shadow: rgba(0, 0, 0, 0.5) 0 1px 12px 0;
 }
 
-/* line 332, ../../../app/stylesheets/screen.scss */
+/* line 342, ../../../app/stylesheets/screen.scss */
 .nav_bar_glass_effect {
   float: left;
   width: 760px;
@@ -384,7 +393,7 @@ body #main_container #footer {
   border-radius: 32px;
 }
 
-/* line 346, ../../../app/stylesheets/screen.scss */
+/* line 356, ../../../app/stylesheets/screen.scss */
 .nav_button_glass_effect {
   float: left;
   width: 108px;
@@ -400,7 +409,7 @@ body #main_container #footer {
   border-radius: 32px;
 }
 
-/* line 359, ../../../app/stylesheets/screen.scss */
+/* line 369, ../../../app/stylesheets/screen.scss */
 .subnav_button_glass_effect {
   float: left;
   width: 102px;
@@ -422,7 +431,7 @@ body #main_container #footer {
   border-top-right-radius: 40px;
 }
 
-/* line 372, ../../../app/stylesheets/screen.scss */
+/* line 382, ../../../app/stylesheets/screen.scss */
 .footer_glass_effect {
   width: 98%;
   height: 18px;
@@ -436,4 +445,18 @@ body #main_container #footer {
   -ms-border-radius: 40px;
   -khtml-border-radius: 40px;
   border-radius: 40px;
+}
+
+/* line 396, ../../../app/stylesheets/screen.scss */
+.field {
+  width: 100%;
+  border: solid;
+}
+/* line 400, ../../../app/stylesheets/screen.scss */
+.field input {
+  font-size: 16px;
+}
+/* line 403, ../../../app/stylesheets/screen.scss */
+.field textarea {
+  font-size: 14px;
 }

@@ -7,10 +7,10 @@
           %li= msg
 
   .field
-    = f.label :title
-    = f.text_field :title
+    /= f.label :title
+    = f.text_field :title, :size => "80"
   .field
-    = f.label :content
-    = f.text_area :content
+    /= f.label :content
+    = f.text_area :content, :size => "80x40"
   .actions
     = f.submit 'Save'

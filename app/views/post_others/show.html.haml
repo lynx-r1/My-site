@@ -5,6 +5,8 @@
   %b Content:
   = @post_other.content
 
-= link_to 'Edit', edit_post_other_path(@post_other)
-\|
+- user_logged do
+  = link_to 'Edit', edit_post_other_path(@project)
+  \|
+
 = link_to 'Back', post_others_path
