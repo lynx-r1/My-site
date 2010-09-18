@@ -15,9 +15,11 @@
       %td= project.title
       %td= project.description
       %td= link_to 'Show', project
-      %td= link_to 'Edit', edit_project_path(project)
-      %td= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete
+      - user_logged do
+        %td= link_to 'Edit', edit_project_path(project)
+        %td= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete
 
 %br
 
-= link_to 'New project', new_project_path
+- user_logged do
+  = link_to 'New project', new_project_path

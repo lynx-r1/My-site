@@ -425,7 +425,7 @@ body #main_container #footer {
 /* line 372, ../../../app/stylesheets/screen.scss */
 .footer_glass_effect {
   width: 98%;
-  height: 16px;
+  height: 18px;
   margin-bottom: -18px;
   margin-left: 4px;
   background-color: red;

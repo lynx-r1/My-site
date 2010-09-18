@@ -85,6 +85,9 @@ class ProjectsController < ApplicationController
   protected
 
   def authorize
+    unless params[:action] == "index" || params[:action] == "show"
+      super
+    end
   end
 
 end
