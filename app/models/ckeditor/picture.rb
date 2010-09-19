@@ -1,19 +1,17 @@
 class Ckeditor::Picture < Ckeditor::Asset
-  has_attachment :content_type => :image, 
-                 :storage => :file_system, :path_prefix => 'public/assets/pictures',
-                 :max_size => 2.megabytes,
-                 :size => 0.kilobytes..2000.kilobytes,
-                 :processor => 'Rmagick',
-                 :thumbnails => { :content => '575>', :thumb => '100x100!' }
-                 
-	validates_as_attachment
-  
-  def url_content
-	  public_filename(:content)
+  has_attached_file :data,
+                    :url  => "/ckeditor_assets/pictures/:id/:style_:basename.:extension",
+                    :path => ":rails_root/public/ckeditor_assets/pictures/:id/:style_:basename.:extension",
+	                  :styles => { :content => '575>', :thumb => '80x80#' }
+	
+	validates_attachment_size :data, :less_than=>2.megabytes
+	
+	def url_content
+	  url(:content)
 	end
 	
 	def url_thumb
-	  public_filename(:thumb)
+	  url(:thumb)
 	end
 	
 	def to_json(options = {})
