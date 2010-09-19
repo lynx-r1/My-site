@@ -1,17 +1,17 @@
 - user_logged do
-  = link_to 'New post', new_post_it_path
+  = link_to 'New post', new_post_event_path
   %br
   %br
 
 #posts_box
-  - @post_its.reverse_each do |post|
+  - @post_events.reverse_each do |post|
     .posts_entry
       .date= post.created_at.localtime.ctime
       %h3= post.title
       = truncate_html(post.content, :length => 400)
       = link_to 'Read more...', post
       - user_logged do
-        %br/
-        = link_to 'Edit', edit_post_it_path(post)
+        %br
+        = link_to 'Edit', edit_post_event_path(post)
         \|
         = link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete

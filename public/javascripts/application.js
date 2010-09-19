@@ -36,4 +36,12 @@ $(document).ready(function() {
     });
 
     $("#post_it_box .post_it_entry").last().css("margin-bottom", "0");
+
+    $("#post_it_submit").click(function() {
+        $("#post_saved").show("slow").delay(2000).hide("slow");
+    });
+
+    $("#post_event_submit").click(function() {
+        $("#post_saved").show("slow").delay(2000).hide("slow");
+    });
 });

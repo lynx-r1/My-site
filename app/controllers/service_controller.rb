@@ -1,6 +1,6 @@
 class ServiceController < ApplicationController
   def index
-    session[:work_path] = request.url
+    session[:work_path] = request.fullpath
   end
 
   protected

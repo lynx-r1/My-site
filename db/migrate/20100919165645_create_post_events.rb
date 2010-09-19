@@ -1,6 +1,6 @@
-class CreatePostOthers < ActiveRecord::Migration
+class CreatePostEvents < ActiveRecord::Migration
   def self.up
-    create_table :post_others do |t|
+    create_table :post_events do |t|
       t.string :title
       t.text :content
 
@@ -9,6 +9,6 @@ class CreatePostOthers < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :post_others
+    drop_table :post_events
   end
 end

@@ -391,19 +391,15 @@ $transparent_white: rgba(255, 255, 255, 0.1);
     }
 }
 
-h1 {
-    /*font-size: 30px;*/
-    /*text-align: center;*/
-    /*margin-bottom: 4px;*/
+h3 {
+    margin-top: 4px;
 }
 
-#post_it_box {
-    //border: solid 1px;
+#posts_box {
     padding: 0px;
+    margin-bottom: -14px;
 
-    //@include border-radius;
-
-    .post_it_entry {
+    .posts_entry {
         .date {
             float: right;
         }
@@ -428,13 +424,7 @@ h1 {
         @include box-shadow;
     }
 
-    .post_it_entry_show {
-        h3 {
-            text-align: left;
-            margin-top: 4px;
-            margin-bottom: 4px;
-            font-weight: bold;
-        }
+    .posts_entry_show {
         border: solid 1px $base_color;
 
         background-color: lighten($base_color, 10%);
@@ -449,3 +439,41 @@ h1 {
     }
 }
 
+#post_saved {
+    color: red;
+    float: right;
+    display: none;
+}
+
+#admin_login {
+    border: solid 1px darken($base_color, 10%);
+    background-color: lighten($base_color, 10%);
+
+    @include border-radius;
+    @include box-shadow;
+    fieldset {
+        $color: darken($base_color, 30%);
+        margin-left: $main_width / 4;
+        color: $color;
+        legend {
+            padding: 0.2em 1em;
+            margin: 0 auto;
+            font-size: 20px;
+        }
+
+        .field {
+            label {
+                width: 80px;
+                float: left;
+                text-align: right;
+                display: block;
+                margin-top: 6px;
+            }
+
+            input {
+                margin-left: 8px;
+                color: $color;
+            }
+        }
+    }
+}

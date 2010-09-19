@@ -1,4 +1,6 @@
 LSite::Application.routes.draw do
+  resources :post_events
+
   resources :post_its
 
   get "blogs/index"
@@ -17,8 +19,6 @@ LSite::Application.routes.draw do
   resources :users
 
   get "feedback/index"
-
-  resources :post_others
 
   get "resume/index"
 

@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
 
-    session[:work_path] = request.url
+    session[:work_path] = request.fullpath
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @projects }

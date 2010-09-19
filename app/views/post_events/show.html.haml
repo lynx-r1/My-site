@@ -1,0 +1,10 @@
+#posts_box
+  .posts_entry_show
+    %h3
+      = @post_event.title
+    %p
+      = raw(@post_event.content)
+    - user_logged do
+      = link_to 'Edit', edit_post_event_path(@post_event)
+      \|
+    = link_to 'Back', post_event_path

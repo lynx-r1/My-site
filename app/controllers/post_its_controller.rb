@@ -4,7 +4,7 @@ class PostItsController < ApplicationController
   def index
     @post_its = PostIt.all
 
-    session[:blogs_path] = request.url
+    session[:blogs_path] = request.fullpath
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @post_its }

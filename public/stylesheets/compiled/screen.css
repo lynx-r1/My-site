@@ -736,18 +736,17 @@ body #main_container #footer {
 }
 
 /* line 394, ../../../app/stylesheets/screen.scss */
-h1 {
-  /*font-size: 30px;*/
-  /*text-align: center;*/
-  /*margin-bottom: 4px;*/
+h3 {
+  margin-top: 4px;
 }
 
-/* line 400, ../../../app/stylesheets/screen.scss */
-#post_it_box {
+/* line 398, ../../../app/stylesheets/screen.scss */
+#posts_box {
   padding: 0px;
+  margin-bottom: -14px;
 }
-/* line 406, ../../../app/stylesheets/screen.scss */
-#post_it_box .post_it_entry {
+/* line 402, ../../../app/stylesheets/screen.scss */
+#posts_box .posts_entry {
   border: solid 1px #aacfff;
   background-color: #ddecff;
   margin-bottom: 12px;
@@ -765,19 +764,19 @@ h1 {
   -o-box-shadow: #333333 0px 1px 8px 0;
   box-shadow: #333333 0px 1px 8px 0;
 }
-/* line 407, ../../../app/stylesheets/screen.scss */
-#post_it_box .post_it_entry .date {
+/* line 403, ../../../app/stylesheets/screen.scss */
+#posts_box .posts_entry .date {
   float: right;
 }
-/* line 410, ../../../app/stylesheets/screen.scss */
-#post_it_box .post_it_entry h3 {
+/* line 406, ../../../app/stylesheets/screen.scss */
+#posts_box .posts_entry h3 {
   text-align: left;
   margin-top: 4px;
   margin-bottom: 4px;
   font-weight: bold;
 }
-/* line 431, ../../../app/stylesheets/screen.scss */
-#post_it_box .post_it_entry_show {
+/* line 427, ../../../app/stylesheets/screen.scss */
+#posts_box .posts_entry_show {
   border: solid 1px #aacfff;
   background-color: #ddecff;
   margin-bottom: 12px;
@@ -794,10 +793,50 @@ h1 {
   -o-box-shadow: #333333 0px 1px 8px 0;
   box-shadow: #333333 0px 1px 8px 0;
 }
-/* line 432, ../../../app/stylesheets/screen.scss */
-#post_it_box .post_it_entry_show h3 {
-  text-align: left;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  font-weight: bold;
+
+/* line 442, ../../../app/stylesheets/screen.scss */
+#post_saved {
+  color: red;
+  float: right;
+  display: none;
+}
+
+/* line 448, ../../../app/stylesheets/screen.scss */
+#admin_login {
+  border: solid 1px #77b2ff;
+  background-color: #ddecff;
+  -moz-border-radius: 32px;
+  -webkit-border-radius: 32px;
+  -o-border-radius: 32px;
+  -ms-border-radius: 32px;
+  -khtml-border-radius: 32px;
+  border-radius: 32px;
+  -moz-box-shadow: #333333 0px 1px 8px 0;
+  -webkit-box-shadow: #333333 0px 1px 8px 0;
+  -o-box-shadow: #333333 0px 1px 8px 0;
+  box-shadow: #333333 0px 1px 8px 0;
+}
+/* line 454, ../../../app/stylesheets/screen.scss */
+#admin_login fieldset {
+  margin-left: 200px;
+  color: #1179ff;
+}
+/* line 458, ../../../app/stylesheets/screen.scss */
+#admin_login fieldset legend {
+  padding: 0.2em 1em;
+  margin: 0 auto;
+  font-size: 20px;
+}
+/* line 465, ../../../app/stylesheets/screen.scss */
+#admin_login fieldset .field label {
+  width: 80px;
+  float: left;
+  text-align: right;
+  display: block;
+  margin-top: 6px;
+}
+/* line 473, ../../../app/stylesheets/screen.scss */
+#admin_login fieldset .field input {
+  margin-left: 8px;
+  color: #1179ff;
 }
