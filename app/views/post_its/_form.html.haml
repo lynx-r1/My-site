@@ -1,6 +1,6 @@
 = javascript_include_tag :ckeditor
 
-= form_for @post_it do |f|
+= form_for @post_it, :remote => true do |f|
   -if @post_it.errors.any?
     #errorExplanation
       %h2= "#{pluralize(@post_it.errors.count, "error")} prohibited this post_it from being saved:"
@@ -9,11 +9,9 @@
           %li= msg
 
   .field
-    /= f.label :title
     = f.text_field :title, :size => "80"
   .field
-    = f.cktext_area :content,   :toolbar => 'LSite', :width => '98%', :height => '600px'
-    /= f.label :content
-    /= f.text_area :content, :size => "80x40"
+    = f.cktext_area :content, :toolbar => 'LSite', :width => '98%', :height => '600px'
+    = ckeditor_ajax_script
   .actions
     = f.submit 'Save'
