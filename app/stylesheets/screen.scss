@@ -8,6 +8,8 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 
+@import "default_html4";
+
 $default-box-shadow-color: #333333;
 $default-box-shadow-h-offset: 0px;
 $default-box-shadow-v-offset: 1px;
@@ -18,7 +20,7 @@ $default-border-radius: 32px;
 $main_min_height: 900px;
 $main_width: 800px;
 
-$base_color: #99cfff;
+$base_color: #aacfff;
 $addon_link_color: #007;
 $addon_color: #111;
 //$base_color: #aaaaff;
@@ -245,16 +247,6 @@ body {
 
             background-color: $body_container_color;
             @include box-shadow;
-
-            #post_it_box {
-                border: solid 1px;
-
-                .post_it_entry {
-                    border: solid 1px;
-
-                    text-align: justify;
-                }
-            }
         }
 
         #subnav_bottom {
@@ -394,13 +386,66 @@ $transparent_white: rgba(255, 255, 255, 0.1);
 }
 
 .field {
-    width: 100%;
-    border: solid;
-
     input {
         font-size: 16px;
     }
-    textarea {
-        font-size: 14px;
+}
+
+h1 {
+    /*font-size: 30px;*/
+    /*text-align: center;*/
+    /*margin-bottom: 4px;*/
+}
+
+#post_it_box {
+    //border: solid 1px;
+    padding: 0px;
+
+    //@include border-radius;
+
+    .post_it_entry {
+        .date {
+            float: right;
+        }
+        h3 {
+            text-align: left;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+        border: solid 1px $base_color;
+
+        background-color: lighten($base_color, 10%);
+
+        //margin-top: 12px;
+        margin-bottom: 12px;
+        padding: 12px;
+        padding-bottom: 16px;
+
+        text-align: justify;
+
+        @include border-radius;
+        @include box-shadow;
+    }
+
+    .post_it_entry_show {
+        h3 {
+            text-align: left;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+        border: solid 1px $base_color;
+
+        background-color: lighten($base_color, 10%);
+
+        margin-bottom: 12px;
+        padding: 12px;
+
+        text-align: justify;
+
+        @include border-radius;
+        @include box-shadow;
     }
 }
+

@@ -34,4 +34,6 @@ $(document).ready(function() {
         $("#subnav_top").html("<div style='text-align: center; line-height: 1.5em; font-size: 1em; font-weight: bold; color: green;'>" +
                 "Hi!</div>");
     });
+
+    $("#post_it_box .post_it_entry").last().css("margin-bottom", "0");
 });

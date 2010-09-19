@@ -1,18 +1,19 @@
-%h1 Listing post_its
-
-#post_it_box
-  - @post_its.each do |post_it|
-    .post_it_entry
-      %h3= post_it.title
-      = raw(truncate(post_it.content, :length => 400))
-      = link_to 'Read more...', post_it
-      - user_logged do
-        %table
-          %tr
-            %td= link_to 'Edit', edit_post_it_path(post_it)
-            %td= link_to 'Destroy', post_it, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
 - user_logged do
   = link_to 'New post_it', new_post_it_path
+
+%br
+%br
+
+#post_it_box
+  - @post_its.reverse_each do |post_it|
+    .post_it_entry
+      .date= post_it.created_at.localtime.ctime
+      %h3= post_it.title
+      = truncate_html(post_it.content, :length => 400)
+      = link_to 'Read more...', post_it
+      - user_logged do
+        %br/
+        = link_to 'Edit', edit_post_it_path(post_it)
+        \|
+        = link_to 'Destroy', post_it, :confirm => 'Are you sure?', :method => :delete
+

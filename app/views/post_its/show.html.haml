@@ -1,12 +1,10 @@
-%p
-  %b Title:
-  = @post_it.title
-%p
-  %b Content:
-  = raw(@post_it.content)
-
-- user_logged do
-  = link_to 'Edit', edit_post_it_path(@project)
-  \|
-
-= link_to 'Back', post_its_path
+#post_it_box
+  .post_it_entry_show
+    %h3
+      = @post_it.title
+    %p
+      = raw(@post_it.content)
+    - user_logged do
+      = link_to 'Edit', edit_post_it_path(@project)
+      \|
+    = link_to 'Back', post_its_path

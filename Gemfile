@@ -21,6 +21,7 @@ gem 'paperclip'
 
 gem 'ckeditor', '3.4.1.pre'
 
+#gem 'truncate_html'
 
 # Use unicorn as the web server
 # gem 'unicorn'

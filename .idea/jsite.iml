@@ -89,6 +89,7 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] paperclip (v2.3.3, /usr/local/lib/ruby/gems/1.9.1/gems/paperclip-2.3.3)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] mime-types (v1.16, /usr/local/lib/ruby/gems/1.9.1/gems/mime-types-1.16)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] ckeditor (v3.4.1.pre, /usr/local/lib/ruby/gems/1.9.1/gems/ckeditor-3.4.1.pre)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] truncate_html (v0.4.0, /usr/local/lib/ruby/gems/1.9.1/gems/truncate_html-0.4.0)" level="application" />
   </component>
 </module>
 

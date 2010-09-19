@@ -39,5 +39,19 @@ CKEDITOR.editorConfig = function( config )
         ['Link','Unlink','Anchor'],
         ['Image','Embed','Flash','Attachment','Table','HorizontalRule','Smiley','SpecialChar','PageBreak']
     ];
+
+  config.toolbar = 'LSite';
+  
+  config.toolbar_LSite =
+    [
+        ['Source','-','Preview','Templates'],
+        ['Maximize','-','About'],
+        ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
+        ['Styles','Format','-', 'Bold','Italic','Underline','Strike','-','Subscript','Superscript', 'TextColor'],
+        ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
+        ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+        ['Link','Unlink','Anchor'],
+        ['Image','Embed','Flash','Attachment','Table','HorizontalRule','Smiley','SpecialChar','PageBreak']
+    ];
 };
 
