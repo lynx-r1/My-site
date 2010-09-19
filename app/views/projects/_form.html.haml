@@ -1,4 +1,6 @@
-= form_for :project, @project, :url => projects_path, :html => { :multipart => true } do |f|
+= javascript_include_tag :ckeditor
+
+= form_for @project, :html => { :multipart => true } do |f|
   -if @project.errors.any?
     #errorExplanation
       %h2= "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
@@ -7,13 +9,11 @@
           %li= msg
 
   .field
-    = f.label :image
+    = f.text_field :title, :size => "80"
+  .field
+    = f.cktext_area :description, :width => '98%', :height => '600px'
+  .field
     = f.file_field :image
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :description
-    = f.text_area :description
   .actions
     = f.submit 'Save'
+    #project_saved Project saved

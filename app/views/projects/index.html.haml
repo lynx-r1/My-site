@@ -1,25 +1,18 @@
-%h1 Listing projects
-
-%table
-  %tr
-    %th Image
-    %th Title
-    %th Description
-    %th
-    %th
-    %th
-
-  - @projects.each do |project|
-    %tr
-      /%td= image_tag project.image.url
-      %td= project.title
-      %td= project.description
-      %td= link_to 'Show', project
-      - user_logged do
-        %td= link_to 'Edit', edit_project_path(project)
-        %td= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
 - user_logged do
-  = link_to 'New project', new_project_path
+  = link_to 'New post', new_project_path
+  %br
+  %br
+
+#projects_box
+  - @projects.reverse_each do |project|
+    .projects_entry
+      .date= project.created_at.localtime.ctime
+      %h3= project.title
+      = image_tag project.image.url
+      = truncate_html(project.description, :length => 400)
+      = link_to 'Read more...', project
+      - user_logged do
+        %br
+        = link_to 'Edit', edit_project_path(project)
+        \|
+        = link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete

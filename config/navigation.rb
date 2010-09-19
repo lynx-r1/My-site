@@ -47,7 +47,6 @@ SimpleNavigation::Configuration.run do |navigation|
     end
     primary.item :work, 'Work', work_index_path, :class => 'nav_button' do |work|
       work.item :projects, 'Projects', projects_path, :class => 'subnav_button'
-      work.item :services, 'Services', service_index_path, :class => 'subnav_button'
       work.item :resume, 'Resume', resume_index_path, :class => 'subnav_button'
     end
     primary.item :contact, 'Contacts', contact_index_path, :class => 'nav_button' do |contact|

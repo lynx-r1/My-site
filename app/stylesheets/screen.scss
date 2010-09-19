@@ -395,56 +395,6 @@ h3 {
     margin-top: 4px;
 }
 
-#posts_box {
-    padding: 0px;
-    margin-bottom: -14px;
-
-    .posts_entry {
-        .date {
-            float: right;
-        }
-        h3 {
-            text-align: left;
-            margin-top: 4px;
-            margin-bottom: 4px;
-            font-weight: bold;
-        }
-        border: solid 1px $base_color;
-
-        background-color: lighten($base_color, 10%);
-
-        //margin-top: 12px;
-        margin-bottom: 12px;
-        padding: 12px;
-        padding-bottom: 16px;
-
-        text-align: justify;
-
-        @include border-radius;
-        @include box-shadow;
-    }
-
-    .posts_entry_show {
-        border: solid 1px $base_color;
-
-        background-color: lighten($base_color, 10%);
-
-        margin-bottom: 12px;
-        padding: 12px;
-
-        text-align: justify;
-
-        @include border-radius;
-        @include box-shadow;
-    }
-}
-
-#post_saved {
-    color: red;
-    float: right;
-    display: none;
-}
-
 #admin_login {
     border: solid 1px darken($base_color, 10%);
     background-color: lighten($base_color, 10%);
@@ -475,5 +425,106 @@ h3 {
                 color: $color;
             }
         }
+    }
+}
+
+#posts_box {
+    padding: 0px;
+    margin-bottom: -14px;
+
+    .posts_entry {
+        .date {
+            float: right;
+            text-decoration: underline;
+        }
+        h3 {
+            text-align: left;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+        border: solid 1px $base_color;
+
+        background-color: lighten($base_color, 10%);
+
+        margin-bottom: 12px;
+        padding: 12px;
+        padding-bottom: 16px;
+
+        text-align: justify;
+
+        @include border-radius;
+        @include box-shadow;
+    }
+
+    .posts_entry_show {
+        border: solid 1px $base_color;
+
+        background-color: lighten($base_color, 10%);
+
+        margin-bottom: 12px;
+        padding: 12px;
+
+        text-align: justify;
+
+        @include border-radius;
+        @include box-shadow;
+    }
+}
+
+.actions {
+    #post_saved {
+        color: red;
+        float: right;
+        display: none;
+    }
+    #project_saved {
+        color: red;
+        float: right;
+        display: none;
+    }
+}
+
+#projects_box {
+    padding: 0px;
+    margin-bottom: -14px;
+
+    .projects_entry {
+        .date {
+            float: right;
+            text-decoration: underline;
+        }
+        h3 {
+            text-align: left;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+        border: solid 1px $base_color;
+
+        background-color: lighten($base_color, 10%);
+
+        margin-bottom: 12px;
+        padding: 12px;
+        padding-bottom: 16px;
+
+        text-align: justify;
+
+        @include border-radius;
+        @include box-shadow;
+    }
+
+    .projects_entry_show {
+        border: solid 1px $base_color;
+
+        background-color: lighten($base_color, 10%);
+
+        margin-bottom: 12px;
+        padding: 12px;
+
+        text-align: justify;
+
+        @include border-radius;
+        @include box-shadow;
     }
 }
