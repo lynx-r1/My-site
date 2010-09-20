@@ -51,7 +51,7 @@ SimpleNavigation::Configuration.run do |navigation|
     end
     primary.item :contact, 'Contacts', contact_index_path, :class => 'nav_button' do |contact|
       contact.item :address, 'Address', address_index_path, :class => 'subnav_button'
-      contact.item :feedback, 'Feedback', feedback_index_path, :class => 'subnav_button'
+      contact.item :feedback, 'Feedback', feedbacks_path, :class => 'subnav_button'
     end
     primary.item :about_me, 'About me', about_me_index_path, :class => 'nav_button'
 

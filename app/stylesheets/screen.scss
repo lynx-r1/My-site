@@ -158,7 +158,7 @@ body {
             }
         }
 
-        hr {
+        #body_hr hr {
             border: solid 3px darken($base_color, 20%);
             width: 50%;
             margin-top: 16px;
@@ -385,9 +385,34 @@ $transparent_white: rgba(255, 255, 255, 0.1);
     @include border-radius(40px);
 }
 
-.field {
-    input {
-        font-size: 16px;
+fieldset {
+    $color: darken($base_color, 50%);
+    color: $color;
+
+    legend {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .field {
+        label {
+            width: 80px;
+            float: left;
+            text-align: right;
+            display: block;
+            margin-top: 5px;
+        }
+
+        input, textarea {
+            margin-left: 8px;
+        }
+    }
+
+    .actions input {
+        color: $color;
+
+        width: 80px;
+        margin-left: 88px;
     }
 }
 
@@ -401,30 +426,9 @@ h3 {
 
     @include border-radius;
     @include box-shadow;
+
     fieldset {
-        $color: darken($base_color, 30%);
         margin-left: $main_width / 4;
-        color: $color;
-        legend {
-            padding: 0.2em 1em;
-            margin: 0 auto;
-            font-size: 20px;
-        }
-
-        .field {
-            label {
-                width: 80px;
-                float: left;
-                text-align: right;
-                display: block;
-                margin-top: 6px;
-            }
-
-            input {
-                margin-left: 8px;
-                color: $color;
-            }
-        }
     }
 }
 
@@ -512,11 +516,16 @@ h3 {
 
         @include border-radius;
         @include box-shadow;
+
+        .project_img {
+            float: left;
+            padding-top: 12px;
+            padding-right: 12px;
+        }
     }
 
     .projects_entry_show {
         border: solid 1px $base_color;
-
         background-color: lighten($base_color, 10%);
 
         margin-bottom: 12px;
@@ -526,5 +535,68 @@ h3 {
 
         @include border-radius;
         @include box-shadow;
+
+        .project_img {
+            float: left;
+            padding-right: 12px;
+        }
     }
+}
+
+#feedbacks {
+    margin-top: 8px;
+    margin-bottom: -10px;
+
+    .feedback {
+        padding: 12px;
+        margin-bottom: 12px;
+
+        border: solid 1px $base_color;
+        background-color: lighten($base_color, 10%);
+
+        @include border-radius;
+        @include box-shadow;
+    }
+}
+
+#feedbacks {
+    margin: 0;
+}
+
+#feedback_hr {
+    hr {
+        border: solid 2px darken($base_color, 20%);
+
+        margin-top: 20px;
+        width: 92%;
+
+        @include border-radius;
+        @include box-shadow($default-box-shadow-color, 0, 1px, 6px);
+    }
+}
+
+#feedback_box {
+    padding: 4px 12px 4px 12px;
+    margin-top: 20px;
+
+    border: solid 1px $base_color;
+    background-color: $base_color + $addon_color;
+
+    @include border-radius;
+    @include box-shadow;
+
+    .field {
+        label {
+            //margin-left: 16px;
+        }
+    }
+
+    .actions input {
+        width: 160px;
+    }
+}
+
+pre.comment_body {
+    font-size: 14px;
+    font-family: sans-serif;
 }

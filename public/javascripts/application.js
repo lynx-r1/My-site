@@ -25,6 +25,14 @@ $(document).ready(function() {
     $("#subnav_top li.subnav_button a").prepend("<div class='subnav_button_glass_effect'></div>");
     $("#footer").prepend("<div class='footer_glass_effect'></div>");
 
+    $("#post_it_submit").click(function() {
+        $("#post_saved").show("slow").delay(2000).hide("slow");
+    });
+
+    $("#post_event_submit").click(function() {
+        $("#post_saved").show("slow").delay(2000).hide("slow");
+    });
+
     $("li.nav_button.selected#home").each(function() {
         $("#subnav_top").html("<div style='text-align: center; line-height: 1.5em; font-size: 1em; font-weight: bold; color: green;'>" +
                 "Welcome!</div>");
@@ -33,15 +41,5 @@ $(document).ready(function() {
     $("li.nav_button.selected#about_me").each(function() {
         $("#subnav_top").html("<div style='text-align: center; line-height: 1.5em; font-size: 1em; font-weight: bold; color: green;'>" +
                 "Hi!</div>");
-    });
-
-    $("#post_it_box .post_it_entry").last().css("margin-bottom", "0");
-
-    $("#post_it_submit").click(function() {
-        $("#post_saved").show("slow").delay(2000).hide("slow");
-    });
-
-    $("#post_event_submit").click(function() {
-        $("#post_saved").show("slow").delay(2000).hide("slow");
     });
 });

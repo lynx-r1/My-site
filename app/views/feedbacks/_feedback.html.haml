@@ -1,0 +1,11 @@
+= div_for feedback do
+  .date_and_options
+    Posted
+    = time_ago_in_words(feedback.created_at)
+    ago
+    - user_logged do
+      = link_to "Delete", feedback_path(feedback), :method => :delete, :remote => true
+  %p
+    %b= feedback.name
+    wrote:
+  %pre.comment_body= feedback.body

@@ -1,0 +1,492 @@
+<TR><TD>7</TD>
+<TD>2010-09-19 08:58:33.036711</TD>
+<TD>2010-09-19 12:34:08.346291</TD>
+<TD>Рекурсивное применение chmod только для директорий или только для файлов</TD>
+<TD>&lt;p>
+	Команда выполняет поиск всех директорий начиная с текущей и выполняет смену прав доступа.&lt;/p>
+&lt;p style="margin-left: 40px;">
+	&lt;code>find . -type d -exec chmod 755 {} \; &lt;/code>&lt;/p>
+&lt;p>
+	Аналогично эта команда выполнит рекурсивные смену прав доступа только для файлов:&lt;/p>
+&lt;p style="margin-left: 40px;">
+	&lt;code>find . -type f -exec chmod 644 {} \;&lt;/code>&lt;/p></TD>
+</TR>
+<TR><TD>8</TD>
+<TD>2010-09-19 12:21:14.360186</TD>
+<TD>2010-09-19 12:29:27.786339</TD>
+<TD>Монтирования raw образа</TD>
+<TD>&lt;p>
+	&lt;style type="text/css">
+p { margin-bottom: 0.21cm; }	&lt;/style>
+&lt;/p>
+&lt;p align="JUSTIFY" style="margin-bottom: 0cm; font-weight: normal;">
+	Для монтирования raw образа необходимо указать смещение относительно начала диска, которое указывает на монтируемый раздел. Для этого узнаем где начинается первый сектор:&lt;/p>
+&lt;p align="JUSTIFY" style="margin-bottom: 0cm; font-weight: normal; margin-left: 40px;">
+	&lt;code>&amp;gt; file suse-sled11-oem-preload.i686-7.9.0.raw&lt;br />
+	suse-sled11-oem-preload.i686-7.9.0.raw: x86 boot sector; GRand Unified Bootloader, stage1 version 0x3, stage2 address 0x2000, stage2 segment 0x200, GRUB version 0.97; partition 1: ID=0x83, active, starthead 1, &lt;strong>startsector 63&lt;/strong>, 19358262 sectors&lt;/code>&lt;/p>
+&lt;p>
+	Затем, вычислем его начало в байтах:&lt;/p>
+&lt;p style="margin-left: 40px;">
+	&lt;code>&amp;gt; echo 63*512 | bc&lt;br />
+	32256&lt;/code>&lt;/p>
+&lt;p>
+	Далее, выполняем монтирование:&lt;/p>
+&lt;p style="margin-left: 40px;">
+	&lt;code>mount suse-sled11-oem-preload.i686-7.9.0.raw sled-11 -o loop,offset=32256&lt;/code>&lt;/p>
+</TD>
+</TR>
+<TR><TD>9</TD>
+<TD>2010-09-19 12:41:41.138858</TD>
+<TD>2010-09-19 12:45:25.779753</TD>
+<TD>Конфигурация iptables</TD>
+<TD>&lt;p>
+	&lt;code>#!/bin/sh&lt;br />
+	&lt;br />
+	#&lt;br />
+	# rc.firewall&lt;br />
+	#&lt;br />
+	### BEGIN INIT INFO&lt;br />
+	# Provides:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; firewall&lt;br />
+	# Required-Start:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&lt;br />
+	# Required-Stop:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&lt;br />
+	# Default-Start:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 2 3 5&lt;br />
+	# Default-Stop:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 2 3 5&lt;br />
+	# Short-Description: Start and stop firewall&lt;br />
+	# Description: Starts and stops firewall.&lt;br />
+	### END INIT INFO&lt;br />
+	#&lt;br />
+	###################################################################&lt;br />
+	# Begin variable declarations and user configuration options ######&lt;br />
+	#&lt;br />
+	IPT=/usr/sbin/iptables&lt;br />
+	IPTR=/usr/sbin/iptables-restore&lt;br />
+	IPTS=/usr/sbin/iptables-save&lt;br />
+	&lt;br />
+	# Local Interfaces&lt;br />
+	# This is the WAN interface that is our link to the outside world.&lt;br />
+	# For pppd and pppoe users.&lt;br />
+	# WAN_IFACE=&amp;quot;ppp0&amp;quot;&lt;br />
+	WAN_IFACE=&amp;quot;eth0&amp;quot;&lt;br />
+	&lt;br />
+	# Ports to open&lt;br />
+	# FTP - 20,21, SSH - 22, SMTP - 25, HTTP - 80, POP3 - 110, HTTPS - 443, Jabber - 5222&lt;br />
+	# QNAP - 8080&lt;br />
+	OPENPORTS=&amp;quot;20,21,22,25,80,110,443,5222,8080&amp;quot;&lt;br />
+	&lt;br />
+	# DHCP server&lt;br />
+	DHCP_SERVER=&amp;quot;192.168.1.1&amp;quot;&lt;br />
+	&lt;br />
+	# Any and all addresses from anywhere.&lt;br />
+	ANYWHERE=&amp;quot;0/0&amp;quot;&lt;br />
+	&lt;br />
+	# Unprivilege ports&lt;br />
+	UNPRIVPORTS=&amp;quot;1024:65535&amp;quot;&lt;br />
+	&lt;br />
+	# Logging all INPUT and OUTPUT traffic&lt;br />
+	LOG_IO=0&lt;br />
+	&lt;br />
+	## end user configuration options #################################&lt;br />
+	&lt;br />
+	start()&lt;br />
+	{&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;echo &amp;quot;Starting firewall&amp;quot;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; [ -f /etc/iptables ] || init&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPTR -c /etc/iptables&lt;br />
+	}&lt;br />
+	&lt;br />
+	stop()&lt;br />
+	{&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;echo &amp;quot;Stop firewall&amp;quot;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPTS -c &amp;gt; /etc/iptables&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -F&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; #$IPT -X&lt;br />
+	}&lt;br />
+	&lt;br />
+	init()&lt;br />
+	{&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;echo &amp;quot;Init firewall&amp;quot;&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# Start building chains and rules #################################&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;#&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# Let&amp;#39;s start clean and flush all chains to an empty state.&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -F&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; #$IPT -X&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;### DEFAULT POLICIES&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -P INPUT DROP&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -P FORWARD DROP&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -P OUTPUT DROP&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;### INPUT RULES&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# Accept localhost/loopback traffic.&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; [ $LOG_IO != 1 ] || $IPT -A INPUT -m limit --limit 3/minute -j LOG --log-prefix &amp;quot;INPUT LOG: &amp;quot; --log-tcp-options --log-ip-options&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -i lo -j ACCEPT&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;## Reserved IPs:&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;#&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# We should never see these private addresses coming in from outside&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# to our external interface.&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -s 10.0.0.0/8&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; -i $WAN_IFACE -j DROP&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -s 172.16.0.0/12&amp;nbsp;&amp;nbsp; -i $WAN_IFACE -j DROP&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;#$IPT -A INPUT -s 192.168.0.0/16&amp;nbsp; -i $WAN_IFACE -j DROP&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -s 127.0.0.0/8&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; -i $WAN_IFACE -j DROP&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -s 169.254.0.0/16&amp;nbsp; -i $WAN_IFACE -j DROP&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -s 224.0.0.0/4&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; -i $WAN_IFACE -j DROP&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -s 240.0.0.0/5&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; -i $WAN_IFACE -j DROP&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# Bogus routing&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -s 255.255.255.255 -j DROP&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# Drop invalid packets&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -m state --state INVALID -j DROP&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# ICMP (ping)&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;#&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# ICMP rules, allow the bare essential types of ICMP only. Ping&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# request is blocked, ie we won&amp;#39;t respond to someone else&amp;#39;s pings,&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# but can still ping out.&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -i $WAN_IFACE -p icmp --icmp-type echo-reply -j ACCEPT&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -i $WAN_IFACE -p icmp --icmp-type destination-unreachable -j ACCEPT&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -i $WAN_IFACE -p icmp --icmp-type time-exceeded -j ACCEPT&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;## Protect from some attacks&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;#&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# SYN flowing&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -p tcp ! --syn -m state --state NEW -m limit --limit 3/minute -j LOG \&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; --log-prefix &amp;quot;INPUT SYN flowing DROP: &amp;quot; --log-tcp-options --log-ip-options&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -p tcp ! --syn -m state --state NEW -j DROP&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# ICMP forwarding&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -p icmp -f -m limit --limit 3/minute -j LOG \&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; --log-prefix &amp;quot;INPUT ICMP forwarding DROP: &amp;quot; --log-tcp-options --log-ip-options&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -p icmp -f -j DROP&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;## Allow some services&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;#&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# Allow DHCP&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -s $DHCP_SERVER -i $WAN_IFACE -p udp -m udp --sport 67 --dport 68 -j ACCEPT&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# Allow DNS server&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -i $WAN_IFACE -p udp -m udp --sport 53 --dport $UNPRIVPORTS -j ACCEPT&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -i $WAN_IFACE -p tcp -m tcp --sport 53 --dport $UNPRIVPORTS -j ACCEPT&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $IPT -A INPUT -i $WAN_IFACE -p udp -m udp --sport 5353 --dport 5353 -j ACCEPT&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# Open some ports&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -i $WAN_IFACE -p tcp -m tcp --dport $UNPRIVPORTS ! --syn \&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; -m multiport --sports $OPENPORTS -m state --state ESTABLISHED,RELATED -j ACCEPT&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# Drop and log other packets&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -m limit --limit 3/minute -j LOG --log-prefix &amp;quot;INPUT Dropping: &amp;quot; --log-tcp-options --log-ip-options&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A INPUT -j DROP&lt;br />
+	&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;### FORWARD RULES&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# Drop forwarding&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A FORWARD -m limit --limit 3/minute -j LOG --log-prefix &amp;quot;FORWARD Dropping: &amp;quot; --log-tcp-options --log-ip-options&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A FORWARD -j DROP&lt;br />
+	&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;### OUTPUT rules&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# Accept localhost/loopback traffic.&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;[ $LOG_IO != 1 ] || $IPT -A OUTPUT -m limit --limit 3/minute -j LOG --log-prefix &amp;quot;OUTPUT LOG: &amp;quot; --log-tcp-options --log-ip-options&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A OUTPUT -o lo -j ACCEPT&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# ICMP (ping)&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;#&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# We can do ping&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A OUTPUT -o $WAN_IFACE -p icmp --icmp-type echo-request -j ACCEPT&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;## Allow some services&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;#&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# Allow DHCP&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A OUTPUT -d $DHCP_SERVER -o $WAN_IFACE -p udp -m udp --sport 68 --dport 67 -j ACCEPT&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# Allow DNS server&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A OUTPUT -o $WAN_IFACE -p udp -m udp --sport $UNPRIVPORTS --dport 53 -j ACCEPT&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A OUTPUT -o $WAN_IFACE -p tcp -m tcp --sport $UNPRIVPORTS --dport 53 -j ACCEPT&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $IPT -A OUTPUT -o $WAN_IFACE -p udp -m udp --sport 5353 --dport 5353 -j ACCEPT&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# Open some ports&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A OUTPUT -o $WAN_IFACE -p tcp -m tcp --sport $UNPRIVPORTS \&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; -m multiport --dports $OPENPORTS -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;# Drop and log other packets&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A OUTPUT -m limit --limit 3/minute -j LOG --log-prefix &amp;quot;OUTPUT Dropping: &amp;quot; --log-tcp-options --log-ip-options&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPT -A OUTPUT -j DROP&lt;br />
+	&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;### SAVE rules&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;$IPTS -c &amp;gt; /etc/iptables&lt;br />
+	}&lt;br />
+	&lt;br />
+	restart()&lt;br />
+	{&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; stop&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; start&lt;br />
+	}&lt;br />
+	&lt;br />
+	reset()&lt;br />
+	{&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; stop&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; init&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; start&lt;br />
+	}&lt;br />
+	&lt;br />
+	case &amp;quot;$1&amp;quot; in&lt;br />
+	start)&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;start&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;;;&lt;br />
+	stop)&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;stop&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;;;&lt;br />
+	restart)&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; restart&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ;;&lt;br />
+	reset)&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; reset&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ;;&lt;br />
+	init)&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;init&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;;;&lt;br />
+	*)&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;echo &amp;quot;Usage: $0 start|stop|restart|reset|init&amp;quot;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;exit 1&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;;;&lt;br />
+	esac&lt;br />
+	exit 0&lt;br />
+	&lt;br />
+	##-- eof rc.firewall&lt;/code>&lt;/p>
+</TD>
+</TR>
+<TR><TD>10</TD>
+<TD>2010-09-19 12:50:21.059389</TD>
+<TD>2010-09-19 12:51:19.630045</TD>
+<TD>Расположение плавающего слоя по центру страницы</TD>
+<TD>&lt;p>
+	В основе используется обертка безразмерного плавающего слоя, которая помещается направо float: right, затем экран сдвигается влево с position: relative; left: -50%;. Далее, к вложенному внутреннему слою применяется относительная позиция 50% position: relative; left: 50%. Это приводит к эффекту выравнивания слоя в центре страницы.&lt;/p>
+&lt;p style="margin-left: 40px;">
+	&lt;br />
+	&lt;code>#buttons {&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;float:right;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;position:relative;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;left:-50%;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;text-align:left;&lt;br />
+	}&lt;br />
+	&lt;br />
+	#buttons ul {&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;list-style:none;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;position:relative;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;left:50%;&lt;br />
+	}&lt;br />
+	&lt;br />
+	#buttons li {&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;float:left;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;position:relative;&lt;br />
+	} /* ie needs position:relative here*/&lt;br />
+	&lt;br />
+	#buttons a {&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;text-decoration:none;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;margin:10px;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;background:red;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;float:left;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;border:2px outset blue;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;color:#fff;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;padding:2px 5px;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;text-align:center;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;white-space:nowrap;&lt;br />
+	}&lt;br />
+	&lt;br />
+	#buttons a:hover {&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;border:2px inset blue;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;color:red;&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;background:#f2f2f2;&lt;br />
+	}&lt;br />
+	&lt;br />
+	#content {&lt;br />
+	&amp;nbsp;&amp;nbsp; &amp;nbsp;overflow:hidden&lt;br />
+	} /* hide horizontal scrollbar*/&lt;/code>&lt;/p>
+</TD>
+</TR>
+<TR><TD>11</TD>
+<TD>2010-09-19 12:55:47.243066</TD>
+<TD>2010-09-19 12:57:02.640623</TD>
+<TD>Ошибка uninitialized constant ActiveSupport::Dependencies при установки Ckeditor в веб-приложение на Ruby on Rails</TD>
+<TD>&lt;p>
+	Во время установки CKEditor в мое приложение я получил такую ошибку:&lt;/p>
+&lt;p style="margin-left: 40px;">
+	&lt;code>#rails g ckeditor:base&lt;br />
+	/usr/local/lib/ruby/gems/1.9.1/gems/ckeditor-3.4.1.pre/lib/ckeditor.rb:59:in `file_manager_image_model=&amp;#39;: uninitialized constant ActiveSupport::Dependencies (NameError)&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; from /usr/local/lib/ruby/gems/1.9.1/gems/ckeditor-3.4.1.pre/lib/ckeditor.rb:61:in `&amp;lt;module:Ckeditor&amp;gt;&amp;#39;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; from /usr/local/lib/ruby/gems/1.9.1/gems/ckeditor-3.4.1.pre/lib/ckeditor.rb:1:in `&amp;lt;top (required)&amp;gt;&amp;#39;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; from /usr/local/lib/ruby/gems/1.9.1/gems/bundler-1.0.0/lib/bundler/runtime.rb:64:in `require&amp;#39;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; from /usr/local/lib/ruby/gems/1.9.1/gems/bundler-1.0.0/lib/bundler/runtime.rb:64:in `block (2 levels) in require&amp;#39;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; from /usr/local/lib/ruby/gems/1.9.1/gems/bundler-1.0.0/lib/bundler/runtime.rb:62:in `each&amp;#39;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; from /usr/local/lib/ruby/gems/1.9.1/gems/bundler-1.0.0/lib/bundler/runtime.rb:62:in `block in require&amp;#39;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; from /usr/local/lib/ruby/gems/1.9.1/gems/bundler-1.0.0/lib/bundler/runtime.rb:51:in `each&amp;#39;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; from /usr/local/lib/ruby/gems/1.9.1/gems/bundler-1.0.0/lib/bundler/runtime.rb:51:in `require&amp;#39;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; from /usr/local/lib/ruby/gems/1.9.1/gems/bundler-1.0.0/lib/bundler.rb:112:in `require&amp;#39;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; from /home/developer/rails/lsite/config/application.rb:7:in `&amp;lt;top (required)&amp;gt;&amp;#39;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; from /usr/local/lib/ruby/gems/1.9.1/gems/railties-3.0.0/lib/rails/commands.rb:15:in `require&amp;#39;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; from /usr/local/lib/ruby/gems/1.9.1/gems/railties-3.0.0/lib/rails/commands.rb:15:in `&amp;lt;top (required)&amp;gt;&amp;#39;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; from script/rails:6:in `require&amp;#39;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; from script/rails:6:in `&amp;lt;main&amp;gt;&amp;#39;&lt;/code>&lt;/p>
+&lt;p>
+	Для её решения необходимо добавить:&lt;/p>
+&lt;p style="margin-left: 40px;">
+	&lt;code>require &amp;#39;active_support/dependencies&amp;#39; &lt;/code>&lt;/p>
+&lt;p>
+	В начало файла lib/ckeditor.rb&lt;br />
+	&lt;br />
+	&amp;nbsp;&lt;/p>
+</TD>
+</TR>
+<TR><TD>12</TD>
+<TD>2010-09-19 13:20:39.350632</TD>
+<TD>2010-09-19 13:24:38.965640</TD>
+<TD>Русские буквы в truncate_html</TD>
+<TD>&lt;p>
+	Модуль &lt;code>truncate_html&lt;/code> позволяет&amp;nbsp; сокращать вывод текста с html-тегами до определенного числа символов. Проблема в том, что он не поддерживает русские буквы. Чтобы решить её я сделал простой хак:&lt;/p>
+&lt;p style="margin-left: 40px;">
+	&lt;br />
+	&lt;code>commit f2032d06ca7ff6355ccb4f1b121c72c53629f7e4&lt;br />
+	Author: lynx-r1 &amp;lt;lynx-r1@yandex.ru&amp;gt;&lt;br />
+	Date:&amp;nbsp;&amp;nbsp; Sun Sep 19 15:13:12 2010 +0400&lt;br />
+	&amp;nbsp;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; Solved: cyrillic characters missing&lt;br />
+	&amp;nbsp;&lt;br />
+	diff --git a/lib/truncate_html/html_string.rb b/lib/truncate_html/html_string.rb&lt;br />
+	index cc81a65..79a01c1 100644&lt;br />
+	--- a/lib/truncate_html/html_string.rb&lt;br />
+	+++ b/lib/truncate_html/html_string.rb&lt;br />
+	@@ -8,7 +8,7 @@ module TruncateHtml&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; end&lt;br />
+	&amp;nbsp;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; def html_tokens&lt;br />
+	-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; scan(/(?:&amp;lt;script.*&amp;gt;.*&amp;lt;\/script&amp;gt;)+|&amp;lt;\/?[^&amp;gt;]+&amp;gt;|[\w\|`~!@#\$%^&amp;amp;*\(\)\-_\+=\[\]{}:;&amp;#39;&amp;quot;,\.\/?]+|\s+/).map do&lt;br />
+	+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; scan(/(?:&amp;lt;script.*&amp;gt;.*&amp;lt;\/script&amp;gt;)+|&amp;lt;\/?[^&amp;gt;]+&amp;gt;|[&lt;strong>[А-Яа-я0-9_]&lt;/strong>|\w\|`~!@#\$%^&amp;amp;*\(\)\-_\+=\[\]{}:;&amp;#39;&amp;quot;,\.\/?]+|\s+/).map do&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; |token| token.gsub(&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; #remove newline characters&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; /\n/,&amp;#39;&amp;#39;
+	&amp;nbsp;&lt;/code>&lt;/p>
+&lt;p>
+	У меня получилось два патча, потому что в начале я решил первую проблему, затем появилась вторая, связанная с кодировкой не ASCII символов. Для этого нужно было добавить &lt;code># coding: utf-8&lt;/code> в начало файла &lt;code>lib/truncate_html/html_string.rb&lt;/code>.&lt;/p>
+&lt;p style="margin-left: 40px;">
+	&lt;code>commit 7c72da0d09d218fbea46704e6f3a39900b1be7f2&lt;br />
+	Author: lynx-r1 &amp;lt;lynx-r1@yandex.ru&amp;gt;&lt;br />
+	Date:&amp;nbsp;&amp;nbsp; Sun Sep 19 15:20:15 2010 +0400&lt;br />
+	&amp;nbsp;&lt;br />
+	&amp;nbsp;&amp;nbsp;&amp;nbsp; Set utf-8 encoding for lib/truncate_html/html_string.rb&lt;br />
+	&amp;nbsp;&lt;br />
+	diff --git a/lib/truncate_html/html_string.rb b/lib/truncate_html/html_string.rb&lt;br />
+	index 79a01c1..17dc358 100644&lt;br />
+	--- a/lib/truncate_html/html_string.rb&lt;br />
+	+++ b/lib/truncate_html/html_string.rb&lt;br />
+	@@ -1,3 +1,5 @@&lt;br />
+	+# coding: utf-8&lt;br />
+	+&lt;br />
+	&amp;nbsp;module TruncateHtml&lt;br />
+	&amp;nbsp;&amp;nbsp; class HtmlString &amp;lt; String&lt;br />
+	&lt;/code>&lt;/p>
+</TD>
+</TR>
+<TR><TD>13</TD>
+<TD>2010-09-19 13:38:56.463298</TD>
+<TD>2010-09-19 13:44:30.612901</TD>
+<TD>Добавление в initrd возможности монтировать зашифрованный корневой раздел диска с паролем для расшифровки в файле (SLED 11)</TD>
+<TD>&lt;p>
+	В стандартном скрипте генерации образа initrd в дистрибутиве SLED нет возможности расшифровывать зашифрованный корневой раздел диска через файл, содержащий ключ. Чтобы добавить эту возможность нужно выполнить следующие действия.&lt;/p>
+&lt;ol>
+	&lt;li>
+		В файл /lib/mkinitrd/setup/21-luks.sh после 50 строки (done) добавить следующий код:
+		&lt;p>
+			&lt;code>if [ $LUKS_ROOT_KEY ]; then&lt;br />
+			&amp;nbsp;&amp;nbsp;&amp;nbsp; luks_root_key=$LUKS_ROOT_KEY&lt;br />
+			&amp;nbsp;&amp;nbsp;&amp;nbsp; save_var luks_root_key&lt;br />
+			fi&lt;br />
+			if [ $LUKS_KEY_DEV ]; then&lt;br />
+			&amp;nbsp;&amp;nbsp;&amp;nbsp; luks_key_dev=$(beautify_blockdev ${LUKS_KEY_DEV})&lt;br />
+			&amp;nbsp;&amp;nbsp;&amp;nbsp; save_var luks_key_dev&lt;br />
+			fi&lt;/code>&lt;/p>
+		&lt;p>
+			Здесь проверяется наличие переменных среды &lt;code>LUKS_ROOT_KEY&lt;/code> и &lt;code>LUKS_KEY_DEV&lt;/code> и если они есть, то их значения сохраняются в конфигурационном скрипте. При этом имя раздела с ключами преобразуется функцией &lt;code>beautify_blockdev&lt;/code>.&lt;/p>
+	&lt;/li>
+	&lt;li>
+		В файле &lt;code>/lib/mkinitrd/scripts/boot-luks.sh&lt;/code> после строки 30 (&lt;code>check_for_device $DEVICE&lt;/code>) добавить следующий код:&lt;br />
+		&lt;code>if [ $curluks == &amp;#39;root&amp;#39; ]; then&lt;br />
+		&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; mkdir /cryptkeys&lt;br />
+		&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; mount $luks_key_dev /cryptkeys&lt;br />
+		&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; /sbin/cryptsetup luksOpen $DEVICE $curluks -d /cryptkeys${luks_root_key}&lt;br />
+		&amp;nbsp;&amp;nbsp;&amp;nbsp; umount /cryptkeys&lt;br />
+		&amp;nbsp;else&lt;br />
+		&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; /sbin/cryptsetup luksOpen $DEVICE $curluks&lt;br />
+		&amp;nbsp;fi&lt;br />
+		&lt;/code>Вместо строки:&lt;br />
+		&lt;code>/sbin/cryptsetup luksOpen $DEVICE $curluks&lt;/code>&lt;br />
+		Здесь выполняется проверка на то, что текущий &lt;code>luks&lt;/code>-раздел является корнем (&lt;code>root&lt;/code>). Если условие выполняется, то создаётся директория &lt;code>cryptkeys&lt;/code>, на которую монтируется раздел, хранящий ключи шифрования. Затем выполняется открытие зашифрованного корневого раздела без запроса пароля. При этом нужно отметить что имя корневого раздела должно быть &lt;code>root&lt;/code>.&lt;/li>
+	&lt;li>
+		Генерация образа &lt;code>initrd&lt;/code>:&lt;br />
+		&lt;code>LUKS_ROOT_KEY=/.keys/susekey LUKS_KEY_DEV=/dev/sda10 mkinitrd -f luks -d /dev/dm-0 -B&lt;/code>&lt;br />
+		Этой командой выполняется генерация образа initrd в который через переменные окружения передаются файл ключа для расшифровки корневого раздела &lt;code>susekey&lt;/code> и имя раздела &lt;code>sda10&lt;/code> на котором находится файл ключа.&lt;br />
+		Предлагаемое решение не носит универсальный характер и подходит как временное.&lt;/li>
+&lt;/ol>
+&lt;p>
+	Кроме этого в скрипт &lt;code>/lib/mkinitrd/setup/21-luks.sh&lt;/code> можно внести небольшое улучшение, добавив сортировку и удаление повторяющихся имён криптографический модулей из файла /proc/crypto.&lt;br />
+	&lt;code> 48 for m in $(cat /proc/crypto | grep module | sed &amp;#39;s/^module .*: \(.*\)$/\1/&amp;#39; | sort | uniq); do&lt;/code>&lt;br />
+	Вместо:&lt;br />
+	&lt;code> 48 for m in $(cat /proc/crypto | grep module | sed &amp;#39;s/^module .*: \(.*\)$/\1/&amp;#39;); do&lt;/code>&lt;/p>
+&lt;p>
+	&lt;span style="font-family: monospace;">В версии SLED 11.1 в сценарии &lt;code>mkinitrd&lt;/code> были внесены изменения, но описанный хак можно выполнить и в них по тому же принципу.&lt;/span>&lt;/p>
+</TD>
+</TR>
+<TR><TD>14</TD>
+<TD>2010-09-19 13:54:27.437219</TD>
+<TD>2010-09-19 13:57:15.319987</TD>
+<TD>QNAP автозапуск сервисов</TD>
+<TD>&lt;p>
+	В сетевом хранилище QNAP операционная система хранится в образе диска, который при запуске монтируется и запускает ОС. Такой способ работы вносит некоторые трудности в конфигурирование. После перезагрузки все настройки теряются. Для того чтобы сохранить настройки необходимо смонтировать диск в, котором хранится скрипт autorun.sh и добавить нужные действия по конфигурированию. Например, для того чтобы добавить автозапуск сервера ntop необходимо выполнить:&lt;/p>
+&lt;ol>
+	&lt;li>
+		Монтирование диска со скриптом автозапуска и создание либо открытие для редактирование скрипта autorun.sh&lt;br />
+		&lt;code>mount /dev/mtdblock5 /tmp/config&lt;br />
+		cd /tmp/config&lt;br />
+		vim autorun.sh&lt;/code>&lt;/li>
+	&lt;li>
+		Добавляем в него команду создающую ссылку на команду запуска ntop в &lt;code>/etc/rcS.d&lt;/code>&lt;br />
+		&lt;code> ln -sf /share/HDA_DATA/.qpkg/Optware/etc/init.d/S01ntop /etc/rcS.d/QS110ntop&lt;/code>&lt;br />
+		&lt;u>Важно:&lt;/u> Путь к команде запуска к сервиса должен быть абсолютным и не ссылкой. Путь &lt;code>/opt/etc/init.d/S01ntop&lt;/code> работать не будет. Кроме этого нужно указать уровень загрузки больше чем у Optware.sh, например, &lt;code>QS110&lt;/code>.&lt;/li>
+	&lt;li>
+		Размонтируем образ диска:&lt;br />
+		&lt;code>umount /tmp/config&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;p>
+	Подробнее здесь: &lt;a class="attach_pdf?1284904562" href="/ckeditor_assets/attachments/4/QNAP TS &amp;amp; SS ARM &amp;amp; Intel How-to Guide V1.2.pdf?1284904562" title="Unofficial Tips &amp;amp; How-to Guide for the QNAP TS/SS ARM &amp;amp; Intel Series NAS">&lt;br />
+	Unofficial Tips &amp;amp; How-to Guide for the QNAP TS/SS ARM &amp;amp; Intel Series NAS&lt;/a>&lt;/p>
+</TD>
+</TR>
+<TR><TD>15</TD>
+<TD>2010-09-19 14:04:12.118143</TD>
+<TD>2010-09-19 15:39:26.330655</TD>
+<TD>Русский язык в консоли</TD>
+<TD>&lt;p>
+	Если в консоле не работает русский шрифт тогда нужно:&lt;/p>
+&lt;ol>
+	&lt;li>
+		Установить русский шрифт командой:&lt;br />
+		&lt;code> setfont UniCyrExt_8x16&lt;/code>&lt;br />
+		Шрифты находятся в &lt;code>/usr/share/kbd/consolefonts.&lt;/code>&lt;br />
+		Для постоянного использования выбранного шрифта нужно указать его в файле /etc/sysconfig/console в качестве значения параметра &lt;code>CONSOLE_FONT&lt;/code>:&lt;br />
+		&lt;code>CONSOLE_FONT=&amp;ldquo;UniCyrExt_8x16&amp;ldquo;&lt;/code>&lt;br />
+		Если шрифт не содержит юникод-карты её нужно указать в переменной &lt;code>CONSOLE_UNICODEMAP&lt;/code>:&lt;br />
+		&lt;code>CONSOLE_UNICODEMAP=&amp;ldquo;ruscii.uni&amp;ldquo;&lt;/code>&lt;br />
+		Для шрифта &lt;code>ruscii_8x16&lt;/code>.&lt;/li>
+	&lt;li>
+		Загрузить раскладку клавиатуры командой:&lt;br />
+		&lt;code>sudo loadkeys ruwin_ct_sh_UTF-8&lt;/code>&lt;br />
+		Раскладки клавиатуры находятся в&lt;code> /usr/share/kbd/keymaps&lt;/code>.&lt;br />
+		Для постоянного использования выбранной раскладки нужно указать её в файле &lt;code>/etc/sysconfig/keyboard&lt;/code> в качестве значения параметра &lt;code>KEYTABLE&lt;/code>:&lt;br />
+		&lt;code>KEYTABLE=&amp;ldquo;ruwin_ct_sh_UTF-8&amp;ldquo;&lt;/code>&lt;br />
+		Кроме этого, можно указать для параметра &lt;code>COMPOSETABLE&lt;/code> следующие значения:&lt;br />
+		&lt;code>COMPOSETABLE=&amp;quot;clear winkeys&amp;quot;&lt;/code>&lt;br />
+		Первый параметр очищает compose таблицу, второй позволяет переключаться между соседними консолями при помощи клавиш &lt;code>Windows&lt;/code>.&lt;/li>
+&lt;/ol>
+</TD>
+</TR>

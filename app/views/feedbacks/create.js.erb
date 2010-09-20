@@ -1,0 +1,11 @@
+/* Add the new feedback to the bottom of the feedbacks list */
+$("#feedbacks").append("<%= escape_javascript(render(@feedback)) %>");
+
+/* Highlight the new feedback */
+$("#feedback_<%= @feedback.id %>").show("scale", {}, 1000);
+
+$("#feedback_box fieldset legend").append("<div id='thanks' style='display: none'>Thanks!</div>");
+$("#thanks").show("pulsate").delay(3000).hide("fade");
+
+/* Reset the feedback form */
+$("#new_feedback")[0].reset();

@@ -11,12 +11,14 @@
     #main_container
       #top_container
         #nav_bar= render_navigation :level => 1
-      %hr/
+      #body_hr
+        %hr
       #subnav_top= render_navigation :level => 2
       #body_container
         - if flash[:notice]
           #notice= flash[:notice]
         = yield
       #subnav_bottom= render_navigation :level => 1
-      #footer Created by Jack IRox. 7518
+      #footer
+        Created by Jack IRox.
 

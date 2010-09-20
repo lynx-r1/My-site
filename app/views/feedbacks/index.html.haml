@@ -1,0 +1,21 @@
+#feedbacks
+  = render :partial => @feedbacks, :locals => {:list => true}
+
+#feedback_hr
+  %hr
+
+#feedback_notice
+
+#feedback_box
+  = form_for Feedback.new, :remote => true do |f|
+    %fieldset
+      %legend
+        Leave a comment.
+      .field
+        = f.label :name, "Your name"
+        = f.text_field :name, :size => 78
+      .field
+        = f.label :body, "Feedback"
+        = f.text_area :body, :size => "77x2"
+      .actions
+        = f.submit "Add feedback"
