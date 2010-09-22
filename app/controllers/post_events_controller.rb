@@ -4,6 +4,8 @@ class PostEventsController < ApplicationController
   def index
     @post_events = PostEvent.all
 
+    logger.info PostEvent.table_name
+
     session[:blogs_path] = request.fullpath
     respond_to do |format|
       format.html # index.html.erb

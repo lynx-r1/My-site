@@ -3,6 +3,7 @@ class PostItsController < ApplicationController
   # GET /post_its.xml
   def index
     @post_its = PostIt.all
+    logger.info PostIt.table_name
 
     session[:blogs_path] = request.fullpath
     respond_to do |format|

@@ -5,6 +5,9 @@
       = @post_it.title
     %p
       = raw(@post_it.content)
+    %p
+      %b Tags:
+      = raw(join_tags(@post_it.blog_tags))
     - user_logged do
       = link_to 'Edit', edit_post_it_path(@post_it)
       \|

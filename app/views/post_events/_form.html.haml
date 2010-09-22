@@ -1,6 +1,7 @@
 = javascript_include_tag :ckeditor
+- @post_event.blog_tags.build
 
-= form_for @post_event, :remote => true do |f|
+= form_for @post_event do |f|
   -if @post_event.errors.any?
     #errorExplanation
       %h2= "#{pluralize(@post_event.errors.count, "error")} prohibited this post_event from being saved:"
@@ -13,6 +14,7 @@
   .field
     = f.cktext_area :content, :width => '98%', :height => '600px'
     = ckeditor_ajax_script
+  %h3
+    = render :partial => 'tags/form', :locals => {:form => f, :tags => :blog_tags}
   .actions
     = f.submit 'Save'
-    #post_saved Post saved

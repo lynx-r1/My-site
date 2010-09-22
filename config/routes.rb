@@ -1,4 +1,6 @@
 LSite::Application.routes.draw do
+  get "tags/index"
+
   resources :feedbacks
 
   resources :post_events

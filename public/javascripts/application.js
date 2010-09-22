@@ -29,10 +29,6 @@ $(document).ready(function() {
         $("#post_saved").show("slow").delay(2000).hide("slow");
     });
 
-    $("#post_event_submit").click(function() {
-        $("#post_saved").show("slow").delay(2000).hide("slow");
-    });
-
     $("li.nav_button.selected#home").each(function() {
         $("#subnav_top").html("<div style='text-align: center; line-height: 1.5em; font-size: 1em; font-weight: bold; color: green;'>" +
                 "Welcome!</div>");

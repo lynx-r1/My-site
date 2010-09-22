@@ -432,19 +432,6 @@ h3 {
     }
 }
 
-.actions {
-    #post_saved {
-        color: red;
-        float: right;
-        display: none;
-    }
-    #project_saved {
-        color: red;
-        float: right;
-        display: none;
-    }
-}
-
 @mixin styled_post($gradient: false)
 {
     $color1: darken($base_color, 10%);
@@ -622,6 +609,17 @@ pre.comment_body {
     }
 }
 
+#tags_home {
+    @include home_posts(left);
+
+    @for $i from 1 through 10 {
+        .tag-#{$i} {
+            font-size: 16px + $i * 2;
+            color: darken($base_color, 30%) - #111 * $i;
+        }
+    }
+}
+
 #post_its_home {
     @include home_posts(left);
 
@@ -646,7 +644,7 @@ pre.comment_body {
     }
 }
 #projects_home {
-    @include home_posts(left);
+    @include home_posts(right);
 
     .project_home {
         @include home_post;
