@@ -1,5 +1,6 @@
 #posts_box
   .posts_entry_show
+    .date= @post_it.created_at.localtime.ctime
     %h3
       = @post_it.title
     %p

@@ -466,15 +466,16 @@ h3 {
     }
 }
 
+.date {
+    float: right;
+    text-decoration: underline;
+}
+
 #posts_box {
     padding: 0px;
     margin-bottom: -14px;
 
     .posts_entry {
-        .date {
-            float: right;
-            text-decoration: underline;
-        }
         h3 {
             text-align: left;
             margin-top: 4px;
@@ -495,10 +496,6 @@ h3 {
     margin-bottom: -14px;
 
     .projects_entry {
-        .date {
-            float: right;
-            text-decoration: underline;
-        }
         h3 {
             text-align: left;
             margin-top: 4px;
@@ -583,7 +580,7 @@ pre.comment_body {
     font-family: sans-serif;
 }
 
-@mixin home_post($float)
+@mixin home_posts($float)
 {
     $color1: darken($base_color, 10%);
     $color2: $base_color;
@@ -600,45 +597,63 @@ pre.comment_body {
     margin-bottom: 20px;
 
     text-align: center;
+    a { text-decoration: none; }
 
     @include border-radius;
     @include box-shadow;
     @include linear-gradient(color-stops($color1 30px, $color2 60px, $color3));
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+@mixin home_post {
+    margin: 8px 0 8px;
+    text-align: left;
+}
+
+@mixin home_h3_a {
+    text-decoration: none;
+
+    color: darken($base_color, 50%) + $addon_link_color;
+    &:hover {
+        color: darken($base_color, 50%);
+    }
 }
 
 #post_its_home {
-    @include home_post(left);
+    @include home_posts(left);
 
     .post_it_home {
-        margin: 8px 0 8px;
-        text-align: left;
+        @include home_post;
+    }
+
+    h3 a {
+        @include home_h3_a;
     }
 }
 
 #post_events_home {
-    @include home_post(right);
+    @include home_posts(right);
 
     .post_event_home {
-        margin: 8px 0 8px;
-        text-align: left;
+        @include home_post;
+    }
+
+    h3 a {
+        @include home_h3_a;
     }
 }
-
-#twitter_home {
-    @include home_post(right);
-
-    .project_home {
-        margin: 8px 0 8px;
-        text-align: left;
-    }
-}
-
 #projects_home {
-    @include home_post(left);
+    @include home_posts(left);
 
     .project_home {
-        margin: 8px 0 8px;
-        text-align: left;
+        @include home_post;
+    }
+
+    h3 a {
+        @include home_h3_a;
     }
 }
 

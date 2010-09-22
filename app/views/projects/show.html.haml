@@ -1,5 +1,6 @@
 #projects_box
   .projects_entry_show
+    .date= @project.created_at.localtime.ctime
     %h3
       = @project.title
     .project_img

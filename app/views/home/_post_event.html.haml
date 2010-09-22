@@ -1,2 +1,2 @@
 .post_event_home
-  = link_to post_event.title, post_event
+  = link_to truncate(post_event.title, :length => 80), post_event

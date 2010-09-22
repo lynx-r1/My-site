@@ -1,21 +1,17 @@
 #post_its_home
-  %h3 IT blog
+  %h3= link_to "IT blog", post_its_path
   = render :partial => 'post_it', :collection => @post_its
   - user_logged do
-    = link_to 'New post', new_post_it_path
+    %b= link_to 'New post', new_post_it_path
 
 #post_events_home
-  %h3 Events
+  %h3= link_to "Events", post_events_path
   = render :partial => 'post_event', :collection => @post_events
   - user_logged do
-    = link_to 'New post', new_post_event_path
-
-#twitter_home
-  %h3 Twitter
-  = render :partial => 'twitter'
+    %b= link_to 'New post', new_post_event_path
 
 #projects_home
-  %h3 Projects
+  %h3= link_to "Projects", projects_path
   = render :partial => 'project', :collection => @projects
   - user_logged do
-    = link_to 'New post', new_project_path
+    %b= link_to 'New post', new_project_path
