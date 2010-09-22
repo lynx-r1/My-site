@@ -67,7 +67,7 @@ body {
         padding-bottom: 7px;
 
         @include border-radius;
-        @include box-shadow;
+        @include box-shadow;//(#333333, 5px, 10px, 260px);
 
         #top_container {
             padding-top: 16px;
@@ -432,6 +432,40 @@ h3 {
     }
 }
 
+.actions {
+    #post_saved {
+        color: red;
+        float: right;
+        display: none;
+    }
+    #project_saved {
+        color: red;
+        float: right;
+        display: none;
+    }
+}
+
+@mixin styled_post($gradient: false)
+{
+    $color1: darken($base_color, 10%);
+    $color2: $base_color;
+    $color3: lighten($base_color, 10%);
+
+    border: solid 1px darken($base_color, 10%);
+    background-color: lighten($base_color, 10%);
+
+    padding: 12px;
+    margin-bottom: 12px;
+
+    text-align: justify;
+
+    @include border-radius;
+    @include box-shadow;
+    @if $gradient {
+        @include linear-gradient(color-stops($color1 30px, $color2 60px, $color3));
+    }
+}
+
 #posts_box {
     padding: 0px;
     margin-bottom: -14px;
@@ -447,45 +481,12 @@ h3 {
             margin-bottom: 4px;
             font-weight: bold;
         }
-        border: solid 1px $base_color;
 
-        background-color: lighten($base_color, 10%);
-
-        margin-bottom: 12px;
-        padding: 12px;
-        padding-bottom: 16px;
-
-        text-align: justify;
-
-        @include border-radius;
-        @include box-shadow;
+        @include styled_post(true);
     }
 
     .posts_entry_show {
-        border: solid 1px $base_color;
-
-        background-color: lighten($base_color, 10%);
-
-        margin-bottom: 12px;
-        padding: 12px;
-
-        text-align: justify;
-
-        @include border-radius;
-        @include box-shadow;
-    }
-}
-
-.actions {
-    #post_saved {
-        color: red;
-        float: right;
-        display: none;
-    }
-    #project_saved {
-        color: red;
-        float: right;
-        display: none;
+        @include styled_post;
     }
 }
 
@@ -504,18 +505,8 @@ h3 {
             margin-bottom: 4px;
             font-weight: bold;
         }
-        border: solid 1px $base_color;
 
-        background-color: lighten($base_color, 10%);
-
-        margin-bottom: 12px;
-        padding: 12px;
-        padding-bottom: 16px;
-
-        text-align: justify;
-
-        @include border-radius;
-        @include box-shadow;
+        @include styled_post(true);
 
         .project_img {
             float: left;
@@ -525,16 +516,7 @@ h3 {
     }
 
     .projects_entry_show {
-        border: solid 1px $base_color;
-        background-color: lighten($base_color, 10%);
-
-        margin-bottom: 12px;
-        padding: 12px;
-
-        text-align: justify;
-
-        @include border-radius;
-        @include box-shadow;
+        @include styled_post;
 
         .project_img {
             float: left;
@@ -599,4 +581,75 @@ h3 {
 pre.comment_body {
     font-size: 14px;
     font-family: sans-serif;
+}
+
+@mixin home_post($float)
+{
+    $color1: darken($base_color, 10%);
+    $color2: $base_color;
+    $color3: lighten($base_color, 10%);
+
+    float: $float;
+
+    border: solid 1px darken($base_color, 10%);
+    background-color: lighten($base_color, 10%);
+    color: darken($base_color, 50%);
+
+    padding: 12px;
+    width: 45%;
+    margin-bottom: 20px;
+
+    text-align: center;
+
+    @include border-radius;
+    @include box-shadow;
+    @include linear-gradient(color-stops($color1 30px, $color2 60px, $color3));
+}
+
+#post_its_home {
+    @include home_post(left);
+
+    .post_it_home {
+        margin: 8px 0 8px;
+        text-align: left;
+    }
+}
+
+#post_events_home {
+    @include home_post(right);
+
+    .post_event_home {
+        margin: 8px 0 8px;
+        text-align: left;
+    }
+}
+
+#twitter_home {
+    @include home_post(right);
+
+    .project_home {
+        margin: 8px 0 8px;
+        text-align: left;
+    }
+}
+
+#projects_home {
+    @include home_post(left);
+
+    .project_home {
+        margin: 8px 0 8px;
+        text-align: left;
+    }
+}
+
+#lynx_r {
+    float:left;
+    margin-right: 12px;
+    margin-bottom: 4px;
+}
+
+#about_me {
+    text-align: justify;
+    margin: 0;
+    padding: 0;
 }

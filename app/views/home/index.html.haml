@@ -1,2 +1,21 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+#post_its_home
+  %h3 IT blog
+  = render :partial => 'post_it', :collection => @post_its
+  - user_logged do
+    = link_to 'New post', new_post_it_path
+
+#post_events_home
+  %h3 Events
+  = render :partial => 'post_event', :collection => @post_events
+  - user_logged do
+    = link_to 'New post', new_post_event_path
+
+#twitter_home
+  %h3 Twitter
+  = render :partial => 'twitter'
+
+#projects_home
+  %h3 Projects
+  = render :partial => 'project', :collection => @projects
+  - user_logged do
+    = link_to 'New post', new_project_path

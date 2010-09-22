@@ -1,6 +1,9 @@
 %p
   %b Name:
   = @user.name
+%p
+  %b Avatar:
+  = image_tag @user.avatar.url
 
 = link_to 'Edit', edit_user_path(@user)
 \|

@@ -31,6 +31,7 @@ LSite::Application.routes.draw do
   get "contact/index"
 
   get "about_me/index"
+  post "about_me/index"
 
   get "home/index"
 

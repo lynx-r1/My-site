@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   validate :password_non_blank
 
+  has_attached_file :avatar
+
   def password
     @password
   end
