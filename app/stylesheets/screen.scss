@@ -17,7 +17,7 @@ $default-box-shadow-blur: 8px;
 
 $default-border-radius: 32px;
 
-$main_min_height: 900px;
+$main_min_height: 700px;
 $main_width: 800px;
 
 $base_color: #aacfff;
@@ -133,6 +133,8 @@ body {
                                 decoration: none;
                             }
 
+                            outline: none;
+
                             color: $color;
                             border: solid 1px $border_color;
                             background-color: $color2;
@@ -216,6 +218,8 @@ body {
                             decoration: none;
                         }
 
+                        outline: none;
+
                         color: $color;
                         border: solid 1px $border_color;
                         background-color: $color2;
@@ -280,7 +284,6 @@ body {
                         color: $color;
                         font: {
                             size: 20px;
-                            //weight: bold;
                         }
 
                         text: {
@@ -614,7 +617,7 @@ pre.comment_body {
 
     @for $i from 1 through 10 {
         .tag-#{$i} {
-            font-size: 16px + $i * 2;
+            font-size: 16px + $i;
             color: darken($base_color, 30%) - #111 * $i;
         }
     }

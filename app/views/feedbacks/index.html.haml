@@ -12,10 +12,10 @@
       %legend
         Leave a comment.
       .field
-        = f.label :name, "Your name"
+        = f.label :name, "Your name:"
         = f.text_field :name, :size => 78
       .field
-        = f.label :body, "Feedback"
+        = f.label :body, "Comment:"
         = f.text_area :body, :size => "77x2"
       .actions
-        = f.submit "Add feedback"
+        = f.submit "Add comment"
