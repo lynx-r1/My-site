@@ -8,12 +8,32 @@
         - @project.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.text_field :title, :size => "80"
-  .field
-    = f.cktext_area :description, :width => '98%', :height => '600px'
-  .field
-    = f.file_field :image
-  .actions
-    = f.submit 'Save'
-    #project_saved Project saved
+  %fieldset
+    .field
+      = f.label :title, "Title:"
+      = f.text_field :title, :size => "80"
+    .field
+      = f.label :language, "Language:"
+      = f.text_field :language, :size => "80"
+    .field
+      = f.label :site, "Site:"
+      = f.text_field :site, :size => "80"
+    .field
+      = f.label :description, "Description:"
+      %br
+      %br
+      = f.cktext_area :description, :width => '98%', :height => '600px'
+    .field
+      = f.label :image, "Image:"
+      = f.file_field :image
+    .field
+      = f.label :source, "Source:"
+      = f.file_field :source
+    .field
+      = f.label :bin_win32, "Bin win32:"
+      = f.file_field :bin_win32
+    .field
+      = f.label :bin_linux, "Bin linux:"
+      = f.file_field :bin_linux
+    .actions
+      = f.submit 'Save'

@@ -10,8 +10,10 @@
           %li= msg
 
   .field
+    = f.label :title
     = f.text_field :title, :size => "80"
   .field
+    = f.label :content
     = f.cktext_area :content, :toolbar => 'LSite', :width => '98%', :height => '600px'
     = ckeditor_ajax_script
   %h3

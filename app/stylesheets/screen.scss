@@ -408,6 +408,7 @@ fieldset {
     }
 
     .field {
+        margin-bottom: 8px;
         label {
             width: 80px;
             float: left;
@@ -504,7 +505,7 @@ a#new_post {
 }
 
 #projects_box {
-    margin-top: 55px;
+    margin-top: 30px;
     padding: 0px;
     margin-bottom: -14px;
 
@@ -586,7 +587,7 @@ a#new_post {
     }
 
     .actions input {
-        width: 160px;
+        width: 100px;
     }
 }
 
@@ -671,6 +672,7 @@ pre.comment_body {
         @include home_h3_a;
     }
 }
+
 #projects_home {
     @include home_posts(right);
 

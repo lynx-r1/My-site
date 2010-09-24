@@ -40,20 +40,20 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched 
     #                            against the current URI.
     #
-    primary.item :home, 'Home', root_path, :class => 'nav_button'
-    primary.item :blogs, 'Blogs', blogs_index_path, :class => 'nav_button' do |blogs|
+    primary.item :home, 'Домой', root_path, :class => 'nav_button'
+    primary.item :blogs, 'Блоги', blogs_index_path, :class => 'nav_button' do |blogs|
       blogs.item :posttechs, 'IT', post_its_path, :class => 'subnav_button'
-      blogs.item :postothers, 'Notes', post_notes_path, :class => 'subnav_button'
+      blogs.item :postothers, 'Заметки', post_notes_path, :class => 'subnav_button'
     end
-    primary.item :work, 'Work', work_index_path, :class => 'nav_button' do |work|
-      work.item :projects, 'Projects', projects_path, :class => 'subnav_button'
-      work.item :resume, 'Resume', resume_index_path, :class => 'subnav_button'
+    primary.item :work, 'Работа', work_index_path, :class => 'nav_button' do |work|
+      work.item :projects, 'Проекты', projects_path, :class => 'subnav_button'
+      work.item :resume, 'Резюме', resume_index_path, :class => 'subnav_button'
     end
-    primary.item :contact, 'Contacts', contact_index_path, :class => 'nav_button' do |contact|
-      contact.item :address, 'Address', address_index_path, :class => 'subnav_button'
-      contact.item :feedback, 'Feedback', feedbacks_path, :class => 'subnav_button'
+    primary.item :contact, 'Контакты', contact_index_path, :class => 'nav_button' do |contact|
+      contact.item :address, 'Адреса', address_index_path, :class => 'subnav_button'
+      contact.item :feedback, 'Отзывы', feedbacks_path, :class => 'subnav_button'
     end
-    primary.item :about_me, 'About me', about_me_index_path, :class => 'nav_button'
+    primary.item :about_me, 'Обо мне', about_me_index_path, :class => 'nav_button'
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,

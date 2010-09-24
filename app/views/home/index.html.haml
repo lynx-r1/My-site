@@ -1,21 +1,21 @@
 #tags_home
-  %h3= "Tags"
+  %h3= "Метки"
   = raw(join_tags_add_class_count_make_uniq(@blog_tags))
 
 #post_notes_home
-  %h3= link_to "Notes", post_notes_path
+  %h3= link_to "Заметки", post_notes_path
   = render :partial => 'post_note', :collection => @post_notes
   - user_logged do
     %b= link_to 'New post', new_post_note_path
 
 #post_its_home
-  %h3= link_to "IT blog", post_its_path
+  %h3= link_to "IT блог", post_its_path
   = render :partial => 'post_it', :collection => @post_its
   - user_logged do
     %b= link_to 'New post', new_post_it_path
 
 #projects_home
-  %h3= link_to "Projects", projects_path
+  %h3= link_to "Проекты", projects_path
   = render :partial => 'project', :collection => @projects
   - user_logged do
     %b= link_to 'New post', new_project_path

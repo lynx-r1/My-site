@@ -10,12 +10,12 @@
   = form_for Feedback.new, :remote => true do |f|
     %fieldset
       %legend
-        Leave a comment.
+        Оставить отзыв.
       .field
-        = f.label :name, "Your name:"
+        = f.label :name, "Ваше имя:"
         = f.text_field :name, :size => 78
       .field
-        = f.label :body, "Comment:"
+        = f.label :body, "Отзыв:"
         = f.text_area :body, :size => "77x2"
       .actions
-        = f.submit "Add comment"
+        = f.submit "Добавить"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100924094522) do
+ActiveRecord::Schema.define(:version => 20100924153208) do
 
   create_table "about_mes", :force => true do |t|
     t.datetime "created_at"
@@ -95,6 +95,20 @@ ActiveRecord::Schema.define(:version => 20100924094522) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "language"
+    t.string   "source_file_name"
+    t.string   "source_content_type"
+    t.integer  "source_file_size"
+    t.datetime "source_updated_at"
+    t.string   "bin_win32_file_name"
+    t.string   "bin_win32_content_type"
+    t.integer  "bin_win32_file_size"
+    t.datetime "bin_win32_updated_at"
+    t.string   "bin_linux_file_name"
+    t.string   "bin_linux_content_type"
+    t.integer  "bin_linux_file_size"
+    t.datetime "bin_linux_updated_at"
+    t.string   "site"
   end
 
   create_table "sessions", :force => true do |t|
