@@ -6,8 +6,9 @@
     %p
       = raw(@post_note.content)
     %p
-      %b Tags:
-      = raw(join_tags(@post_note.blog_tags))
+      - unless @post_note.blog_tags.blank?
+        %b Метки:
+        = raw(join_tags(@post_note.blog_tags))
     - user_logged do
       = link_to 'Edit', edit_post_note_path(@post_note)
       \|

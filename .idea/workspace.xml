@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67f9efc8-538f-4f3a-a0b1-60826b100a9f" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/system/images/9/original/ossimPlanetPlugin.jpg" afterPath="$PROJECT_DIR$/public/system/images/11/original/ossimPlanetPlugin.jpg" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/sources/9/original/diplom.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/bin_linuxes/9/original/diplom.zip" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/system/images/9/thumb/ossimPlanetPlugin.jpg" afterPath="$PROJECT_DIR$/public/system/images/11/thumb/ossimPlanetPlugin.jpg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/bin_win32s/9/original/diplom.zip" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/system/sources/11/original/diplom.tar.bz2" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/compiled/screen.css" afterPath="$PROJECT_DIR$/public/stylesheets/compiled/screen.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/development.sqlite3" afterPath="$PROJECT_DIR$/db/development.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/post_notes/show.html.haml" afterPath="$PROJECT_DIR$/app/views/post_notes/show.html.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/index.html.haml" afterPath="$PROJECT_DIR$/app/views/projects/index.html.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/system/images/9/medium/ossimPlanetPlugin.jpg" afterPath="$PROJECT_DIR$/public/system/images/11/medium/ossimPlanetPlugin.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/system/images/10/original/multiqml.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/system/images/10/medium/multiqml.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/bin_linuxes/9/original/diplom.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/bin_win32s/9/original/diplom.zip" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/show.html.haml" afterPath="$PROJECT_DIR$/app/views/projects/show.html.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/system/images/10/thumb/multiqml.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/system/sources/10/original/multiqml.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/stylesheets/screen.scss" afterPath="$PROJECT_DIR$/app/stylesheets/screen.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/post_its/show.html.haml" afterPath="$PROJECT_DIR$/app/views/post_its/show.html.haml" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="jsite.iws" />
@@ -41,24 +36,6 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" highlightNonProjectFiles="true" nonProjectFilesColor="ffffe4" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_form_search.html.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/post_its/_form_search.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="21" selection-start="94" selection-end="94" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_form_search.html.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/projects/_form_search.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="21" selection-start="94" selection-end="94" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_form.html.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/projects/_form.html.haml">
           <provider selected="true" editor-type-id="text-editor">
@@ -104,10 +81,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="screen.scss" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="screen.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/stylesheets/screen.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="524" column="26" selection-start="13749" selection-end="13749" vertical-scroll-proportion="0.024549918">
+            <state line="524" column="26" selection-start="13749" selection-end="13749" vertical-scroll-proportion="-0.5769231">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/post_its/show.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="6" selection-start="159" selection-end="159" vertical-scroll-proportion="-4.6153846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.haml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/post_notes/show.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="8" selection-start="228" selection-end="228" vertical-scroll-proportion="0.24038461">
               <folding />
             </state>
           </provider>
@@ -165,10 +160,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/tags_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/about_me/index.html.haml" />
         <option value="$PROJECT_DIR$/public/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/app/views/post_notes/show.html.haml" />
         <option value="$PROJECT_DIR$/app/views/post_notes/_form.html.haml" />
         <option value="$PROJECT_DIR$/app/views/post_notes/index.html.haml" />
         <option value="$PROJECT_DIR$/app/controllers/projects_controller.rb" />
@@ -181,6 +174,8 @@
         <option value="$PROJECT_DIR$/app/views/projects/show.html.haml" />
         <option value="$PROJECT_DIR$/app/views/projects/index.html.haml" />
         <option value="$PROJECT_DIR$/app/stylesheets/screen.scss" />
+        <option value="$PROJECT_DIR$/app/views/post_its/show.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/post_notes/show.html.haml" />
       </list>
     </option>
   </component>
@@ -342,6 +337,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="projects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="post_notes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="post_its" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -769,16 +808,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/post_notes/edit.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/post_notes/show.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/post_notes/index.html.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="0" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" />
@@ -850,7 +879,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/stylesheets/screen.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="524" column="26" selection-start="13749" selection-end="13749" vertical-scroll-proportion="0.024549918">
+        <state line="524" column="26" selection-start="13749" selection-end="13749" vertical-scroll-proportion="-0.5769231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/post_its/show.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="6" selection-start="159" selection-end="159" vertical-scroll-proportion="-4.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/post_notes/show.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="8" selection-start="228" selection-end="228" vertical-scroll-proportion="0.24038461">
           <folding />
         </state>
       </provider>
