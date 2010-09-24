@@ -1,0 +1,18 @@
+- user_logged do
+  = link_to 'New post', new_post_note_path, :id => "new_post"
+
+#posts_search
+  = render :partial => "form_search"
+
+#posts_box
+  - @post_notes.reverse_each do |post|
+    .posts_entry
+      .date= post.created_at.localtime.ctime
+      %h3= post.title
+      = truncate_html(post.content, :length => 400)
+      = link_to 'Read more...', post
+      - user_logged do
+        %br
+        = link_to 'Edit', edit_post_note_path(post)
+        \|
+        = link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete

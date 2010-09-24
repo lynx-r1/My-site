@@ -1,0 +1,20 @@
+= javascript_include_tag :ckeditor
+- @post_note.blog_tags.build
+
+= form_for @post_note do |f|
+  -if @post_note.errors.any?
+    #errorExplanation
+      %h3= "#{pluralize(@post_note.errors.count, "error")} prohibited this post_note from being saved:"
+      %ul
+        - @post_note.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.text_field :title, :size => "80"
+  .field
+    = f.cktext_area :content, :toolbar => 'LSite', :width => '98%', :height => '600px'
+    = ckeditor_ajax_script
+  %h3
+    = render :partial => 'tags/form', :locals => {:form => f, :tags => :blog_tags}
+  .actions
+    = f.submit 'Save'

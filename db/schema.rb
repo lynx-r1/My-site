@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100922115505) do
+ActiveRecord::Schema.define(:version => 20100924094522) do
 
   create_table "about_mes", :force => true do |t|
     t.datetime "created_at"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20100922115505) do
   create_table "blog_tags", :force => true do |t|
     t.string   "name"
     t.integer  "post_it_id"
-    t.integer  "post_event_id"
+    t.integer  "post_note_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -62,6 +62,13 @@ ActiveRecord::Schema.define(:version => 20100922115505) do
     t.datetime "updated_at"
     t.string   "title"
     t.text     "content"
+  end
+
+  create_table "post_notes", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "post_others", :force => true do |t|

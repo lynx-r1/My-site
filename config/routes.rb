@@ -1,5 +1,5 @@
 LSite::Application.routes.draw do
-  get "tags/index"
+  resources :post_notes
 
   resources :feedbacks
 
@@ -10,6 +10,8 @@ LSite::Application.routes.draw do
   resources :users
 
   resources :projects
+
+  get "tags/index"
 
   get "blogs/index"
 

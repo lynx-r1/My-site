@@ -2,7 +2,8 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.xml
   def index
-    @projects = Project.all
+    @projects = Project.title_like_all(params[:search].to_s.split)
+    @projects |= Project.description_like_all(params[:search].to_s.split)
 
     session[:work_path] = request.fullpath
     respond_to do |format|

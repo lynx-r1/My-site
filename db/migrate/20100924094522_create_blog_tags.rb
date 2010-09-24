@@ -3,7 +3,7 @@ class CreateBlogTags < ActiveRecord::Migration
     create_table :blog_tags do |t|
       t.string :name
       t.references :post_it
-      t.references :post_event
+      t.references :post_note
 
       t.timestamps
     end

@@ -3,9 +3,9 @@
 one:
   name: MyString
   post_it: 
-  post_event: 
+  post_note: 
 
 two:
   name: MyString
   post_it: 
-  post_event: 
+  post_note: 

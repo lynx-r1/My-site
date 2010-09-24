@@ -1,7 +1,8 @@
 - user_logged do
-  = link_to 'New post', new_post_it_path
-  %br
-  %br
+  = link_to 'New post', new_post_it_path, :id => "new_post"
+
+#posts_search
+  = render :partial => "form_search"
 
 #posts_box
   - @post_its.reverse_each do |post|
@@ -11,7 +12,7 @@
       = truncate_html(post.content, :length => 400)
       = link_to 'Read more...', post
       - user_logged do
-        %br/
+        %br
         = link_to 'Edit', edit_post_it_path(post)
         \|
         = link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete

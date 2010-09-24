@@ -25,6 +25,8 @@ gem 'ckeditor', '3.4.1.pre'
 
 gem 'nifty-generators'
 
+#gem 'searchlogic', :git => 'http://github.com/railsdog/searchlogic.git'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

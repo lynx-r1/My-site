@@ -247,6 +247,7 @@ body {
 
             min-height: $main_min_height - 190px;
             padding: 16px;
+            padding-top: 0;
             border: solid 1px darken($body_container_color, 10%);
 
             background-color: $body_container_color;
@@ -330,6 +331,26 @@ body {
             @include box-shadow(rgba(0, 0, 0, 0.5), 0, 1px, 12px);
         }
     }
+}
+
+#notice {
+    border: solid 1px #8b0000;
+    color: red;
+    padding: 12px;
+    margin-top: 16px;
+
+    @include border-radius;
+    @include box-shadow(rgba(0, 0, 0, 0.5), 0, 1px, 8px);
+}
+
+a#new_post {
+    float: left;
+    margin-top: 20px;
+}
+
+#posts_search {
+    float: right;
+    margin-top: 0px;
 }
 
 $transparent_white: rgba(255, 255, 255, 0.1);
@@ -424,6 +445,7 @@ h3 {
 }
 
 #admin_login {
+    margin-top: 16px;
     border: solid 1px darken($base_color, 10%);
     background-color: lighten($base_color, 10%);
 
@@ -463,6 +485,7 @@ h3 {
 }
 
 #posts_box {
+    margin-top: 55px;
     padding: 0px;
     margin-bottom: -14px;
 
@@ -483,6 +506,7 @@ h3 {
 }
 
 #projects_box {
+    margin-top: 55px;
     padding: 0px;
     margin-bottom: -14px;
 
@@ -638,10 +662,10 @@ pre.comment_body {
     }
 }
 
-#post_events_home {
+#post_notes_home {
     @include home_posts(right);
 
-    .post_event_home {
+    .post_note_home {
         @include home_post;
     }
 

@@ -4,7 +4,7 @@
 = form_for @post_it do |f|
   -if @post_it.errors.any?
     #errorExplanation
-      %h2= "#{pluralize(@post_it.errors.count, "error")} prohibited this post_it from being saved:"
+      %h3= "#{pluralize(@post_it.errors.count, "error")} prohibited this post_it from being saved:"
       %ul
         - @post_it.errors.full_messages.each do |msg|
           %li= msg

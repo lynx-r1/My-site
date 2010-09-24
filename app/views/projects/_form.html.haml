@@ -3,7 +3,7 @@
 = form_for @project, :html => { :multipart => true } do |f|
   -if @project.errors.any?
     #errorExplanation
-      %h2= "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
+      %h3= "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
       %ul
         - @project.errors.full_messages.each do |msg|
           %li= msg

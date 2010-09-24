@@ -2,9 +2,8 @@ class PostEventsController < ApplicationController
   # GET /post_events
   # GET /post_events.xml
   def index
-    @post_events = PostEvent.all
-
-    logger.info PostEvent.table_name
+    @post_events = PostEvent.title_like_all(params[:search].to_s.split)
+    @post_events |= PostEvent.content_like_all(params[:search].to_s.split)
 
     session[:blogs_path] = request.fullpath
     respond_to do |format|

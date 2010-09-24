@@ -2,8 +2,8 @@ class PostItsController < ApplicationController
   # GET /post_its
   # GET /post_its.xml
   def index
-    @post_its = PostIt.all
-    logger.info PostIt.table_name
+    @post_its = PostIt.title_like_all(params[:search].to_s.split)
+    @post_its |= PostIt.content_like_all(params[:search].to_s.split)
 
     session[:blogs_path] = request.fullpath
     respond_to do |format|
