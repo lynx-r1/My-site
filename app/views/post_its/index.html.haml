@@ -2,7 +2,7 @@
   = link_to 'New post', new_post_it_path, :id => "new_post"
 
 #posts_search
-  = render :partial => "form_search"
+  = render "form_search"
 
 #posts_box
   - @post_its.reverse_each do |post|

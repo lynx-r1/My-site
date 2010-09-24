@@ -247,7 +247,6 @@ body {
 
             min-height: $main_min_height - 190px;
             padding: 16px;
-            padding-top: 0;
             border: solid 1px darken($body_container_color, 10%);
 
             background-color: $body_container_color;
@@ -341,16 +340,6 @@ body {
 
     @include border-radius;
     @include box-shadow(rgba(0, 0, 0, 0.5), 0, 1px, 8px);
-}
-
-a#new_post {
-    float: left;
-    margin-top: 20px;
-}
-
-#posts_search {
-    float: right;
-    margin-top: 0px;
 }
 
 $transparent_white: rgba(255, 255, 255, 0.1);
@@ -484,8 +473,17 @@ h3 {
     margin-left: 8px;
 }
 
+a#new_post {
+    float: left;
+}
+
+#posts_search {
+    float: right;
+    margin-top: -20px;
+}
+
 #posts_box {
-    margin-top: 55px;
+    margin-top: 30px;
     padding: 0px;
     margin-bottom: -14px;
 

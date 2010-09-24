@@ -2,7 +2,7 @@
   = link_to 'New post', new_post_note_path, :id => "new_post"
 
 #posts_search
-  = render :partial => "form_search"
+  = render "form_search"
 
 #posts_box
   - @post_notes.reverse_each do |post|
