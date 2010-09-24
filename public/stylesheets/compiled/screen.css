@@ -921,7 +921,7 @@ a#new_post {
 }
 /* line 530, ../../../app/stylesheets/screen.scss */
 #projects_box .projects_entry_show {
-  min-height: 350px;
+  min-height: 330px;
   border: solid 1px #77b2ff;
   background-color: #ddecff;
   padding: 12px;

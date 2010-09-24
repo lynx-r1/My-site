@@ -14,8 +14,8 @@
       %p
         Язык:
         = project.language
-      %p
-        - unless project.site.blank?
+      - unless project.site.blank?
+        %p
           Сайт:
           = link_to project.site.to_s.gsub(/http[s]?:\/\//, "")
       = truncate_html(project.description, :length => 400)
