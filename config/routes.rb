@@ -3,8 +3,6 @@ LSite::Application.routes.draw do
 
   resources :feedbacks
 
-  resources :post_events
-
   resources :post_its
 
   resources :users
