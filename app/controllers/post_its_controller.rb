@@ -4,6 +4,7 @@ class PostItsController < ApplicationController
   def index
     @post_its = PostIt.title_like_all(params[:search].to_s.split)
     @post_its |= PostIt.content_like_all(params[:search].to_s.split)
+    @post_its.reverse!
 
     session[:blogs_path] = request.fullpath
     respond_to do |format|

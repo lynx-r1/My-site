@@ -1,0 +1,19 @@
+.projects_entry
+  .date= project.created_at.localtime.ctime
+  %h3= project.title
+  .project_img
+    = image_tag project.image.url(:thumb)
+  %p
+    Язык:
+    = project.language
+  - unless project.site.blank?
+    %p
+      Сайт:
+      = link_to project.site.to_s.gsub(/http[s]?:\/\//, "")
+  = truncate_html(project.description, :length => 400)
+  = link_to 'Read more...', project
+  - user_logged do
+    %br
+    = link_to 'Edit', edit_project_path(project)
+    \|
+    = link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete

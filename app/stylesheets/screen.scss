@@ -56,7 +56,7 @@ body {
 
     margin: 12px;
     background-color: $color1;
-    @include linear-gradient(color-stops($color1, $color2 50%, $color3), left);
+    //@include linear-gradient(color-stops($color1, $color2 50%, $color3), left);
 
     #main_container {
         width: $main_width;
@@ -483,8 +483,8 @@ a#new_post {
     margin-top: -20px;
 }
 
-#posts_box {
-    margin-top: 30px;
+@mixin posts_box
+{
     padding: 0px;
     margin-bottom: -14px;
 
@@ -502,6 +502,16 @@ a#new_post {
     .posts_entry_show {
         @include styled_post;
     }
+}
+
+#posts_box_index
+{
+    margin-top: 30px;
+    @include posts_box;
+}
+
+#posts_box_show {
+    @include posts_box;
 }
 
 #projects_box {

@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
     @projects = Project.title_like_all(params[:search].to_s.split)
     @projects |= Project.description_like_all(params[:search].to_s.split)
     @projects |= Project.language_like_all(params[:search].to_s.split)
+    @projects.reverse!
 
     session[:work_path] = request.fullpath
     respond_to do |format|

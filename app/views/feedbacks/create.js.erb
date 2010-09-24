@@ -1,5 +1,5 @@
-/* Add the new feedback to the bottom of the feedbacks list */
 $("#feedbacks").append("<%= escape_javascript(render(@feedback)) %>");
+/* Add the new feedback to the bottom of the feedbacks list */
 
 /* Highlight the new feedback */
 $("#feedback_<%= @feedback.id %>").show("scale", {}, 1000);

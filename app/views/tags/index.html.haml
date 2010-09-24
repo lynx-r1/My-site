@@ -1,4 +1,2 @@
-- @posts.each do |p|
-  .tag_post
-    %h3= p.title
-    %p= raw(p.content)
+#posts_box_show
+  = render :partial => "post", :collection => @posts

@@ -4,6 +4,7 @@ class PostNotesController < ApplicationController
   def index
     @post_notes = PostNote.title_like_all(params[:search].to_s.split)
     @post_notes |= PostNote.content_like_all(params[:search].to_s.split)
+    @post_notes.reverse!
 
     session[:blogs_path] = request.fullpath
     respond_to do |format|
