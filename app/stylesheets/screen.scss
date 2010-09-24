@@ -459,6 +459,7 @@ h3 {
 .date {
     float: right;
     text-decoration: underline;
+    margin-left: 8px;
 }
 
 #posts_box {
@@ -503,6 +504,8 @@ h3 {
     }
 
     .projects_entry_show {
+        min-height: 350px;
+
         @include styled_post;
 
         .project_img {
@@ -668,4 +671,16 @@ pre.comment_body {
     text-align: justify;
     margin: 0;
     padding: 0;
+}
+
+.resume_col1 {
+    color: #555;
+
+    .resume_col2 {
+        color: black;
+    }
+
+    .resume_com {
+        color: gray;
+    }
 }

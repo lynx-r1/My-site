@@ -42,6 +42,12 @@
     </requirement>
     <requirement>
       <requirement>
+        <dependency name="nifty-generators" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="paperclip" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
       <source from="Gemfile" />
