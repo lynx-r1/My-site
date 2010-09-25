@@ -41,19 +41,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="screen.scss" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="screen.scss" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/stylesheets/screen.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="269" column="28" selection-start="8449" selection-end="8449" vertical-scroll-proportion="0.0">
+            <state line="312" column="44" selection-start="9629" selection-end="9629" vertical-scroll-proportion="0.40031397">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="7" selection-start="1949" selection-end="1949" vertical-scroll-proportion="0.81161696">
+            <state line="46" column="7" selection-start="1949" selection-end="1949" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -170,8 +170,8 @@
         <option value="$PROJECT_DIR$/app/views/tags/index.html.haml" />
         <option value="$PROJECT_DIR$/config/navigation.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
-        <option value="$PROJECT_DIR$/app/stylesheets/screen.scss" />
         <option value="$PROJECT_DIR$/public/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/app/stylesheets/screen.scss" />
       </list>
     </option>
   </component>
@@ -860,16 +860,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/stylesheets/screen.scss">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="269" column="28" selection-start="8449" selection-end="8449" vertical-scroll-proportion="0.0">
+        <state line="46" column="7" selection-start="1949" selection-end="1949" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
+    <entry file="file://$PROJECT_DIR$/app/stylesheets/screen.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="7" selection-start="1949" selection-end="1949" vertical-scroll-proportion="0.81161696">
+        <state line="312" column="44" selection-start="9629" selection-end="9629" vertical-scroll-proportion="0.40031397">
           <folding />
         </state>
       </provider>
