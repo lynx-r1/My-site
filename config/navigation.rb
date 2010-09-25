@@ -64,7 +64,7 @@ SimpleNavigation::Configuration.run do |navigation|
     # you can also specify a css id or class to attach to this particular level
     # works for all levels of the menu
     # primary.dom_id = 'menu-id'
-    # primary.dom_class = 'nav_bar'
+    primary.dom_class = 'navigation'
     
     # You can turn off auto highlighting for a specific level
     # primary.auto_highlight = false

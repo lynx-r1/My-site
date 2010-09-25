@@ -29,8 +29,6 @@ $(document).ready(function() {
         $("#post_saved").show("slow").delay(2000).hide("slow");
     });
 
-    //$("body").css("background-color", "red");
-
     var greetColor = $("#nav_bar ul li a").css("color");
     $("li.nav_button.selected#home").each(function() {
         $("#subnav_top").html("<div style='text-align: center; line-height: 1.5em; font-size: 1em; " +
@@ -40,5 +38,11 @@ $(document).ready(function() {
     $("li.nav_button.selected#about_me").each(function() {
         $("#subnav_top").html("<div style='text-align: center; line-height: 1.5em; font-size: 1em; " +
                 "font-weight: bold; color:" + greetColor + ";'>Привет!</div>");
+    });
+
+    $("#subnav_bottom ul.navigation li.nav_button").hover(function() {
+        $(this).find("ul").hide().show("slow");
+    }, function() {
+        $(this).find("ul").hide("slow");
     });
 });

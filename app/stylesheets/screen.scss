@@ -261,25 +261,36 @@ body {
             @include border-bottom-radius;
             @include linear-gradient(color-stops($background_color, lighten($background_color, 10%), $background_color), left);
 
-            ul {
-                list-style: none;
+            ul.navigation {
+                padding: 0;
+                margin: 0;
 
                 float: right;
                 position: relative;
                 left: -50%;
 
-                margin: 0;
+                ul {
+                    bottom: 100%;
 
-                li {
+                    position: absolute;
+                    left: 0px;
+                    display: none;
+                    padding: 0;
+                }
+
+                li.nav_button {
+                    list-style: none;
                     position: relative;
-                    left: 50%;
                     float: left;
 
                     padding: 0px 8px 0px 8px;
 
+                    position: relative;
+                    left: 50%;
+                    float: left;
+
                     a {
                         $color: darken($base_color, 50%) + $addon_link_color;
-                        float: left;
 
                         color: $color;
                         font: {
@@ -296,6 +307,26 @@ body {
                         &.selected {
                             color: darken($color, 10%);
                             font-weight: bold;
+                        }
+                    }
+
+                    &:hover ul {
+                        display: inline;
+                    }
+
+                    ul {
+                        margin: 0;
+                        margin-left: 8px;
+
+                        padding: 4px;
+                        background-color: $base_color;
+
+                        @include border-radius(8px);
+                        @include box-shadow;
+                        @include text_shadow;
+
+                        li.subnav_button a {
+                            font-size: 18px;
                         }
                     }
                 }

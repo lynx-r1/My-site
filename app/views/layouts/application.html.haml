@@ -18,7 +18,7 @@
         - if flash[:notice]
           #notice= flash[:notice]
         = yield
-      #subnav_bottom= render_navigation :level => 1
+      #subnav_bottom= render_navigation :level => :all, :expand_all => true
       #footer
         Разработчик lynx_r
 
