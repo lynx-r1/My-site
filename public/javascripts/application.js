@@ -2,7 +2,7 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 var fadeToUp = 1;
-var fadeToDown = 0.7;
+var fadeToDown = 0.8;
 var fadeDuration = 500;
 
 function fadeDown(obj) {
@@ -13,7 +13,16 @@ function fadeUp(obj) {
     $(obj).stop().fadeTo(fadeDuration, fadeToUp);
 }
 
+function fadeEffect(elem) {
+    $(elem).hover(function() {
+        fadeDown(this);
+    }, function() {
+        fadeUp(this);
+    })
+}
+
 $(document).ready(function() {
+
     // fade effect for navigation
     $("#nav_bar li.nav_button a").not(".selected").hover(function() {
         fadeDown(this);
@@ -28,29 +37,12 @@ $(document).ready(function() {
     });
 
     // fade effect for home page
-    $("#tags_home").hover(function() {
-        fadeDown(this);
-    }, function() {
-        fadeUp(this);
-    });
-
-    $("#post_notes_home").hover(function() {
-        fadeDown(this);
-    }, function() {
-        fadeUp(this);
-    });
-
-    $("#post_its_home").hover(function() {
-        fadeDown(this);
-    }, function() {
-        fadeUp(this);
-    });
-
-    $("#projects_home").hover(function() {
-        fadeDown(this);
-    }, function() {
-        fadeUp(this);
-    });
+    fadeEffect("#tags_home");
+    fadeEffect("#post_notes_home");
+    fadeEffect("#post_its_home");
+    fadeEffect("#projects_home");
+    fadeEffect(".posts_entry");
+    fadeEffect(".projects_entry");
 
     // underline bottom menu items
     $("#subnav_bottom li.nav_button a").not(".selected").hover(function() {
