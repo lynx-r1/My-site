@@ -577,6 +577,14 @@ a#new_post {
             padding-right: 12px;
         }
     }
+
+    .project_col1 {
+        color: #555;
+
+        span.project_col2 {
+            color: black;
+        }
+    }
 }
 
 #projects_box_index {
@@ -657,7 +665,7 @@ pre.comment_body {
     color: darken($base_color, 50%);
 
     padding: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 
     text-align: center;
     a {

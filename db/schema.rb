@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100924153208) do
+ActiveRecord::Schema.define(:version => 20100926132940) do
 
   create_table "about_mes", :force => true do |t|
     t.datetime "created_at"
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(:version => 20100924153208) do
     t.integer  "bin_linux_file_size"
     t.datetime "bin_linux_updated_at"
     t.string   "site"
+    t.string   "framework"
   end
 
   create_table "sessions", :force => true do |t|
