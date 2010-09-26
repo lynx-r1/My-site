@@ -5,4 +5,9 @@ class FeedbackTest < ActiveSupport::TestCase
   test "the truth" do
     assert true
   end
+
+  test "create feedback" do
+    feedback = Feedback.new(:one)
+    assert !feedback.save
+  end
 end

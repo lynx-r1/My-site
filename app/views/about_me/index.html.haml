@@ -1,4 +1,5 @@
-= image_tag @me.avatar.url, :id => 'lynx_r'
+- if @me
+  = image_tag @me.avatar.url, :id => 'lynx_r'
 
 #about_me
   %p

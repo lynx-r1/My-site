@@ -8,12 +8,12 @@ class AdminControllerTest < ActionController::TestCase
 
   test "should get logout" do
     get :logout
-    assert_response :success
+    assert_redirected_to admin_login_path
   end
 
   test "should get index" do
     get :index
-    assert_response :success
+    assert_redirected_to admin_login_path
   end
 
 end

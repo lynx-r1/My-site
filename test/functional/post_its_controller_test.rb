@@ -13,15 +13,17 @@ class PostItsControllerTest < ActionController::TestCase
 
   test "should get new" do
     get :new
-    assert_response :success
+    assert_redirected_to admin_login_path
+    #assert_response :success
   end
 
   test "should create post_it" do
-    assert_difference('PostIt.count') do
+    #assert_difference('PostIt.count') do
       post :create, :post_it => @post_it.attributes
-    end
+    #end
 
-    assert_redirected_to post_it_path(assigns(:post_it))
+    assert_redirected_to admin_login_path
+    #assert_redirected_to post_it_path(assigns(:post_it))
   end
 
   test "should show post_it" do
@@ -31,19 +33,22 @@ class PostItsControllerTest < ActionController::TestCase
 
   test "should get edit" do
     get :edit, :id => @post_it.to_param
-    assert_response :success
+    assert_redirected_to admin_login_path
+    #assert_response :success
   end
 
   test "should update post_it" do
     put :update, :id => @post_it.to_param, :post_it => @post_it.attributes
-    assert_redirected_to post_it_path(assigns(:post_it))
+    assert_redirected_to admin_login_path
+    #assert_redirected_to post_it_path(assigns(:post_it))
   end
 
   test "should destroy post_it" do
-    assert_difference('PostIt.count', -1) do
+    #assert_difference('PostIt.count', -1) do
       delete :destroy, :id => @post_it.to_param
-    end
+    #end
 
-    assert_redirected_to post_its_path
+    assert_redirected_to admin_login_path
+    #assert_redirected_to post_its_path
   end
 end

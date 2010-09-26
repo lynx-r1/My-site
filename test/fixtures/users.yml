@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  hashed_password: MyString
-  salt: MyString
+  name: User1
+  hashed_password: user1
+  salt: salt1
 
 two:
-  name: MyString
-  hashed_password: MyString
-  salt: MyString
+  name: User2
+  hashed_password: user2
+  salt: slat2

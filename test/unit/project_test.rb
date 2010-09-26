@@ -5,4 +5,9 @@ class ProjectTest < ActiveSupport::TestCase
   test "the truth" do
     assert true
   end
+
+  test "create project" do
+    project = Project.new(:one)
+    assert !project.save
+  end
 end

@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  post_it: 
-  post_note: 
+  post_it_id: 1
+  post_note_id: NULL
 
 two:
   name: MyString
-  post_it: 
-  post_note: 
+  post_it_id: NULL
+  post_note_id: 2

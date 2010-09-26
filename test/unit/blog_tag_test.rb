@@ -5,4 +5,9 @@ class BlogTagTest < ActiveSupport::TestCase
   test "the truth" do
     assert true
   end
+
+  test "create tag" do
+    #tag = BlogTag.new(:one)
+    #assert !tag.save
+  end
 end

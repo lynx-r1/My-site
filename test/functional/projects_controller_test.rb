@@ -13,15 +13,17 @@ class ProjectsControllerTest < ActionController::TestCase
 
   test "should get new" do
     get :new
-    assert_response :success
+    #assert_response :success
+    assert_redirected_to admin_login_path
   end
 
   test "should create project" do
-    assert_difference('Project.count') do
+    #assert_difference('Project.count') do
       post :create, :project => @project.attributes
-    end
+    #end
 
-    assert_redirected_to project_path(assigns(:project))
+    assert_redirected_to admin_login_path
+    #assert_redirected_to project_path(assigns(:project))
   end
 
   test "should show project" do
@@ -31,19 +33,22 @@ class ProjectsControllerTest < ActionController::TestCase
 
   test "should get edit" do
     get :edit, :id => @project.to_param
-    assert_response :success
+    assert_redirected_to admin_login_path
+    #assert_response :success
   end
 
   test "should update project" do
     put :update, :id => @project.to_param, :project => @project.attributes
-    assert_redirected_to project_path(assigns(:project))
+    assert_redirected_to admin_login_path
+    #assert_redirected_to project_path(assigns(:project))
   end
 
   test "should destroy project" do
-    assert_difference('Project.count', -1) do
+    #assert_difference('Project.count', -1) do
       delete :destroy, :id => @project.to_param
-    end
+    #end
 
-    assert_redirected_to projects_path
+    assert_redirected_to admin_login_path
+    #assert_redirected_to projects_path
   end
 end

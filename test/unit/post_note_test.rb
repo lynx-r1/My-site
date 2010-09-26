@@ -5,4 +5,9 @@ class PostNoteTest < ActiveSupport::TestCase
   test "the truth" do
     assert true
   end
+
+  test "create note" do
+    note = PostNote.new(:one)
+    assert !note.save
+  end
 end
