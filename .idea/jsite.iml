@@ -42,12 +42,6 @@
     </requirement>
     <requirement>
       <requirement>
-        <dependency name="nifty-generators" version="0" bound="GREATER_OR_EQUAL" git="false" />
-      </requirement>
-      <source from="Gemfile" />
-    </requirement>
-    <requirement>
-      <requirement>
         <dependency name="paperclip" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
       <source from="Gemfile" />
@@ -82,6 +76,12 @@
       </requirement>
       <source from="Gemfile" />
     </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="yandex_metrika" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
@@ -112,6 +112,7 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] nifty-generators (v0.4.0, /usr/local/lib/ruby/gems/1.9.1/gems/nifty-generators-0.4.0)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] nifty-generators (v0.4.1, /usr/local/lib/ruby/gems/1.9.1/gems/nifty-generators-0.4.1)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] jquery-rails (v0.1.3, /usr/local/lib/ruby/gems/1.9.1/gems/jquery-rails-0.1.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] yandex_metrika (v0.0.1, /usr/local/lib/ruby/gems/1.9.1/gems/yandex_metrika-0.0.1)" level="application" />
   </component>
 </module>
 

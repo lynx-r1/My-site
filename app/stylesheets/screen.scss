@@ -56,7 +56,7 @@ body {
 
     margin: 12px;
     background-color: $color1;
-    //@include linear-gradient(color-stops($color1, $color2 50%, $color3), left);
+    @include linear-gradient(color-stops($color1, $color2 50%, $color3), left);
 
     #main_container {
         width: $main_width;
@@ -368,7 +368,7 @@ body {
     border: solid 1px #8b0000;
     color: red;
     padding: 12px;
-    margin-top: 16px;
+    margin-bottom: 16px;
 
     @include border-radius;
     @include box-shadow(rgba(0, 0, 0, 0.5), 0, 1px, 8px);
@@ -546,8 +546,7 @@ a#new_post {
     @include posts_box;
 }
 
-#projects_box {
-    margin-top: 30px;
+@mixin projects_box {
     padding: 0px;
     margin-bottom: -14px;
 
@@ -569,7 +568,7 @@ a#new_post {
     }
 
     .projects_entry_show {
-        min-height: 330px;
+        overflow: hidden;
 
         @include styled_post;
 
@@ -578,6 +577,15 @@ a#new_post {
             padding-right: 12px;
         }
     }
+}
+
+#projects_box_index {
+    margin-top: 30px;
+    @include projects_box;
+}
+
+#projects_box_show {
+    @include projects_box;
 }
 
 #feedbacks {
@@ -644,26 +652,26 @@ pre.comment_body {
     $color2: $base_color;
     $color3: lighten($base_color, 10%);
 
-    float: $float;
-
     border: solid 1px darken($base_color, 10%);
     background-color: lighten($base_color, 10%);
     color: darken($base_color, 50%);
 
     padding: 12px;
-    width: 45%;
     margin-bottom: 20px;
 
     text-align: center;
-    a { text-decoration: none; }
+    a {
+        text-decoration: none;
+        text-width: 400px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 
     @include border-radius;
     @include box-shadow;
     @include linear-gradient(color-stops($color1 30px, $color2 60px, $color3));
-
-    a:hover {
-        text-decoration: underline;
-    }
 }
 
 @mixin home_post {
@@ -683,6 +691,13 @@ pre.comment_body {
 #tags_home {
     @include home_posts(left);
 
+    hr {
+        border: solid 2px darken($base_color, 20%);
+
+        @include border-radius;
+        @include box-shadow($default-box-shadow-color, 0, 1px, 6px);
+    }
+
     @for $i from 1 through 10 {
         .tag-#{$i} {
             font-size: 16px + $i;
@@ -691,8 +706,24 @@ pre.comment_body {
     }
 }
 
+ul#post_blogs {
+    margin: 0;
+    padding: 0;
+    float: right;
+
+    width: 49%;
+}
+
+ul#tags_and_projects {
+    margin: 0;
+    padding: 0;
+    float: left;
+
+    width: 49%;
+}
+
 #post_its_home {
-    @include home_posts(left);
+    @include home_posts(right);
 
     .post_it_home {
         @include home_post;
@@ -716,7 +747,7 @@ pre.comment_body {
 }
 
 #projects_home {
-    @include home_posts(right);
+    @include home_posts(left);
 
     .project_home {
         @include home_post;

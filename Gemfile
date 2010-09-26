@@ -23,7 +23,7 @@ gem 'ckeditor', '3.4.1.pre'
 
 #gem 'truncate_html'
 
-gem 'nifty-generators'
+gem 'yandex_metrika'
 
 #gem 'searchlogic', :git => 'http://github.com/railsdog/searchlogic.git'
 
