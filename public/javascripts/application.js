@@ -74,4 +74,15 @@ $(document).ready(function() {
     }, function() {
         $(this).find("ul").hide("slow");
     });
+
+    window.onload = function () {
+        var map = new YMaps.Map(document.getElementById("ymapsID"));
+        map.setCenter(new YMaps.GeoPoint(35.778928,52.446737, 35.778928,52.446736), 12);
+        map.enableScrollZoom(true);
+        map.addControl(new YMaps.Zoom());
+        map.addControl(new YMaps.ToolBar());
+        map.addControl(new YMaps.MiniMap());
+        map.addControl(new YMaps.ScaleLine());
+        map.addControl(new YMaps.TypeControl());
+    };
 });
