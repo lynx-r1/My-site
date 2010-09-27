@@ -8,4 +8,11 @@ class TagsController < ApplicationController
     end
   end
 
+  protected
+
+  def authorize
+    unless params[:action] == "index"
+      super
+    end
+  end
 end

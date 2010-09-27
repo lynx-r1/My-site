@@ -5,12 +5,12 @@ class ApplicationController < ActionController::Base
   before_filter :counter
 
   def self.yandex_metrika
-    m = 1515351
+    m = 1521043
     m
   end
 
   def self.yandex_maps_key
-    k = 'ANV9n0wBAAAA63nFPQMAkeJWGr97G_CTpeK11tuV8PtwNZMAAAAAAAAAAAAnPHZZPbk5DlopH6ueTFExZ7BUbg=='
+    k = 'APfGoEwBAAAAj3dmLAIALRItFMPt1jRpNNU0uzWNVoGG61sAAAAAAAAAAACCjt2Kqd32O02PZbszuzNmGiZWnA=='
     k
   end
 
