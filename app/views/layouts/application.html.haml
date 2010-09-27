@@ -24,6 +24,11 @@
       #footer
         Разработчик lynx_r
 
+    /Yandex.Metrika
     .yandex_metrika
       :javascript
-        try { var yaCounter = new Ya.Metrika(#{ApplicationController.yandex_metrika}); } catch(e){}
+        try { var yaCounter#{ApplicationController.yandex_metrika} = new Ya.Metrika(#{ApplicationController.yandex_metrika}); } catch(e){}
+    %noscript
+      .yandex_img
+        = image_tag "//mc.yandex.ru/watch/1521043", :alt => ""
+    //Yandex.Metrika
