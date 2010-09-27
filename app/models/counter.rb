@@ -3,7 +3,7 @@ class Counter < ActiveRecord::Base
     c = Counter.find_by_path(path)
     c = Counter.create(:path => path, :count => 0) if c.nil?
     c.count += 1
-    #c.save
+    c.save
   end
 
   def self.stat
