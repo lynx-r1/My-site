@@ -1461,3 +1461,17 @@ ul#tags_and_projects {
 .resume_col1 .resume_com {
   color: gray;
 }
+
+/* line 795, ../../../app/stylesheets/screen.scss */
+#statistics table {
+  border-collapse: collapse;
+}
+/* line 798, ../../../app/stylesheets/screen.scss */
+#statistics table tr td {
+  border: solid 1px;
+  padding: 1px 4px 2px 4px;
+}
+/* line 801, ../../../app/stylesheets/screen.scss */
+#statistics table tr td span.page {
+  color: #555;
+}
