@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100927071306) do
+ActiveRecord::Schema.define(:version => 20100927180651) do
 
   create_table "about_mes", :force => true do |t|
     t.datetime "created_at"
