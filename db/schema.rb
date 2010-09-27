@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100926132940) do
+ActiveRecord::Schema.define(:version => 20100927071306) do
 
   create_table "about_mes", :force => true do |t|
     t.datetime "created_at"
@@ -42,6 +42,13 @@ ActiveRecord::Schema.define(:version => 20100926132940) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "fk_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_assetable_type"
   add_index "ckeditor_assets", ["user_id"], :name => "fk_user"
+
+  create_table "counters", :force => true do |t|
+    t.string   "path"
+    t.integer  "count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "feedbacks", :force => true do |t|
     t.string   "name"

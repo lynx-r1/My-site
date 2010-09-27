@@ -789,3 +789,18 @@ ul#tags_and_projects {
         color: gray;
     }
 }
+
+#statistics {
+    table {
+        border-collapse: collapse;
+        tr {
+            td {
+                border: solid 1px;
+                padding: 1px 4px 2px 4px;
+                span.page {
+                    color: #555;
+                }
+            }
+        }
+    }
+}

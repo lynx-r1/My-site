@@ -1,2 +1,12 @@
-%h1 Admin#index
-%p Find me in app/views/admin/index.html.haml
+%h3 Statistic
+
+#statistics
+  %table
+    - Counter.stat.each do |k, v|
+      %tr
+        %td
+          The page
+          %span.page= k
+          was visited
+        %td
+          = pluralize(v, "time")
