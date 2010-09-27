@@ -1,51 +1,6 @@
-%h3 Попрядухин Алексей Леонидович
+= link_to_function("En", "$('#resume_index').html(\"#{render('resume-en').gsub(/\n/, '')}\")", |
+  :class => 'lang_link', :id => 'en_link');
+= link_to_function("Ru", "$('#resume_index').html(\"#{render('resume').gsub(/\n/, '')}\")", |
+  :class => 'lang_link', :id => 'ru_link')
 
-%h4 Программист
-
-%h4 Личная информация
-.resume_col1
-  Уровень образования:
-  %span.resume_col2 Высшее.
-.resume_col1
-  Дата рождения:
-  %span.resume_col2 16 декабря 1986 г.
-.resume_col1
-  Семейное положение:
-  %span.resume_col2 Не женат, детей нет.
-
-%h4 Опыт работы
-.resume_col1
-  Период работы:
-  %span.resume_col2 С ноября 2008 по май 2010 г.
-.resume_col1
-  Должность:
-  %span.resume_col2 Программист (частичная занятость).
-.resume_col1
-  Обазанности:
-  %span.resume_col2 Разработка модулей для Quantum GIS.
-
-%h4 Образование
-.resume_col1
-  Учебное заведение:
-  %span.resume_col2 Орловский Государственный Технический Университет, г. Орел.
-.resume_col1
-  Дата окончания:
-  %span.resume_col2 Октябрь 2009 г.
-.resume_col1
-  Форма обучения:
-  %span.resume_col2 Дневная/Очная.
-
-%h4 Иностранные языки и компьютерные навыки
-.resume_col1
-  Английский язык:
-  %span.resume_col2 Технический.
-.resume_col1
-  Компьютерные навыки и знания:
-  %span.resume_col2
-    C/C++, Python, Ruby, Bash,
-    Qt, SQL, Ruby on Rails, jQuery, CSS, HTML,
-    GNU/Linux на уровне системного администратора,
-    опыт работы с системами контроля версий (Subversion, Git).
-
-%h4 Дополнительная информация
-.resume_col2 Вредных привычек нет.
+#resume_index= render 'resume'

@@ -56,7 +56,7 @@ body {
 
     margin: 12px;
     background-color: $color1;
-    @include linear-gradient(color-stops($color1, $color2 50%, $color3), left);
+    //@include linear-gradient(color-stops($color1, $color2 50%, $color3), left);
 
     #main_container {
         width: $main_width;
@@ -803,4 +803,18 @@ ul#tags_and_projects {
             }
         }
     }
+}
+
+.lang_link {
+    float: right;
+    margin-left: 4px;
+}
+
+.yandex_metrika {
+    display: none;
+}
+
+#ymapsID {
+    width: 400px;
+    height: 200px;
 }
