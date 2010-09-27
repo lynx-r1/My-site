@@ -11,14 +11,14 @@
 @import "default_html4";
 
 $default-box-shadow-color: #333333;
-$default-box-shadow-h-offset: 0.0em;
-$default-box-shadow-v-offset: 0.0625em;
-$default-box-shadow-blur: 0.5em;
+$default-box-shadow-h-offset: 0px;
+$default-box-shadow-v-offset: 1px;
+$default-box-shadow-blur: 8px;
 
-$default-border-radius: 2.0em;
+$default-border-radius: 32px;
 
-$main_min_height: 43.75em;
-$main_width: 50.0em;
+$main_min_height: 700px;
+$main_width: 800px;
 
 $base_color: #aacfff;
 $addon_link_color: #007;
@@ -28,23 +28,22 @@ $addon_color: #111;
 //$addon_color: #444;
 $body_container_color: #f5f5f5;
 
-$margin_left_body: 1.0em;
+$margin_left_body: 16px;
 
 @mixin text_shadow {
-    text-shadow: 0 0.0625em 0.125em $default-box-shadow-color;
+    text-shadow: 0 1px 2px $default-box-shadow-color;
 }
 
 @mixin subnav_init {
-    $height: 1.5em;
+    $height: 24px;
     $background_color: darken($base_color, 10%) + $addon_color;
     $border_color: darken($background_color, 10%);
 
     background-color: $background_color;
-    border: solid 0.0625em $border_color;
+    border: solid 1px $border_color;
 
     height: $height;
     width: $main_width - $margin_left_body * 2;
-    line-height: $height;
     margin-left: $margin_left_body;
 
     @include box-shadow;
@@ -55,7 +54,7 @@ body {
     $color2: lighten($base_color, 50%);
     $color3: $base_color;
 
-    margin: 0.75em;
+    margin: 12px;
     background-color: $color1;
     @include linear-gradient(color-stops($color1, $color2 50%, $color3), left);
 
@@ -65,23 +64,23 @@ body {
         background-color: $base_color;
 
         margin: 0 auto;
-        padding-bottom: 0.4375em;
+        padding-bottom: 7px;
 
         @include border-radius;
         @include box-shadow;
 
         #top_container {
-            padding-top: 1.0em;
+            padding-top: 16px;
 
             #nav_bar {
-                $height: 2.0em;
+                $height: 32px;
                 $color1: $base_color + $addon_color;
                 $color2: darken($base_color, 20%) + $addon_color;
                 $color3: darken($base_color, 10%) + $addon_color;
                 $border_color: darken($color2, 10%);
 
                 background-color: $color2;
-                border: solid 0.0625em $border_color;
+                border: solid 1px $border_color;
 
                 height: $height;
                 width: $main_width - $margin_left_body * 2;
@@ -92,7 +91,7 @@ body {
                 @include linear-gradient(color-stops($color1, $color2, $color3));
 
                 ul {
-                    $height: 1.6em;
+                    $height: 26px;
 
                     list-style: none;
 
@@ -102,18 +101,17 @@ body {
 
                     height: $height;
 
-                    margin-top: 0.12em;
+                    margin-top: 2px;
 
                     li {
                         position: relative;
                         left: 50%;
                         float: left;
 
-                        padding: 0.0em 0.5em 0.0em 0.5em;
+                        padding: 0px 8px 0px 8px;
 
                         a {
-                            $width: 6.0em;
-                            $height: 1.4em;
+                            $width: 112px;
                             $color: darken($base_color, 50%) + $addon_link_color;
                             $color1: $base_color;
                             $color2: darken($base_color, 20%);
@@ -126,7 +124,7 @@ body {
                             float: left;
 
                             font: {
-                                size: 1.1875em;
+                                size: 19px;
                                 weight: normal;
                             }
 
@@ -138,7 +136,7 @@ body {
                             outline: none;
 
                             color: $color;
-                            border: solid 0.0625em $border_color;
+                            border: solid 1px $border_color;
                             background-color: $color2;
 
                             @include text_shadow;
@@ -153,7 +151,7 @@ body {
 
                                 font-weight: bold;
                                 background-color: $dark_color2;
-                                @include box-shadow($default-box-shadow-color, 0, 0.0625em, 0.25em);
+                                @include box-shadow($default-box-shadow-color, 0, 1px, 4px);
                                 @include linear-gradient(color-stops($dark_color1, $dark_color2, $dark_color3), bottom);
                             }
                         }
@@ -163,24 +161,24 @@ body {
         }
 
         #body_hr hr {
-            border: solid 0.1875em darken($base_color, 20%);
+            border: solid 3px darken($base_color, 20%);
             width: 50%;
-            margin-top: 1.0em;
+            margin-top: 16px;
             @include border-radius;
-            @include box-shadow($default-box-shadow-color, 0, 0.0625em, 0.375em);
+            @include box-shadow($default-box-shadow-color, 0, 1px, 6px);
         }
 
         #subnav_top {
             $background_color: darken($base_color, 10%) + $addon_color;
 
-            margin-top: 1.0em;
+            margin-top: 16px;
 
             @include subnav_init;
             @include border-top-radius;
             @include linear-gradient(color-stops($background_color, lighten($background_color, 10%), $background_color));
 
             ul {
-                $height: 1.25em;
+                $height: 20px;
 
                 list-style: none;
 
@@ -198,10 +196,10 @@ body {
                     left: 50%;
                     float: left;
 
-                    padding: 0.0em 0.4375em 0.0em 0.4375em;
+                    padding: 0px 7px 0px 7px;
 
                     a {
-                        $width: 7.0em;
+                        $width: 112px;
                         $color: darken($base_color, 50%) + $addon_link_color;
                         $color1: $base_color;
                         $color2: darken($base_color, 20%);
@@ -211,7 +209,7 @@ body {
                         float: left;
 
                         font: {
-                            size: 1.125em;
+                            size: 18px;
                             weight: normal;
                         }
 
@@ -223,7 +221,7 @@ body {
                         outline: none;
 
                         color: $color;
-                        border: solid 0.0625em $border_color;
+                        border: solid 1px $border_color;
                         background-color: $color2;
 
                         @include box-shadow;
@@ -245,11 +243,11 @@ body {
         }
 
         #body_container {
-            margin: 0.5em 1.0em 0 1.0em;
+            margin: 8px 16px 0 16px;
 
-            min-height: $main_min_height - 11.875em;
-            padding: 1.0em;
-            border: solid 0.0625em darken($body_container_color, 10%);
+            min-height: $main_min_height - 190px;
+            padding: 16px;
+            border: solid 1px darken($body_container_color, 10%);
 
             background-color: $body_container_color;
             @include box-shadow;
@@ -257,7 +255,7 @@ body {
 
         #subnav_bottom {
             $background_color: darken($base_color, 10%) + $addon_color;
-            margin-top: 0.5em;
+            margin-top: 8px;
 
             @include subnav_init;
             @include border-bottom-radius;
@@ -275,7 +273,7 @@ body {
                     bottom: 100%;
 
                     position: absolute;
-                    left: 0.0em;
+                    left: 0px;
                     display: none;
                     padding: 0;
                 }
@@ -285,7 +283,7 @@ body {
                     position: relative;
                     float: left;
 
-                    padding: 0.0em 0.5em 0.0em 0.5em;
+                    padding: 0px 8px 0px 8px;
 
                     position: relative;
                     left: 50%;
@@ -296,7 +294,7 @@ body {
 
                         color: $color;
                         font: {
-                            size: 1.25em;
+                            size: 20px;
                         }
 
                         text: {
@@ -319,17 +317,17 @@ body {
 
                     ul {
                         margin: 0;
-                        margin-left: 0.5em;
+                        margin-left: 8px;
 
-                        padding: 0.25em;
+                        padding: 4px;
                         background-color: $base_color;
 
-                        @include border-radius(0.5em);
+                        @include border-radius(8px);
                         @include box-shadow;
                         @include text_shadow;
 
                         li.subnav_button a {
-                            font-size: 1.125em;
+                            font-size: 18px;
                         }
                     }
                 }
@@ -337,7 +335,7 @@ body {
         }
 
         #footer {
-            $height: 2.375em;
+            $height: 38px;
             $width: 40%;
             $color1: #aaa;
             $color2: #777;
@@ -346,45 +344,45 @@ body {
 
             width: $width;
             height: $height;
-            border: solid 0.0625em $borderColor;
+            border: solid 1px $borderColor;
             background: $color2;
 
             text-align: center;
             line-height: $height;
-            text-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.5);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 
             margin: 0 auto;
-            margin-top: 0.4375em;
+            margin-top: 7px;
 
-            font-size: 1.0em;
+            font-size: 16px;
             cursor: default;
 
             @include border-radius(1em);
             @include linear-gradient(color-stops($color1, $color2, $color3), top);
-            @include box-shadow(rgba(0, 0, 0, 0.5), 0, 0.0625em, 0.75em);
+            @include box-shadow(rgba(0, 0, 0, 0.5), 0, 1px, 12px);
         }
     }
 }
 
 #notice {
-    border: solid 0.0625em #8b0000;
+    border: solid 1px #8b0000;
     color: red;
-    padding: 0.75em;
-    margin-bottom: 1.0em;
+    padding: 12px;
+    margin-bottom: 16px;
 
     @include border-radius;
-    @include box-shadow(rgba(0, 0, 0, 0.5), 0, 0.0625em, 0.5em);
+    @include box-shadow(rgba(0, 0, 0, 0.5), 0, 1px, 8px);
 }
 
 $transparent_white: rgba(255, 255, 255, 0.1);
 
 .nav_bar_glass_effect {
     float: left;
-    width: $main_width - $margin_left_body * 2 - 0.5em; // see width and height of
-    height: 0.875em; // body #main_container #top_container #nav_bar
+    width: $main_width - $margin_left_body * 2 - 8px; // see width and height of
+    height: 14px; // body #main_container #top_container #nav_bar
 
-    margin-left: 0.25em;
-    margin-bottom: -0.875em;
+    margin-left: 4px;
+    margin-bottom: -14px;
 
     background-color: red;
     background-color: $transparent_white;
@@ -394,11 +392,11 @@ $transparent_white: rgba(255, 255, 255, 0.1);
 
 .nav_button_glass_effect {
     float: left;
-    width: 6.75em; // see width and height of
-    height: 0.75em; // body #main_container #top_container #nav_bar ul li a
+    width: 108px; // see width and height of
+    height: 12px; // body #main_container #top_container #nav_bar ul li a
 
-    margin-left: 0.125em;
-    margin-bottom: -1.0em;
+    margin-left: 2px;
+    margin-bottom: -16px;
 
     background-color: $transparent_white;
 
@@ -407,28 +405,28 @@ $transparent_white: rgba(255, 255, 255, 0.1);
 
 .subnav_button_glass_effect {
     float: left;
-    width: 6.375em; // see width and height of
-    height: 0.625em; // body #main_container #subnav_top ul li a
+    width: 102px; // see width and height of
+    height: 10px; // body #main_container #subnav_top ul li a
 
-    margin-bottom: -0.875em;
-    margin-left: 0.3125em;
+    margin-bottom: -14px;
+    margin-left: 5px;
 
     background-color: $transparent_white;
 
-    @include border-top-radius(2.5em);
+    @include border-top-radius(40px);
 }
 
 .footer_glass_effect {
     width: 98%; // see width and height of
-    height: 1.125em; // body #main_container #subnav_top ul li a
+    height: 18px; // body #main_container #subnav_top ul li a
 
-    margin-bottom: -1.125em;
-    margin-left: 0.25em;
+    margin-bottom: -18px;
+    margin-left: 4px;
 
     background-color: red;
     background-color: $transparent_white;
 
-    @include border-radius(2.5em);
+    @include border-radius(40px);
 }
 
 fieldset {
@@ -436,40 +434,40 @@ fieldset {
     color: $color;
 
     legend {
-        font-size: 1.25em;
-        margin-bottom: 0.75em;
+        font-size: 20px;
+        margin-bottom: 12px;
     }
 
     .field {
-        margin-bottom: 0.5em;
+        margin-bottom: 8px;
         label {
-            width: 5.0em;
+            width: 80px;
             float: left;
             text-align: right;
             display: block;
-            margin-top: 0.3125em;
+            margin-top: 5px;
         }
 
         input, textarea {
-            margin-left: 0.5em;
+            margin-left: 8px;
         }
     }
 
     .actions input {
         color: $color;
 
-        width: 5.0em;
-        margin-left: 5.5em;
+        width: 80px;
+        margin-left: 88px;
     }
 }
 
 h3 {
-    margin-top: 0.25em;
+    margin-top: 4px;
 }
 
 #admin_login {
-    margin-top: 1.0em;
-    border: solid 0.0625em darken($base_color, 10%);
+    margin-top: 16px;
+    border: solid 1px darken($base_color, 10%);
     background-color: lighten($base_color, 10%);
 
     @include border-radius;
@@ -486,25 +484,25 @@ h3 {
     $color2: $base_color;
     $color3: lighten($base_color, 10%);
 
-    border: solid 0.0625em darken($base_color, 10%);
+    border: solid 1px darken($base_color, 10%);
     background-color: lighten($base_color, 10%);
 
-    padding: 0.75em;
-    margin-bottom: 0.75em;
+    padding: 12px;
+    margin-bottom: 12px;
 
     text-align: justify;
 
     @include border-radius;
     @include box-shadow;
     @if $gradient {
-        @include linear-gradient(color-stops($color1 1.875em, $color2 3.75em, $color3));
+        @include linear-gradient(color-stops($color1 30px, $color2 60px, $color3));
     }
 }
 
 .date {
     float: right;
     text-decoration: underline;
-    margin-left: 0.5em;
+    margin-left: 8px;
 }
 
 a#new_post {
@@ -513,19 +511,19 @@ a#new_post {
 
 #posts_search {
     float: right;
-    margin-top: -1.25em;
+    margin-top: -20px;
 }
 
 @mixin posts_box
 {
-    padding: 0.0em;
-    margin-bottom: -0.875em;
+    padding: 0px;
+    margin-bottom: -14px;
 
     .posts_entry {
         h3 {
             text-align: left;
-            margin-top: 0.25em;
-            margin-bottom: 0.25em;
+            margin-top: 4px;
+            margin-bottom: 4px;
             font-weight: bold;
         }
 
@@ -539,7 +537,7 @@ a#new_post {
 
 #posts_box_index
 {
-    margin-top: 1.875em;
+    margin-top: 30px;
     @include posts_box;
 }
 
@@ -548,14 +546,14 @@ a#new_post {
 }
 
 @mixin projects_box {
-    padding: 0.0em;
-    margin-bottom: -0.875em;
+    padding: 0px;
+    margin-bottom: -14px;
 
     .projects_entry {
         h3 {
             text-align: left;
-            margin-top: 0.25em;
-            margin-bottom: 0.25em;
+            margin-top: 4px;
+            margin-bottom: 4px;
             font-weight: bold;
         }
 
@@ -563,8 +561,8 @@ a#new_post {
 
         .project_img {
             float: left;
-            padding-top: 0.75em;
-            padding-right: 0.75em;
+            padding-top: 12px;
+            padding-right: 12px;
         }
     }
 
@@ -575,7 +573,7 @@ a#new_post {
 
         .project_img {
             float: left;
-            padding-right: 0.75em;
+            padding-right: 12px;
         }
     }
 
@@ -589,7 +587,7 @@ a#new_post {
 }
 
 #projects_box_index {
-    margin-top: 1.875em;
+    margin-top: 30px;
     @include projects_box;
 }
 
@@ -598,14 +596,14 @@ a#new_post {
 }
 
 #feedbacks {
-    margin-top: 0.5em;
-    margin-bottom: -0.625em;
+    margin-top: 8px;
+    margin-bottom: -10px;
 
     .feedback {
-        padding: 0.75em;
-        margin-bottom: 0.75em;
+        padding: 12px;
+        margin-bottom: 12px;
 
-        border: solid 0.0625em $base_color;
+        border: solid 1px $base_color;
         background-color: lighten($base_color, 10%);
 
         @include border-radius;
@@ -619,33 +617,33 @@ a#new_post {
 
 #feedback_hr {
     hr {
-        border: solid 0.125em darken($base_color, 20%);
+        border: solid 2px darken($base_color, 20%);
 
-        margin-top: 1.25em;
+        margin-top: 20px;
         width: 92%;
 
         @include border-radius;
-        @include box-shadow($default-box-shadow-color, 0, 0.0625em, 0.375em);
+        @include box-shadow($default-box-shadow-color, 0, 1px, 6px);
     }
 }
 
 #feedback_box {
-    padding: 0.25em 0.75em 0.25em 0.75em;
-    margin-top: 1.25em;
+    padding: 4px 12px 4px 12px;
+    margin-top: 20px;
 
-    border: solid 0.0625em $base_color;
+    border: solid 1px $base_color;
     background-color: $base_color + $addon_color;
 
     @include border-radius;
     @include box-shadow;
 
     .actions input {
-        width: 6.25em;
+        width: 100px;
     }
 }
 
 pre.comment_body {
-    font-size: 0.875em;
+    font-size: 14px;
     font-family: sans-serif;
 }
 
@@ -655,17 +653,17 @@ pre.comment_body {
     $color2: $base_color;
     $color3: lighten($base_color, 10%);
 
-    border: solid 0.0625em darken($base_color, 10%);
+    border: solid 1px darken($base_color, 10%);
     background-color: lighten($base_color, 10%);
     color: darken($base_color, 50%);
 
-    padding: 0.75em;
-    margin-bottom: 0.875em;
+    padding: 12px;
+    margin-bottom: 14px;
 
     text-align: center;
     a {
         text-decoration: none;
-        text-width: 25.0em;
+        text-width: 400px;
 
         &:hover {
             text-decoration: underline;
@@ -674,11 +672,11 @@ pre.comment_body {
 
     @include border-radius;
     @include box-shadow;
-    @include linear-gradient(color-stops($color1 1.875em, $color2 3.75em, $color3));
+    @include linear-gradient(color-stops($color1 30px, $color2 60px, $color3));
 }
 
 @mixin home_post {
-    margin: 0.5em 0 0.5em;
+    margin: 8px 0 8px;
     text-align: left;
 }
 
@@ -695,15 +693,15 @@ pre.comment_body {
     @include home_posts(left);
 
     hr {
-        border: solid 0.125em darken($base_color, 20%);
+        border: solid 2px darken($base_color, 20%);
 
         @include border-radius;
-        @include box-shadow($default-box-shadow-color, 0, 0.0625em, 0.375em);
+        @include box-shadow($default-box-shadow-color, 0, 1px, 6px);
     }
 
     @for $i from 1 through 10 {
         .tag-#{$i} {
-            font-size: 16.0px + $i;
+            font-size: 16px + $i;
             color: darken($base_color, 30%) - #111 * $i;
         }
     }
@@ -763,8 +761,8 @@ ul#tags_and_projects {
 
 #lynx_r {
     float:left;
-    margin-right: 0.75em;
-    margin-bottom: 0.25em;
+    margin-right: 12px;
+    margin-bottom: 4px;
 }
 
 #about_me {
@@ -790,8 +788,8 @@ ul#tags_and_projects {
         border-collapse: collapse;
         tr {
             td {
-                border: solid 0.0625em;
-                padding: 0.125em 0.25em 0.125em 0.25em;
+                border: solid 1px;
+                padding: 2px 4px 2px 4px;
                 span.page {
                     color: #555;
                 }
@@ -802,7 +800,7 @@ ul#tags_and_projects {
 
 .lang_link {
     float: right;
-    margin-left: 0.25em;
+    margin-left: 4px;
 }
 
 .yandex_metrika {
@@ -810,8 +808,8 @@ ul#tags_and_projects {
 }
 
 #ymapsID {
-    width: 37.5em;
-    height: 25.0em;
+    width: 600px;
+    height: 400px;
 
-    margin-bottom: 1.25em;
+    margin-bottom: 20px;
 }
