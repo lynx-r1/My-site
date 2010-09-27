@@ -56,7 +56,7 @@ body {
 
     margin: 12px;
     background-color: $color1;
-    //@include linear-gradient(color-stops($color1, $color2 50%, $color3), left);
+    @include linear-gradient(color-stops($color1, $color2 50%, $color3), left);
 
     #main_container {
         width: $main_width;
@@ -67,7 +67,7 @@ body {
         padding-bottom: 7px;
 
         @include border-radius;
-        @include box-shadow;//(#333333, 5px, 10px, 260px);
+        @include box-shadow;
 
         #top_container {
             padding-top: 16px;
@@ -417,7 +417,6 @@ $transparent_white: rgba(255, 255, 255, 0.1);
 }
 
 .footer_glass_effect {
-    //float: left;
     width: 98%; // see width and height of
     height: 18px; // body #main_container #subnav_top ul li a
 
@@ -638,12 +637,6 @@ a#new_post {
     @include border-radius;
     @include box-shadow;
 
-    .field {
-        label {
-            //margin-left: 16px;
-        }
-    }
-
     .actions input {
         width: 100px;
     }
@@ -796,7 +789,7 @@ ul#tags_and_projects {
         tr {
             td {
                 border: solid 1px;
-                padding: 1px 4px 2px 4px;
+                padding: 2px 4px 2px 4px;
                 span.page {
                     color: #555;
                 }
