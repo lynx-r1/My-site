@@ -19,11 +19,9 @@ gem 'simple-navigation'
 
 gem 'paperclip'
 
-gem 'ckeditor', '3.4.1.pre'
+gem 'ckeditor', :git => 'git://github.com/galetahub/rails-ckeditor.git', :branch => 'rails3'
 
 #gem 'truncate_html'
-
-gem 'yandex_metrika'
 
 #gem 'searchlogic', :git => 'http://github.com/railsdog/searchlogic.git'
 

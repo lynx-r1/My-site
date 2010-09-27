@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/galetahub/rails-ckeditor.git
+  revision: 8e4c84d72291654f0e605554c3c7f4adab73a7ea
+  branch: rails3
+  specs:
+    ckeditor (3.4.1.pre)
+      mime-types (>= 1.16)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -31,8 +39,6 @@ GEM
     arel (1.0.1)
       activesupport (~> 3.0.0)
     builder (2.1.2)
-    ckeditor (3.4.1.pre)
-      mime-types (>= 1.16)
     compass (0.10.5)
       haml (>= 3.0.4)
     erubis (2.6.6)
@@ -78,15 +84,12 @@ GEM
     treetop (1.4.8)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
-    yandex_metrika (0.0.1)
-      actionpack (>= 2.3.3)
-      activesupport (>= 2.3.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  ckeditor (= 3.4.1.pre)
+  ckeditor!
   compass
   haml
   haml-rails
@@ -95,4 +98,3 @@ DEPENDENCIES
   rails (= 3.0.0)
   simple-navigation
   sqlite3-ruby
-  yandex_metrika
