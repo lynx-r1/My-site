@@ -12,11 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 20100927180651) do
 
-  create_table "about_mes", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "blog_tags", :force => true do |t|
     t.string   "name"
     t.integer  "post_it_id"
@@ -57,13 +52,6 @@ ActiveRecord::Schema.define(:version => 20100927180651) do
     t.datetime "updated_at"
   end
 
-  create_table "post_events", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "post_its", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -72,20 +60,6 @@ ActiveRecord::Schema.define(:version => 20100927180651) do
   end
 
   create_table "post_notes", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "post_others", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "post_teches", :force => true do |t|
     t.string   "title"
     t.text     "content"
     t.datetime "created_at"
