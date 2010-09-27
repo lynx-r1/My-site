@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :authorize, :except => [:login]
+  before_filter :counter
 
   protected
 
@@ -11,4 +12,12 @@ class ApplicationController < ActionController::Base
       redirect_to admin_login_path
     end
   end
+
+  def counter
+    session[request.fullpath] = 1 if session[request.fullpath].nil?
+    session[request.fullpath] += 1
+
+    logger.info request.fullpath.to_s + " visited " + session[request.fullpath].to_s + " times"
+  end
+
 end

@@ -22,7 +22,6 @@ function fadeEffect(elem) {
 }
 
 $(document).ready(function() {
-
     // fade effect for navigation
     $("#nav_bar li.nav_button a").not(".selected").hover(function() {
         fadeDown(this);
