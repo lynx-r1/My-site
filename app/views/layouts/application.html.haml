@@ -9,6 +9,9 @@
     = javascript_include_tag '//mc.yandex.ru/metrika/watch.js'
     = javascript_include_tag "http://api-maps.yandex.ru/1.1/index.xml?key=#{ApplicationController.yandex_maps_key}"
     = csrf_meta_tag
+
+    %meta{'name' => 'yandex-verification', 'content' => '7fe956b52d51c3c7'}
+    %meta{'name' => 'google-site-verification', 'content' => '1Vh_OlRl7CIgUK61l0xghvp7WL2lQ_FRBsmv5jhI_bM'}
   %body
     /[If IE]
       Internet Explorer не поддерживает CSS3, поэтому для корректного отображения дизайна сайта воспользуйтесь другим браузером, например, |
