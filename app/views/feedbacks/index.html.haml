@@ -13,9 +13,9 @@
         Оставить отзыв.
       .field
         = f.label :name, "Ваше имя:"
-        = f.text_field :name, :size => 70
+        = f.text_field :name, :size => '75%'
       .field
         = f.label :body, "Отзыв:"
-        = f.text_area :body, :size => "70x2"
+        = f.text_area :body, :size => '75%'
       .actions
         = f.submit "Добавить"

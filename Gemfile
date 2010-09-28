@@ -13,7 +13,7 @@ gem 'haml'
 
 gem 'haml-rails'
 
-gem 'compass'
+#gem 'compass'
 
 gem 'simple-navigation'
 

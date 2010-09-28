@@ -237,7 +237,7 @@ body {
                             $dark_color2: darken($color2, 5%);
 
                             font-weight: bold;
-                            background-color: $dark_color2;
+                            background-color: $transparent_white;
                             @include linear-gradient(color-stops($dark_color1, $dark_color2), bottom);
                         }
                     }

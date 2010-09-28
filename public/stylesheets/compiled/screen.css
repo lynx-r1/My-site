@@ -560,7 +560,7 @@ body #main_container #subnav_top ul li a {
 /* line 235, ../../../app/stylesheets/screen.scss */
 body #main_container #subnav_top ul li a.selected {
   font-weight: bold;
-  background-color: #2a87ff;
+  background-color: rgba(255, 255, 255, 0.1);
   background-image: -webkit-gradient(linear, 0% 100%, 0% 0%, color-stop(0%, #91c1ff), color-stop(100%, #2a87ff));
   background-image: -moz-linear-gradient(bottom, #91c1ff 0%, #2a87ff 100%);
   background-image: linear-gradient(bottom, #91c1ff 0%, #2a87ff 100%);
