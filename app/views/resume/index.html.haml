@@ -1,6 +1,6 @@
-= link_to_function("En", "$('#resume_index').html(\"#{render('resume-en').gsub(/\n/, '')}\")", |
+= link_to_function("En", "$('#resume_index').html(\"#{render('resume-en').gsub(/\n/, '').gsub(/\"/, '\'')}\")", |
   :class => 'lang_link', :id => 'en_link');
-= link_to_function("Ru", "$('#resume_index').html(\"#{render('resume').gsub(/\n/, '')}\")", |
+= link_to_function("Ru", "$('#resume_index').html(\"#{render('resume').gsub(/\n/, '').gsub(/\"/, '\'')}\")", |
   :class => 'lang_link', :id => 'ru_link')
 
 #resume_index= render 'resume'
