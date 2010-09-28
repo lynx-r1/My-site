@@ -18,13 +18,15 @@
     %p
       = raw(@project.description)
     %p
-      Скачать:
-      - unless @project.source.url.include? "missing.png"
-        = link_to "Sources", @project.source.url
-      - unless @project.bin_win32.url.include? "missing.png"
-        = link_to "Windows", @project.bin_win32.url
-      - unless @project.bin_linux.url.include? "missing.png"
-        = link_to "Linux", @project.bin_linux.url
+      - unless @project.source.url.include?("missing.png") || @project.bin_win32.url.include?("missing.png") || |
+        @project.bin_linux.url.include?("missing.png") |
+        Скачать:
+        - unless @project.source.url.include? "missing.png"
+          = link_to "Sources", @project.source.url
+        - unless @project.bin_win32.url.include? "missing.png"
+          = link_to "Windows", @project.bin_win32.url
+        - unless @project.bin_linux.url.include? "missing.png"
+          = link_to "Linux", @project.bin_linux.url
     - user_logged do
       = link_to 'Edit', edit_project_path(@project)
       \|

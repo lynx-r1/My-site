@@ -10,6 +10,11 @@
     = javascript_include_tag "http://api-maps.yandex.ru/1.1/index.xml?key=#{ApplicationController.yandex_maps_key}"
     = csrf_meta_tag
   %body
+    /[If IE]
+      Internet Explorer не поддерживает CSS3, поэтому для корректного отображения дизайна сайта воспользуйтесь другим браузером, например, |
+      Firefox 3.6 |
+      %a{:href => 'http://www.mozilla.com'}
+        скачать.
     #main_container
       #top_container
         #nav_bar= render_navigation :level => 1
