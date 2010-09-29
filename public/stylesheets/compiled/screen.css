@@ -515,7 +515,7 @@ body #main_container #subnav_top ul {
   left: -50%;
   height: 20px;
   line-height: 20px;
-  margin: 1px;
+  margin-top: 1px;
 }
 /* line 197, ../../../app/stylesheets/screen.scss */
 body #main_container #subnav_top ul li {
@@ -1177,9 +1177,8 @@ a#new_post {
 #feedback_box .actions input {
   width: 100px;
 }
-
-/* line 645, ../../../app/stylesheets/screen.scss */
-pre.comment_body {
+/* line 644, ../../../app/stylesheets/screen.scss */
+#feedback_box comment_body {
   font-size: 14px;
   font-family: sans-serif;
 }

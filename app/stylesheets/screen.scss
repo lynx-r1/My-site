@@ -192,7 +192,7 @@ body {
                 height: $height;
                 line-height: $height;
 
-                margin: 1px;
+                margin-top: 1px;
 
                 li {
                     position: relative;
@@ -639,11 +639,11 @@ a#new_post {
     .actions input {
         width: 100px;
     }
-}
 
-pre.comment_body {
-    font-size: 14px;
-    font-family: sans-serif;
+    comment_body {
+        font-size: 14px;
+        font-family: sans-serif;
+    }
 }
 
 @mixin home_posts($float)
