@@ -515,7 +515,7 @@ body #main_container #subnav_top ul {
   left: -50%;
   height: 20px;
   line-height: 20px;
-  margin: 0;
+  margin: 1px;
 }
 /* line 197, ../../../app/stylesheets/screen.scss */
 body #main_container #subnav_top ul li {
