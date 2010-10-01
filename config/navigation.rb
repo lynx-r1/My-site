@@ -40,7 +40,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched 
     #                            against the current URI.
     #
-    primary.item :home, 'Домой', root_path, :class => 'nav_button'
+    primary.item :home, 'Главная', root_path, :class => 'nav_button'
     primary.item :blogs, 'Блоги', blogs_index_path, :class => 'nav_button' do |blogs|
       blogs.item :posttechs, 'IT', post_its_path, :class => 'subnav_button'
       blogs.item :postothers, 'Заметки', post_notes_path, :class => 'subnav_button'
