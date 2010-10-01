@@ -18,11 +18,11 @@
     %p
       = raw(@project.description)
     %p
-      - unless @project.source.url.include?("missing.png") || @project.bin_win32.url.include?("missing.png") || |
+      - unless @project.source.url.include?("missing.png") && @project.bin_win32.url.include?("missing.png") && |
         @project.bin_linux.url.include?("missing.png") |
         Скачать:
         - unless @project.source.url.include? "missing.png"
-          = link_to "Sources", @project.source.url
+          = link_to "Исходники", @project.source.url
         - unless @project.bin_win32.url.include? "missing.png"
           = link_to "Windows", @project.bin_win32.url
         - unless @project.bin_linux.url.include? "missing.png"
