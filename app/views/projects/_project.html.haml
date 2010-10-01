@@ -14,7 +14,7 @@
       Сайт:
       %span.project_col2= link_to project.site.to_s.gsub(/http[s]?:\/\//, "")
   = truncate_html(project.description, :length => 400)
-  = link_to 'Read more...', project
+  = link_to 'Читать дальше...', project
   - user_logged do
     %br
     = link_to 'Edit', edit_project_path(project)

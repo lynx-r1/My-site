@@ -21,7 +21,44 @@ function fadeEffect(elem) {
     })
 }
 
+function twitter_profile() {
+    var textColor = $("#nav_bar ul li a").css("color");
+    var transparentColor = $("#nav_bar").css("background-color");
+    var backgroundColor = $("body").css("background-color")
+
+    new TWTR.Widget({
+      version: 2,
+      type: 'profile',
+      rpp: 4,
+      interval: 6000,
+      width: 'auto',
+      height: 300,
+      theme: {
+        shell: {
+          background: transparentColor,
+          color: '#111'
+        },
+        tweets: {
+          background: backgroundColor,
+          color: '#111',
+          links: textColor
+        }
+      },
+      features: {
+        scrollbar: false,
+        loop: false,
+        live: false,
+        hashtags: true,
+        timestamp: true,
+        avatars: false,
+        behavior: 'all'
+      }
+    }).render().setUser('lynx_r1').start();
+}
+
 $(document).ready(function() {
+    var textColor = $("#nav_bar ul li a").css("color");
+
     // fade effect for navigation
     $("#nav_bar li.nav_button a").not(".selected").hover(function() {
         fadeDown(this);
@@ -57,15 +94,14 @@ $(document).ready(function() {
     $("#footer").prepend("<div class='footer_glass_effect'></div>");
 
     // greeting message on instead top submenu
-    var greetColor = $("#nav_bar ul li a").css("color");
     $("li.nav_button.selected#home").each(function() {
         $("#subnav_top").html("<div style='text-align: center; line-height: 1.5em; font-size: 1em; " +
-                "font-weight: bold; color:" + greetColor + ";'>Добро пожаловать!</div>");
+                "font-weight: bold; color:" + textColor + ";'>Добро пожаловать!</div>");
     });
 
     $("li.nav_button.selected#about_me").each(function() {
         $("#subnav_top").html("<div style='text-align: center; line-height: 1.5em; font-size: 1em; " +
-                "font-weight: bold; color:" + greetColor + ";'>Привет!</div>");
+                "font-weight: bold; color:" + textColor + ";'>Привет!</div>");
     });
 
     // drop up menu in bottom submenu

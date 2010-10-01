@@ -1,27 +1,29 @@
 %ul#tags_and_projects
-  %li
-    #tags_home
-      %h3= "Метки"
-      = raw(join_tags_add_class_count(@blog_note_tags))
-      %hr
+  %li#tags_home
+    %h3= "Метки"
+    = raw(join_tags_add_class_count(@blog_note_tags))
+    %hr
       = raw(join_tags_add_class_count(@blog_it_tags))
-  %li
-    #projects_home
-      %h3= link_to "Проекты", projects_path
-      = render :partial => 'project', :collection => @projects
-      - user_logged do
-        %b= link_to 'New post', new_project_path
+  %li#projects_home
+    %h3= link_to "Проекты", projects_path
+    = render :partial => 'project', :collection => @projects
+    - user_logged do
+      %b= link_to 'New post', new_project_path
+  %li#clock_home
+    = render 'clock'
+
 
 %ul#post_blogs
-  %li
-    #post_its_home
-      %h3= link_to "IT блог", post_its_path
-      = render :partial => 'post_it', :collection => @post_its
-      - user_logged do
-        %b= link_to 'New post', new_post_it_path
-  %li
-    #post_notes_home
-      %h3= link_to "Заметки", post_notes_path
-      = render :partial => 'post_note', :collection => @post_notes
-      - user_logged do
-        %b= link_to 'New post', new_post_note_path
+  %li#post_its_home
+    %h3= link_to "IT блог", post_its_path
+    = render :partial => 'post_it', :collection => @post_its
+    - user_logged do
+      %b= link_to 'New post', new_post_it_path
+  %li#post_notes_home
+    %h3= link_to "Заметки", post_notes_path
+    = render :partial => 'post_note', :collection => @post_notes
+    - user_logged do
+      %b= link_to 'New post', new_post_note_path
+  %li#twitter_home
+    :javascript
+      twitter_profile();

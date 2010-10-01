@@ -4,7 +4,7 @@ $("#feedbacks").append("<%= escape_javascript(render(@feedback)) %>");
 /* Highlight the new feedback */
 $("#feedback_<%= @feedback.id %>").show("scale", {}, 1000);
 
-$("#feedback_box fieldset legend").append("<div id='thanks' style='display: none'>Thanks!</div>");
+$("#feedback_box fieldset legend").append("<div id='thanks' style='display: none'>Спасибо!</div>");
 $("#thanks").show("pulsate").delay(3000).hide("fade");
 
 /* Reset the feedback form */
