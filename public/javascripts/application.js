@@ -77,6 +77,8 @@ $(document).ready(function() {
     fadeEffect("#post_notes_home");
     fadeEffect("#post_its_home");
     fadeEffect("#projects_home");
+    fadeEffect("#twitter_home");
+    fadeEffect("#clock_home");
     fadeEffect(".posts_entry");
     fadeEffect(".projects_entry");
 

@@ -52,6 +52,7 @@ GEM
       activesupport (>= 2.3.6)
       mime-types
       treetop (>= 1.4.5)
+    meta-tags (1.2.3)
     mime-types (1.16)
     paperclip (2.3.3)
       activerecord
@@ -91,6 +92,7 @@ DEPENDENCIES
   haml
   haml-rails
   jquery-rails
+  meta-tags
   paperclip
   rails (= 3.0.0)
   simple-navigation
