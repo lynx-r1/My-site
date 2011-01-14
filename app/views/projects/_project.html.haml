@@ -12,7 +12,7 @@
   - unless project.site.blank?
     .project_col1
       Сайт:
-      %span.project_col2= link_to project.site.to_s.gsub(/http[s]?:\/\//, "")
+      %span.project_col2= link_to project.site.to_s.gsub(/http[s]?:\/\//, ""), project.site, :target => '_blank'
   = truncate_html(project.description, :length => 400)
   = link_to 'Читать дальше...', project
   - user_logged do
