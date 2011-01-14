@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
     @projects |= Project.description_like_all(params[:search].to_s.split)
     @projects |= Project.language_like_all(params[:search].to_s.split)
     @projects |= Project.framework_like_all(params[:search].to_s.split)
-    @projects.sort_by(&:created_at)
+    @projects = @projects.sort_by(&:created_at)
     @projects.reverse!
 
     session[:work_path] = request.fullpath
