@@ -53,7 +53,7 @@ SimpleNavigation::Configuration.run do |navigation|
       contact.item :address, 'Адреса', address_index_path, :class => 'subnav_button'
       contact.item :feedback, 'Отзывы', feedbacks_path, :class => 'subnav_button'
     end
-    primary.item :about_me, 'Обо мне', about_me_index_path, :class => 'nav_button'
+    #primary.item :about_me, 'Обо мне', about_me_index_path, :class => 'nav_button'
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,

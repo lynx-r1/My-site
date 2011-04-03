@@ -17,7 +17,6 @@ class User < ActiveRecord::Base
     @password = pwd
     return if pwd.blank?
     create_new_salt
-    logger.info(@password + ' ' + self.password)
     self.hashed_password = User.encrypted_password(self.password, self.salt)
   end
 
